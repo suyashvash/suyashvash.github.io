@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3f4fa2d3.chunk.css",
+    "main.js": "/static/js/main.a814122a.chunk.js",
+    "main.js.map": "/static/js/main.a814122a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a7b9956f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a7b9956f.js.map",
+    "static/js/2.02814ee5.chunk.js": "/static/js/2.02814ee5.chunk.js",
+    "static/js/2.02814ee5.chunk.js.map": "/static/js/2.02814ee5.chunk.js.map",
+    "static/js/3.eca15ab0.chunk.js": "/static/js/3.eca15ab0.chunk.js",
+    "static/js/3.eca15ab0.chunk.js.map": "/static/js/3.eca15ab0.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.3f4fa2d3.chunk.css.map": "/static/css/main.3f4fa2d3.chunk.css.map",
+    "static/js/2.02814ee5.chunk.js.LICENSE.txt": "/static/js/2.02814ee5.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/Montserrat-Regular.3cd78665.ttf",
+    "static/media/App.css": "/static/media/teacher.378aee21.jpg",
+    "static/media/girl.2bb27a39.jpg": "/static/media/girl.2bb27a39.jpg",
+    "static/media/ui.ba0fb698.png": "/static/media/ui.ba0fb698.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a7b9956f.js",
+    "static/js/2.02814ee5.chunk.js",
+    "static/css/main.3f4fa2d3.chunk.css",
+    "static/js/main.a814122a.chunk.js"
+  ]
+}
