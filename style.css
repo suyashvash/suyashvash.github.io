@@ -214,18 +214,70 @@ span.tag{color: var(--theme-green);}
 
 .work-about>h2{color: var(--theme-green);}
 .work-about>p{color: darkgray;margin-bottom: 30px;}
+.work-about>span{
+    color: var(--theme-green);
+    background-color: var(--bg-two);
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    margin: 10px 0px;
+    /* box-shadow: 0px 0px 6px 1px var(--bg-two); */
+    border: 1px var(--theme-green) solid;
+    transition: ease 0.5s;
+}
+
+
+.work-about>span>img{
+    margin-right: 0.5rem;
+}
 .work-btn{ margin-right: 20px;}
 .contact-wrapper{width: 50%; margin: auto;}
 .contact-wrapper>h2{ color: var(--theme-green);margin-bottom: 20px;}
 .modal{color: black;}
 
+.form-control{
+    background-color: black;
+    border: black;
+    color: var(--theme-green);
+    transition: ease 0.5s;
+}
+
+.form-control:focus{
+    transition: ease 0.5s;
+    background-color: black;
+    /* border: 1px solid var(--theme-green); */
+    color: white;
+    box-shadow: 0 0 0px 0.1em #6df0a4a3;
+}
+
+
+
+.sub-btn{
+    border: 1.5px solid var(--theme-green);
+    color: var(--theme-green);
+    background-color: transparent;
+    transition: ease 0.5s;
+}
+
+.sub-btn:hover{
+    background-color: var(--theme-green);
+    color: black;
+    transition: ease 0.5s;
+ 
+}
+
 
 @media only screen and (max-width: 600px) {
     .container{flex-direction: column;}
     .navbar-nav{display: none;}
-    .banner-bg{justify-content: center;align-items: flex-start;padding: 0px;}
+    .banner-bg{justify-content: center;align-items: flex-start;padding: 0px;padding-top: 3rem;}
     .tech-holder{height: 280px}
-    .title-holder{padding: 0px;padding-top: 10rem;transform: translateX(10%);}
+    .title-holder{padding: 0px;padding-top: 15rem;transform: translateX(10%);}
     .rotate-bar{width: 60%;}
     .services{height: 110vh;margin-bottom: 20px;margin-top: 20px;}
     .service-wrapper{flex-direction: column-reverse;height: auto;}
