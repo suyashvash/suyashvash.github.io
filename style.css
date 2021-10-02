@@ -6,6 +6,12 @@
 
 ::selection { color: var(--theme-green);background: rgb(14, 14, 14);}
 
+@font-face {
+    font-family: ProductSansRegular;
+    src: url("/media/font/Product-Sans-Regular.ttf");
+}
+
+
 .body-flex{
     display: flex;
     flex-direction: column;
@@ -17,12 +23,15 @@ nav{
     background-color: rgb(19, 19, 19);
 }
 
+
+
 body{
     margin: auto;
     color: white;
     font-family:sans-serif;
     background-color: var(--bg-two);
     scroll-behavior: smooth;
+    font-family: ProductSansRegular,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
 }
 
 .social-btn{
@@ -209,7 +218,7 @@ span.tag{color: var(--theme-green);}
     background-color: var(--bg-two);
     overflow: hidden;
     box-shadow: #000000e6 7px 6px 20px;
-    transition: ease 1s;
+    transition: ease 0.5s;
 }
 
 .work-about>h2{color: var(--theme-green);}
