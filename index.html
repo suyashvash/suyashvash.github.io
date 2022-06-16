@@ -265,6 +265,25 @@
     </div>
 
 
+    <!-- Modal -->
+    <div class="modal fade" data-backdrop="static" id="exampleModalLoading" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title " id="exampleModalLabel">Submitting you Enquiry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    Loading....
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script>
 
 
@@ -281,6 +300,7 @@
             if (firstName == "" || lastName == "" || email == "" || message == "") {
                 alert("Please fill all the fields")
             } else {
+                $('#exampleModalLoading').modal('show');
                 const data = {
                     email: email,
                     firstname: firstName,
@@ -293,8 +313,10 @@
 
                 await axios.post("https://suyashenquiry.herokuapp.com/api/enquiries/submit", data)
                     .then((response) => {
+                        $('#exampleModalLoading').modal('hide');
                         $('#exampleModal').modal('show');
                     }).catch((err) => {
+                        $('#exampleModalLoading').modal('hide');
                         console.log(err)
                     })
 
