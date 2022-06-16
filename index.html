@@ -264,26 +264,12 @@
         </div>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
 
     <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyCOjqH6ZHtrPm1xXk7sdym3HlVFpB-pU6w",
-            authDomain: "hire-form.firebaseapp.com",
-            projectId: "hire-form",
-            storageBucket: "hire-form.appspot.com",
-            messagingSenderId: "109749983832",
-            appId: "1:109749983832:web:5da20e63d07ea9f2a2c82d",
-            measurementId: "G-QQFG6ZCXQ9"
-        };
-
-        var app = firebase.initializeApp(firebaseConfig);
-        const db = app.firestore();
 
 
 
-        function formInput() {
+        const formInput = async () => {
             var firstName = document.getElementById("inputFirstName").value;
             var lastName = document.getElementById("inputLastName").value
             var email = document.getElementById("inputEmail").value;
@@ -297,16 +283,21 @@
             } else {
                 const data = {
                     email: email,
-                    firstName: firstName,
-                    lastName: lastName,
+                    firstname: firstName,
+                    lastname: lastName,
                     message: message,
-                    sentOn: new Date(),
-                    timeStamp: dateTime,
-                    status: "",
+                    sentOn: `${new Date()}`,
+                    timestamp: dateTime,
+                    status: "none",
                 };
 
-                db.collection("enquiries").doc(`${dateTime}`).set(data);
-                $('#exampleModal').modal('show');
+                await axios.post("https://suyashenquiry.herokuapp.com/api/enquiries/submit", data)
+                    .then((response) => {
+                        $('#exampleModal').modal('show');
+                    }).catch((err) => {
+                        console.log(err)
+                    })
+
             }
 
 
@@ -330,7 +321,7 @@
 
 
 
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
