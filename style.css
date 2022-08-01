@@ -421,8 +421,33 @@ border-width: 1px;
     .work-card>img{width: 100%;}
     .work-about{width: 100%;margin-top: 20px;}
     .work-wrapper.even {flex-direction: column;}
-    .contact-wrapper {width: 80%;height: auto;}
+   
     .testimonial{ height: auto; padding-top: 30px;padding-bottom: 40px;}
     .testimonial-body{flex-direction: column;}
     .testimonial-card{margin: 20px;width: 330px;height: auto;}
+    .contact-wrapper {width: 80%;height: auto;}
   }
+
+@media only screen and (max-width: 768px){
+    .container{flex-direction: column;}
+    .navbar-nav{display: none;}
+    .banner-bg{padding: 0px;padding-top: 3rem;}
+    .title-holder{padding: 0px;transform: translateX(10%);}
+    .tech-holder{height: 280px}
+    .services{height: 130vh;margin-bottom: 20px;margin-top: 20px;}
+    .service-wrapper{flex-direction: column-reverse;height: auto;}
+    .tab-about{width: 100%;padding: 0px;}
+    .service-lead {width: 100%;}
+    .service-tab {width: 300px}
+    .service-tab :hover{transform: translateX(0%);transform: translateZ(10px);}
+    .work-wrapper{flex-direction: column;margin: 2rem 0px;}
+    .work-card {width: 300px;height: 200px;}
+    .work-card>img{width: 100%;}
+    .work-about{width: 100%;margin-top: 20px;}
+    .work-wrapper.even {flex-direction: column;}
+    .testimonial{ height: auto; padding-top: 30px;padding-bottom: 40px;}
+    .testimonial-body{flex-direction: column;}
+    .testimonial-card{margin: 20px;width: 330px;height: auto;}
+    .contact-wrapper {width: 80%;height: auto;}
+
+}
