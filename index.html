@@ -488,7 +488,7 @@
                     status: "none",
                 };
            
-                await axios.post("https://suyashenquiry.herokuapp.com/api/enquiries/submit", data)
+                await axios.post("https://suyashvashishthabackend.azurewebsites.net/api/v8/enquiries/submit", data)
                     .then((response) => {
                         $('#exampleModalLoading').modal('hide');
                         $('#exampleModal').modal('show');
