@@ -2,6 +2,7 @@
     --bg-one:#25262a;
     --bg-two:#2d2e32;
     --theme-green:#6df0a4;
+    scroll-behavior: smooth;
 }
 
 ::selection { color: var(--theme-green);background: rgb(14, 14, 14);}
