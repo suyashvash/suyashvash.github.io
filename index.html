@@ -30,8 +30,6 @@
         gtag('config', 'G-3L954H8EQD');
     </script>
 
-
-
 </head>
 
 
@@ -40,7 +38,6 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
         <div class="container">
             <h1 class="author body-flex"> <img src="logo.png" class="logo" alt="Suyash Logo"> Suyash Vashishtha</h1>
-
 
             <ul class="navbar-nav page-navigator">
                 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
@@ -51,7 +48,6 @@
             </ul>
 
             <ul class="navbar-nav ">
-
                 <a class="social-btn" target="blank" href="https://github.com/suyashvash">
                     <svg xmlns="https://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                         class="bi bi-github dd" viewBox="0 0 16 16">
@@ -122,7 +118,6 @@
             <br>
             <a href="#contact" class="btn btn-outline-light banner-contact" tabindex="-1">Contact Me</a>
         </div>
-
 
     </section>
 
@@ -295,10 +290,6 @@
         </div>
 
             </div>
-
-            
-
-
         </div>
 
     </section>
@@ -350,7 +341,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label class="form-label" for="inputFirstName">First name</label>
-                    <input type="name" class="form-control" id="inputFirstName" placeholder="John">
+                    <input  type="name" class="form-control" id="inputFirstName" placeholder="John">
                 </div>
                 <div class="form-group col-md-6">
                     <label class="form-label" for="inputLastName">Last name</label>
@@ -359,7 +350,7 @@
             </div>
             <div class="form-group">
                 <label class="form-label" for="inputEmail">Email</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                <input type='email' class="form-control" id="inputEmail" placeholder="Email">
             </div>
             <div class="form-group">
                 <label class="form-label" for="exampleFormControlTextarea1">Subject</label>
@@ -473,9 +464,33 @@
 
             let formBody = document.getElementById('modal-body')
 
+            var mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+           
+            if(firstName==""){
+                alert("Please Enter your First Name !")
+                return
+            }
+            if(lastName==""){
+                alert("Please Enter your Last Name !")
+                return
+            }
+            if(email==""){
+                alert("Please Enter your Email !")
+                return
+            }
+
+            if (!email.match(mailformat)) {
+                alert("You have entered an invalid email address!")
+                return
+            }
+            if(message==""){
+                alert("Please Enter your Message !")
+                return
+            }
 
             if (firstName == "" || lastName == "" || email == "" || message == "") {
                 alert("Please fill all the fields")
+                return
             } else {
                 $('#exampleModalLoading').modal('show');
                 const data = {
