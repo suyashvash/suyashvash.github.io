@@ -1,0 +1,460 @@
+/*** templates **/
+html {
+	scroll-behavior: smooth;
+  }
+  
+h1.headings{
+    text-align: center;
+    font-family: Verdana;
+}
+
+
+
+/* icon */
+
+
+div.icon{
+	margin-top: 400px;
+	margin-left: 85px;
+
+}
+
+div.icon a{
+	padding-right: 50px;
+	margin-right: 25px;
+	padding-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+/***/
+
+
+header div.nav{
+	
+	padding: 2px;
+	font-family: Tahoma;
+
+	
+}
+
+
+
+
+header div.nav  div.links{
+	
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	padding: 20px;
+	padding-right: 50px;
+
+	
+
+	
+	
+	
+  
+}
+
+
+header div.bg{
+    background: url("bg.png");
+    background-color: rgb(0, 20, 131);
+    height: 768px;
+    width: 100%;
+    
+}
+
+
+
+header div.nav a{
+    font-size: 18px;
+    padding-left: 50px;
+    
+}
+
+/****** a tag link color *******/
+header div.nav a:link {
+color: white;
+background-color: transparent;
+text-decoration: none;
+}
+
+header div.nav a:visited {
+color: white;
+background-color: transparent;
+text-decoration: none;
+}
+
+header div.nav a:hover {
+color: white;
+background-color: transparent;
+text-decoration: underline;
+}
+
+header div.nav a:active {
+color: white;
+background-color: transparent;
+text-decoration: underline;
+}
+
+/** about */
+
+div.aboutdiv{
+	background-color: white;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	
+	/*overflow: auto;*/
+}
+
+
+
+div.introbox{
+	margin: auto;
+	display: inline-flex; 
+	
+}
+
+
+
+div.introp{
+	
+	color: rgb(0, 10, 70);
+	font-weight: 600;
+	width: 800px;
+}
+
+
+
+div.introbox p{
+	font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 20px;
+	vertical-align: middle;
+	padding: 20px;
+}
+
+
+
+
+div.introbox div.imgholder, div.introp{
+	display: inline-block;
+	margin: 10px;
+	vertical-align: middle;
+
+  }
+
+  div.imgholder{
+	  padding-left: 50px;
+  }
+
+
+
+/** Services **/
+
+div.servicediv{
+	padding-top: 80px;
+	
+    
+    
+}
+
+div.serviceholder{
+	margin: auto;
+	width: 80%;
+	
+}
+
+div.service-container{
+	
+	color: black;
+	margin: auto;
+	width: 100%;
+	
+	
+
+}
+
+div.service{
+	font-size: 20px;
+	display: inline-block;
+	padding: 45px;
+	text-align: center;
+	font-family: Helvetica;
+	border: 3px solid rgb(8, 0, 121);
+	border-radius: 30px;
+	box-shadow: 5px 5px 10px rgb(0, 0, 0);
+	margin: 20px;
+	
+	
+	
+}
+
+div.service div.over {
+	position: absolute;
+	top: 230.5%;
+
+	
+	background-color:rgba(1, 16, 85, 0.911);
+	overflow: hidden;
+	width: 22%;
+	height: 59.5%;
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	-webkit-transition: .3s ease;
+	transition: .3s ease;
+	border-radius: 30px;
+  }
+
+div.service div.first{
+	left: 12.4%;
+}
+
+div.service div.second{
+	left: 38.4%;
+}
+
+div.service div.third{
+	left: 64.5%;
+}
+
+.overtext {
+	color: white;
+	font-size: 20px;
+	padding-top: 30%;
+	
+	-webkit-transform: translate(0%, 0%);
+	-ms-transform: translate(0%, 0%);
+	transform: translate(0%, 0%);
+	text-align: center;
+}
+
+.service:hover .over {
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	
+  }
+  
+
+
+/*** Skills ***/
+div.skilldiv{
+	padding-top: 80px;
+}
+
+div.skill-holder{
+	color: rgb(5, 0, 82);
+	font-size: 20px;
+	font-family: Helvetica;
+	font-style: italic;
+	width: 90%;
+	margin: auto;
+
+	
+	
+
+}
+
+div.skill-holder div.percen{
+	color: rgb(214, 27, 27);
+	font-weight: 600;
+
+}
+
+div.skill-holder div.skillname{
+	font-weight: 600;
+}
+
+div.webskillsdiv{
+	font-size: 20px;
+	display: inline-block;
+	-webkit-transition: 0.3s;
+  	transition: 0.3s;
+	font-family: Helvetica;
+}
+
+
+div.otherskillsdiv{
+    font-size: 20px;
+	display: inline-block;
+	-webkit-transition: 0.3s;
+  	transition: 0.3s;
+	font-family: Helvetica;
+}
+
+
+
+div.skill-holder li{
+
+	position: relative;
+	list-style: none;
+	margin: 50px 0px;
+	font-weight: 500;
+	text-transform: uppercase;
+	
+	width: 500px;
+	margin-right: 50px;
+
+}
+
+/****** making skill bars ****/
+
+div.skill-holder div.webskillsdiv li:before {
+	content: '';
+	position: absolute;
+	top: calc(100% + 10px);
+	left: 0;
+	width: 100%;
+	height: 15px;
+	background-color: rgba(4, 2, 175, 0.486);
+	border-radius: 100px;
+}
+
+
+
+div.skill-holder div.webskillsdiv li:after {
+	content: '';
+	position: absolute;
+	top: calc(100% + 10px);
+	left: 0;
+	width: 0%;
+	height: 15px;
+	background-color: rgb(8, 6, 153);
+	border-radius: 100px;
+	animation-duration: .7s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+}
+
+
+/**** other skills **/ 
+div.skill-holder div.otherskillsdiv li:before {
+	content: '';
+	position: absolute;
+	top: calc(100% + 10px);
+	left: 0;
+	width: 100%;
+	height: 15px;
+	background-color: rgba(19, 235, 12, 0.486);
+	border-radius: 100px;
+}
+
+
+
+div.skill-holder div.otherskillsdiv li:after {
+	content: '';
+	position: absolute;
+	top: calc(100% + 10px);
+	left: 0;
+	width: 0%;
+	height: 15px;
+	background-color: rgb(12, 235, 23);
+	border-radius: 100px;
+	animation-duration: .7s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+}
+
+/*****************/
+
+/*** animation****/
+
+/*** web skill **/
+
+div.skill-holder li.html:after{
+	animation-name: html;
+}
+
+@keyframes html{
+	to {
+		width: 85%;
+	}
+}
+
+
+div.skill-holder li.css:after{
+	animation-name: css;
+}
+
+@keyframes css{
+	to {
+		width: 90%;
+	}
+}
+
+div.skill-holder li.javascript:after{
+	animation-name: js;
+}
+
+@keyframes js{
+	to {
+		width: 55%;
+	}
+}
+
+/** other skill **/
+
+div.skill-holder li.photoshop:after{
+	animation-name: ps;
+}
+
+@keyframes ps{
+	to {
+		width: 80%;
+	}
+}
+
+
+div.skill-holder li.corel:after{
+	animation-name: cd;
+}
+
+@keyframes cd{
+	to {
+		width: 70%;
+	}
+}
+
+div.skill-holder li.videoedit:after{
+	animation-name: ve;
+}
+
+@keyframes ve{
+	to {
+		width: 65%;
+	}
+}
+
+
+
+
+/*** hover **/ 
+
+div.otherskillsdiv:hover{
+	box-shadow: 5px 5px 10px gray;
+	border-radius: 20px;
+	
+}
+
+div.webskillsdiv:hover{
+	box-shadow: 5px 5px 10px gray;
+	border-radius: 20px;
+}
+
+/**************************** Project ******************************/
+
+
+/**** Contact ********/
+
+
+
+
+
