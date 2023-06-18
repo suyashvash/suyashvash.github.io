@@ -1,0 +1,589 @@
+@font-face {
+  font-family: customLatoFont;
+  src: url("res/Lato/Lato-Light.ttf");
+}
+
+@font-face {
+  font-family: boldLato;
+  src: url("res/Lato/Lato-Bold.ttf");
+}
+
+body {
+  margin: 0%;
+  scroll-behavior: smooth;
+  font-family: customLatoFont;
+  background-color: black;
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #363636; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255); /* color of the scroll thumb */
+
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #363636; /* creates padding around scroll thumb */
+}
+
+section.headSection {
+  width: 100%;
+  background: rgb(12, 12, 12);
+  background-size: contain;
+
+  color: white;
+  height: 610px;
+}
+
+/**** side bar ***/
+span.sideopen {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.705);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.sidenav a {
+  padding: 8px 50px 30px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 40px;
+  margin-left: 10px;
+}
+
+h2.head {
+  font-size: 35px;
+}
+
+/***************************************/
+
+/****** NAV BAR ***********************************************/
+
+div.navbarParent {
+  background-color: rgba(0, 0, 0, 0.123);
+}
+
+div.content {
+  text-align: right;
+  padding: 10px;
+}
+
+div.navlinks > a,
+a:visited,
+a:active,
+a:checked {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  margin: 12px;
+}
+
+/****** HEAD CONTENT ***********************************************/
+
+div.headParent {
+  width: 90%;
+  margin: auto;
+  margin-top: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+}
+
+div.headParent > h1 {
+  font-size: 70px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+div.headParent > h3 {
+  font-size: 30px;
+  text-align: center;
+  animation: 1s fade 1.5s forwards;
+  opacity: 0;
+}
+
+div.headParent > h1 {
+  animation: 1s zoom 0.5s forwards;
+  transform: scale(0.2);
+  opacity: 0;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.5;
+  }
+
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+.pageNav{
+  background-color: rgb(20, 20, 20);
+ 
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 20px #575757;
+  margin-bottom: 40px;
+}
+
+a.navAnchor{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+
+
+
+a.bannerBtn {
+  margin-top: 30px;
+  font-size: 20px;
+  transition: 0.5s ease;
+  padding: 11px;
+  padding-right: 17px;
+  padding-left: 17px;
+  text-decoration: none;
+  background-color: white;
+  color: #363636;
+  font-weight: 900;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+
+
+a.bannerBtn:hover {
+  /* border: 2px solid rgb(255, 255, 255); */
+
+  background-color: #363636;
+  color: white;
+  transition: 0.5s ease;
+}
+
+/******************************** ABOUT *********************/
+
+section.about {
+  width: 100%;
+  /* background: url("res/bg2.png") ; */
+  background-color: black;
+  background-size: contain;
+  padding-top: 80px;
+  color: white;
+  height: 610px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+}
+
+img.mypic {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.aboutHolder {
+  padding: 20px;
+}
+
+h1.aboutHead {
+  font-size: 45px;
+  margin: 0px;
+  color: red;
+  font-family: boldLato;
+}
+
+h3.aboutTag {
+  font-size: 34px;
+  margin: 0px;
+}
+
+p.aboutPara {
+  margin-top: 30px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+span.tags {
+  padding: 5px;
+  padding-left: 13px;
+  padding-right: 13px;
+  background-color: #363636;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+/********************* skills */
+
+section.skills {
+  width: 100%;
+  /* background: url("res/bg2.png") ; */
+  background: url("res/bg.png");
+  background-size: contain;
+  padding-top: 80px;
+  color: white;
+  height: 610px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillWrapper {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillCard {
+  margin: auto;
+}
+
+.hideData {
+  width: 80%;
+  text-align: center;
+  display: block;
+  margin-top: -50%;
+  opacity: 0;
+  padding-bottom: 20px;
+  transition: ease-out 0.5s;
+}
+
+.skillC {
+  width: 280px;
+  height: 400px;
+  background-color: #363636;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  box-shadow: 0px 5px 20px #0c0c0c;
+  transition: 0.5s ease;
+}
+
+.skillC:hover {
+  transform: scale(1.1);
+
+  transition: 0.5s ease;
+}
+
+.skillC:hover > .hideData {
+  display: block;
+  opacity: 1;
+  margin-top: 0%;
+  transition: 0.5s ease;
+}
+
+.skillC:hover > img.sImg {
+  border: 5px solid #6bd0ff;
+  box-shadow: 0px 5px 10px #6bd0ff;
+  transition: 0.5s ease;
+}
+
+.L {
+  width: 250px;
+  height: 320px;
+}
+
+.R {
+  width: 250px;
+  height: 320px;
+}
+
+img.sImg {
+  width: 50%;
+  height: auto;
+  background-color: black;
+  transition: 0.5s ease;
+  border-radius: 50%;
+  border: 5px solid #222222;
+  box-shadow: 0px 5px 10px #222222;
+}
+
+.hideData > h4 {
+  margin: 0px;
+}
+
+h4.usage {
+  margin-top: 10px;
+  color: rgb(77, 175, 255);
+}
+
+ 
+/* Contact */
+
+section.contactSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  background: url("res/bg.png");
+  background-size: cover;
+}
+
+/* Style inputs */
+input[type="text"],
+select,
+textarea {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #ffffff;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 40%;
+  margin-top: 6px;
+  padding: 30px;
+  background-color: #3636363d;
+  box-shadow: 0px 5px 20px #0c0c0c;
+  border-radius: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h2.f {
+  margin-top: 0px;
+}
+
+/* Portfolio */
+
+
+section.portfolio {
+  width: 100%;
+  /* background: url("res/bg2.png") ; */
+  background-color: black;
+  padding-top: 50px;
+  color: white;
+  height: 610px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portWrapper {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.flip-card {
+
+  width: 400px;
+  height: 400px;
+  background-color: #363636;
+  color: rgb(255, 255, 255);
+  background: url("res/projects/instaClone.png");
+  background-size: contain;
+  border-radius: 10px;
+  
+}
+
+
+
+.fCard {
+  border-radius: 10px;
+}
+
+
+.cardDetails{
+  width: 50%;
+  height: 80%;
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  
+ 
+}
+
+
+.detailHeader{
+  width: 100%;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  padding-left: 20px;
+
+  
+}
+
+span.projName{
+  font-size: 30px;
+  padding: 10px;
+  font-family: boldLato;
+}
+
+span.projTech{
+  font-size: 20px;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+
+.detailBody{
+  width: 100%;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 75%;
+  padding-left: 20px;
+
+
+  
+}
+
+span.detailHead{
+  font-size: 22px;
+  font-family: boldLato;
+  padding: 10px;
+}
+
+p.detailPara{
+  margin-top: 0px;
+  padding: 10px;
+}
+
+
+.linkHodler{
+  display: flex;
+  flex-direction: row;
+}
+
+a.projLink{
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 20px;
+  background-color: black;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  
+
+}
