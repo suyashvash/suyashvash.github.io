@@ -451,6 +451,12 @@
 
         const readMore = ()=>{
             $('#clientsModal').modal('show');
+            console.log("read more clicked")
+            gtag("event", "read_more", {
+            "event_category": "testimonial",
+            "event_label": "spiro_review"
+            });
+
         }
 
 
