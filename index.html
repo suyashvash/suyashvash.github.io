@@ -2,17 +2,7 @@
 <html lang="en">
 
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3L954H8EQD"></script>
-
-    <script>
-
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-3L954H8EQD');
-    </script>
-
+ 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -30,7 +20,14 @@
         content="Suyash vashishtha Mobile App developer | React Native | JavaScript | Web Developer " />
     <meta property="og:image" content="logo.png" />
 
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3L954H8EQD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-3L954H8EQD');
+    </script>
 </head>
 
 
@@ -453,11 +450,7 @@
         const readMore = ()=>{
             $('#clientsModal').modal('show');
             console.log("read more clicked")
-            gtag("event", "read_more", {
-            "event_category": "testimonial",
-            "event_label": "spiro_review",
-            "event_name":"read_more"
-            });
+            gtag("event", "read_more");
 
         }
 
