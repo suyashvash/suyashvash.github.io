@@ -38,15 +38,15 @@
             <h1 class="author body-flex"> <img src="logo.png" class="logo" alt="Suyash Logo"> Suyash Vashishtha</h1>
 
             <ul class="navbar-nav page-navigator">
-                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
-                <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a onclick="sendEvent('nav_home')" class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a onclick="sendEvent('nav_services')" class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a onclick="sendEvent('nav_work')" class="nav-link" href="#work">Work</a></li>
+                <li class="nav-item"><a onclick="sendEvent('nav_testi')" class="nav-link" href="#testimonials">Testimonials</a></li>
+                <li class="nav-item"><a onclick="sendEvent('nav_contact')" class="nav-link" href="#contact">Contact</a></li>
             </ul>
 
             <ul class="navbar-nav ">
-                <a class="social-btn" target="blank" href="https://github.com/suyashvash">
+                <a onclick="sendEvent('open_nav_github')" class="social-btn" target="blank" href="https://github.com/suyashvash">
                     <svg xmlns="https://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                         class="bi bi-github dd" viewBox="0 0 16 16">
                         <path
@@ -54,7 +54,7 @@
                         </path>
                     </svg>
                 </a>
-                <a class="social-btn" target="blank" href="https://www.linkedin.com/in/suyashvashishtha/">
+                <a onclick="sendEvent('open_nav_linkedin')" class="social-btn" target="blank" href="https://www.linkedin.com/in/suyashvashishtha/">
                     <svg xmlns="https://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                         class="bi bi-github" viewBox="0 0 16 16">
                         <path
@@ -62,7 +62,7 @@
                     </svg>
                     </svg>
                 </a>
-                <a class="social-btn" target="blank" href="https://www.instagram.com/suyash.codes/">
+                <a onclick="sendEvent('open_nav_instagram')" class="social-btn" target="blank" href="https://www.instagram.com/suyash.codes/">
                     <svg xmlns="https://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                         class="bi bi-github" viewBox="0 0 16 16">
                         <path
@@ -71,7 +71,7 @@
                 </a>
 
 
-                <a href="mailto:suyashvashishtha@gmail.com" class="social-btn">
+                <a onclick="sendEvent('open_nav_mail')" href="mailto:suyashvashishtha@gmail.com" class="social-btn">
                     <svg xmlns="https://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                         class="bi bi-envelope-fill" viewBox="0 0 16 16">
                         <path
@@ -114,7 +114,7 @@
             <h2 class="title">Talk is Cheap <br> Show me the Code !</h2>
             <span class="tag">Developer from India  🇮🇳<br>Helping Businesses and Start-ups to build ,<br> powerful and scalable apps across the globe.</span>
             <br>
-            <a href="#contact" class="btn btn-outline-light banner-contact" tabindex="-1">Contact Me</a>
+            <a onclick="sendEvent('cta_hero_contact')" href="#contact" class="btn btn-outline-light banner-contact" tabindex="-1">Contact Me</a>
         </div>
 
     </section>
@@ -170,9 +170,9 @@
 
                     <p>Playwise is an online social platform for gamers and the eSports community. Users can create their profiles, follow other users, create and join tournaments, watch leaderboards, chat with other users, and much more. </p>
                     </p>
-                    <a href="https://play.google.com/store/apps/details?id=gg.playwise.mobile" target="blank"
+                    <a onclick="sendEvent('pw_google_play')" href="https://play.google.com/store/apps/details?id=gg.playwise.mobile" target="blank"
                         class="btn btn-outline-light work-btn" tabindex="-1" role="button">Google Play</a>
-                    <a href="https://apps.apple.com/us/app/playwise/id6443646627" target="blank"
+                    <a onclick="sendEvent('pw_app_store')" href="https://apps.apple.com/us/app/playwise/id6443646627" target="blank"
                         class="btn btn-outline-light work-btn" tabindex="-1" role="button">App Store</a>
 
                 </div>
@@ -191,9 +191,9 @@
                         clients can get real time
                         updates on there task just with few taps.
                     </p>
-                    <a href="https://play.google.com/store/apps/details?id=com.singhaljain.client" target="blank"
+                    <a onclick="sendEvent('singhal_google_play')" href="https://play.google.com/store/apps/details?id=com.singhaljain.client" target="blank"
                         class="btn btn-outline-light work-btn" tabindex="-1" role="button">Google Play</a>
-                    <a href="https://apps.apple.com/in/app/singhal-jain-co/id1623310438" target="blank"
+                    <a onclick="sendEvent('singhal_app_store')" href="https://apps.apple.com/in/app/singhal-jain-co/id1623310438" target="blank"
                         class="btn btn-outline-light work-btn" tabindex="-1" role="button">App Store</a>
                 </div>
             </div>
@@ -214,7 +214,7 @@
                     </p>
 
 
-                    <a href="https://snippetsauce.tech/" target="blank" class="btn btn-outline-light work-btn"
+                    <a onclick="sendEvent('ss_visit')" href="https://snippetsauce.tech/" target="blank" class="btn btn-outline-light work-btn"
                         tabindex="-1" role="button">Visit</a>
                 </div>
             </div>
@@ -454,8 +454,13 @@
 
         }
 
+        const sendEvent=(event)=>{
+            gtag("event", event);
+        }
+
 
         const formInput = async () => {
+            gtag("event", "form_submit");
             var firstName = document.getElementById("inputFirstName").value;
             var lastName = document.getElementById("inputLastName").value
             var email = document.getElementById("inputEmail").value;
@@ -521,11 +526,34 @@
         var servTab2 = document.getElementById('service-tab2')
         var servTab3 = document.getElementById('service-tab3')
 
+        var reachedWork = false;
+        var reachedTest = false;
+        var reachedContact = false;
+
         window.addEventListener('scroll', function () {
-            if (window.pageYOffset > 500) {
+
+            let scollPos = window.pageYOffset;
+            if (scollPos > 600) {
+                gtag("event", "scroll_about");
                 servTab1.classList.add('tab-rev');
                 servTab2.classList.add('tab-rev');
                 servTab3.classList.add('tab-rev');
+            }
+
+            if(scollPos>1300 && reachedWork==false){
+                gtag("event", "scrolled_work");
+                reachedWork=true;
+                
+            }
+
+            if(scollPos>2700 && reachedTest==false){
+                gtag("event", "scrolled_test");
+                reachedTest=true;
+            }
+
+            if(scollPos>3400 && reachedContact==false){
+                gtag("event", "scrolled_contact");
+                reachedContact=true;
             }
         });
     </script>
