@@ -8,10 +8,10 @@
     background-color: transparent;
     transition: all 0.3s ease-in-out;
     font-size: 1rem;
-    /* &:hover{
-        border: 1px solid white;
-        color: var(--primary-color);
-    } */
+    &:hover{
+        background-color: var(--primary-color);
+        color: black;
+    }
 
 }
 

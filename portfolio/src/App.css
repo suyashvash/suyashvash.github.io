@@ -5,19 +5,21 @@
   --detail-gray: #9b9b9b;
 }
 
+::selection { color: var(--primary-color);background: var(--background-dark-color)}
+
 @font-face {
-  font-family: Poppins-Regular;
-  src: url('./assets/fonts/Poppins/Poppins-Regular.ttf');
+  font-family: Quicksand-Regular;
+  src: url('./assets/fonts/Quicksand/Quicksand-Regular.ttf');
 }
 
 @font-face {
-  font-family: Poppins-Bold;
-  src: url('./assets/fonts/Poppins/Poppins-Bold.ttf');
+  font-family: Quicksand-Bold;
+  src: url('./assets/fonts/Quicksand/Quicksand-Bold.ttf');
 }
 
 @font-face {
-  font-family: Poppins-Thin;
-  src: url('./assets/fonts/Poppins/Poppins-Thin.ttf');
+  font-family: Quicksand-Thin;
+  src: url('./assets/fonts/Quicksand/Quicksand-Light.ttf');
 }
 
 body{
@@ -26,7 +28,7 @@ body{
   font-family: sans-serif;
   background-color: black;
   scroll-behavior: smooth;
-  font-family: Poppins-Bold,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
+  font-family: Quicksand-Bold,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll; 
@@ -48,4 +50,45 @@ body::-webkit-scrollbar {
   align-items: center;
   color: white;
   
+}
+
+
+.tag{
+  font-family: Quicksand-Bold;
+  color:  var(--primary-color);
+  font-size: 0.95rem;
+  position: relative;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+}
+
+.tag::before{
+  content: ""; /* Required to create a pseudo-element */
+  display: block; /* Make it a block-level element so it appears on a new line */
+  height: 1px; /* Set the height of the line */
+  background-color: var(--primary-color); /* Set the color of the line */
+  width: 30px; /* Make the line span the full width of the parent div */
+  position: absolute; /* Position it absolutely relative to the parent div */
+  right: 110%; /* Position it at the left edge of the parent div */
+  bottom: 50%;
+}
+
+.tag.no_dash::before{
+  display: none;
+}
+
+.tag.no_dash{
+  font-family: Quicksand-Regular;
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+}
+
+.description{
+  font-family: Quicksand-Regular;
+  color:  var( --detail-gray);
+  font-size: 1rem;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+  line-height: 1.875;
 }
