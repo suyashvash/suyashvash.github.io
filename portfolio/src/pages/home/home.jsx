@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from "react";
 import "./home_styles.css";
 import { OutlineButton } from "../../components";
-import {HeroSection} from "./sections";
 
 export default function HomePage() {
 
@@ -67,7 +66,17 @@ export default function HomePage() {
       </div>
 
 
-          <HeroSection/>
+      <section className="hero_section">
+        <div className="hero_container">
+          <span className="hero_me">Hi, I am Suyash Vashishtha</span>
+          <h2 className="tagline">
+            Turning Ideas,
+            <br />
+            Into Realties
+          </h2>
+          <OutlineButton title="Get in Touch" href="/contact" />
+        </div>
+      </section>
 
       <section className="hero_section">
         <div className="hero_container">
