@@ -1,0 +1,51 @@
+:root{
+  --primary-color: #feb406;
+  --heading-color: white;
+  --background-dark-color: #10121A;
+  --detail-gray: #9b9b9b;
+}
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('./assets/fonts/Poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('./assets/fonts/Poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Thin;
+  src: url('./assets/fonts/Poppins/Poppins-Thin.ttf');
+}
+
+body{
+  margin: auto;
+  color: white;
+  font-family: sans-serif;
+  background-color: black;
+  scroll-behavior: smooth;
+  font-family: Poppins-Bold,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
+}
+
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+
+
+.page{
+
+  width: 100vw;
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  
+}

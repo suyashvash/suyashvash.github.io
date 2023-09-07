@@ -1,0 +1,67 @@
+.home_indexer{
+    padding: 10px;
+    position: fixed;
+    right: 1%;
+    top: 45%;
+    z-index: 999;
+}
+
+.index_cover{
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indexer_circle{
+    background-color: var(--primary-color);
+    border: 1px solid gray;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+.indexer_circle.active{
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.indexer_circle.inactive{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.inactive_index::after {
+    content: ""; /* Required to create a pseudo-element */
+    display: block; /* Make it a block-level element so it appears on a new line */
+    height: 1px; /* Set the height of the line */
+    background-color: gray; /* Set the color of the line */
+    width: 300%; /* Make the line span the full width of the parent div */
+    position: absolute; /* Position it absolutely relative to the parent div */
+    bottom: 50%; /* Position it at the bottom of the parent div */
+    left: 600%; /* Position it at the left edge of the parent div */
+    transition: left 0.4s ease;
+  }
+
+.active_index::after {
+    content: ""; /* Required to create a pseudo-element */
+    display: block; /* Make it a block-level element so it appears on a new line */
+    height: 1px; /* Set the height of the line */
+    background-color: gray; /* Set the color of the line */
+    width: 300%; /* Make the line span the full width of the parent div */
+    position: absolute; /* Position it absolutely relative to the parent div */
+    bottom: 50%; /* Position it at the bottom of the parent div */
+    left: 200%; /* Position it at the left edge of the parent div */
+    transition: left 0.4s ease;
+  }
+

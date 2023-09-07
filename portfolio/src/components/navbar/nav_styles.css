@@ -1,0 +1,58 @@
+
+
+.navbar{
+    height: 80px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar_wrapper{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar_logo{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.app_link{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.app_link :visited{
+    color: #fff;
+}
+
+.app_link:hover{
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav_links{
+    font-size: 0.9rem;
+    font-family: Poppins-Bold;
+}
+
+.nav_links.active{
+    color: var(--primary-color);
+}
+
+.navbar__logo>h3{
+    font-family: Poppins-Thin;
+}
