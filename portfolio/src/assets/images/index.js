@@ -7,6 +7,12 @@ import MobileThree from './m3.png';
 import MobileFour from './m4.png';
 import Rocket from './rocket.png';
 import Bubble from './buble.png';
+import Android from './android.png';
+import ReactNative from './reactNative.png';
+import iOS from './ios.png';
+import AndoridWall from './androidWall.jpeg';
+import ReactNativeWall from './rnWall.webp';
+import iOSWall from './iosWall.jpeg';
 
 export const BackgroundImages = {
     bgOne,
@@ -26,3 +32,12 @@ export const MobileMockups = {
     MobileFour
 }
 
+
+export const ServicesAssets = {
+    Android,
+    ReactNative,
+    iOS,
+    AndoridWall,
+    ReactNativeWall,
+    iOSWall
+}

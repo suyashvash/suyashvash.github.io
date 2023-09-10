@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./home_styles.css";
 import { OutlineButton } from "../../components";
-import { HomeAssets, MobileMockups } from "../../assets/images";
+import { HomeAssets, MobileMockups, ServicesAssets } from "../../assets/images";
+import { Projects } from "../../assets/data/project";
 
 export default function HomePage() {
   useEffect(() => {
@@ -13,6 +14,7 @@ export default function HomePage() {
   }, []);
 
   const [currentSection, setCurrentSection] = useState(0);
+  const [currentProject, setCurrentProject] = useState(1);
 
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
@@ -48,6 +50,36 @@ export default function HomePage() {
     },
   ];
 
+  const services = [
+    {
+      id: 1,
+      title: "Cross Platform Development",
+      description:
+        "I develop native Android apps using Kotlin and Java. I have experience in developing apps for various domains like e-commerce, social media, and more.",
+      icon: ServicesAssets.ReactNative,
+      bg: ServicesAssets.ReactNativeWall,
+      class: "rn",
+    },
+    {
+      id: 2,
+      title: "Android Development",
+      description:
+        "I develop native Android apps using Kotlin and Java. I have experience in developing apps for various domains like e-commerce, social media, and more.",
+      icon: ServicesAssets.Android,
+      bg: ServicesAssets.AndoridWall,
+      class: "android",
+    },
+    {
+      id: 3,
+      title: "iOS Development",
+      description:
+        "I develop native Android apps using Kotlin and Java. I have experience in developing apps for various domains like e-commerce, social media, and more.",
+      icon: ServicesAssets.iOS,
+      bg: ServicesAssets.iOSWall,
+      class: "ios",
+    },
+  ];
+
   const handleScroll = () => {
     let scrollPosY = window.scrollY;
     if (
@@ -64,13 +96,33 @@ export default function HomePage() {
       setCurrentSection(2);
     }
 
-    // if(projectsRef.current.getBoundingClientRect().top <=50 ){
-    //   setCurrentSection(3);
-    // }
+    if (projectsRef.current.getBoundingClientRect().top <= 50) {
+      setCurrentSection(3);
+    }
 
     // if(contactRef.current.getBoundingClientRect().top <=50 ){
     //   setCurrentSection(4);
     // }
+  };
+
+  const projectHandler = (increment) => {
+    if (increment && currentProject < Projects.length - 1) {
+      setCurrentProject(currentProject + 1);
+    } else if (!increment && currentProject > 1) {
+      setCurrentProject(currentProject - 1);
+    }
+  };
+
+  const projectClassHandler = (id) => {
+    if (id == currentProject) {
+      return "project_card active";
+    } else if (id == currentProject - 1) {
+      return "project_card prev";
+    } else if (id == currentProject + 1) {
+      return "project_card next";
+    } else {
+      return "project_card ";
+    }
   };
 
   return (
@@ -152,8 +204,7 @@ export default function HomePage() {
               business's unique needs.
             </p>
             <p style={{ color: "white" }} className="description">
-              Have an Idea ?{" "}
-              <a className="app_link highlight">Let's talk !</a>
+              Have an Idea ? <a className="app_link highlight">Let's talk !</a>
             </p>
           </div>
         </div>
@@ -162,11 +213,38 @@ export default function HomePage() {
       <section ref={servicesRef} className="services_section">
         <span className="tag about-tag">SERVICES</span>
         <div className="services_wrapper">
-          <div className="service_card"></div>
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className={"service_card" + " " + service.class}
+              //+ (currentSection == 2 && " revealed")
+            >
+              <img src={service.bg} className="service_bg" />
+              <div className="service_bg_holder"></div>
+              <div className="service_card_body">
+                <img src={service.icon} className="service_icon" />
+                <h3 className="service_title">{service.title}</h3>
+                <p className="service_description">{service.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-          <div className="service_card"></div>
-
-          <div className="service_card"></div>
+      <section ref={projectsRef} className="project_section">
+        <span className="tag about-tag project">MY LATEST PROJECT</span>
+        <div className="project_wrapper">
+          {Projects.map((project) => (
+            <div className="project_card">
+              <div className="project_card_body">
+                {/* <img src={project.logo} className="project_icon" /> */}
+                <div className="project_card_body_about">
+                  <h3 className="project_title">{project.title}</h3>
+                  <p className="project_description">{project.location}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
