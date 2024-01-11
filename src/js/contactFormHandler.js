@@ -23,17 +23,19 @@ function enableScroll() {
 function openContactModal() {
     disableScroll();
     document.querySelector(".modal.backdrop").classList.add("show");
+    document.querySelector(".contactModal-title").classList.add("showTitle");
 }
 
 function closeContactModal() {
     enableScroll();
     document.querySelector(".modal.backdrop").classList.remove("show");
+    document.querySelector(".contactModal-title").classList.remove("showTitle");
 }
 
 
 
 const submitForm = async () => {
-    // gtag("event", "form_submit");
+    gtag("event", "form_submit");
     var name = document.getElementById("inputName").value;
 
     var email = document.getElementById("inputEmail").value;
@@ -101,6 +103,7 @@ const submitForm = async () => {
             body: JSON.stringify(body)
         }).then(res => res.json())
             .then(data => {
+                gtag("event", "form_submit_success");
                 alert("Thank you for contacting me. I will get back to you soon.")
 
                 formButton.innerHTML = "Submit"
@@ -115,6 +118,7 @@ const submitForm = async () => {
 
 
             }).catch(err => {
+                gtag("event", "form_submit_error");
                 alert("Something went wrong. Please try again later.")
 
                 formButton.innerHTML = "Submit"

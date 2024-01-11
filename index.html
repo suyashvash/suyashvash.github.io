@@ -74,6 +74,7 @@
             </div>
         </div>
     </section>
+
     <section class="brands">
         <div class="heading">
             <hr class="heading-line">
@@ -96,17 +97,17 @@
             <img class="brand-img" src="src/assets/images/brandS/Haulr.webp" alt="Halr">
             <img class="brand-img" src="src/assets/images/brandS/playnoot.webp" alt="playnoot">
             <img class="brand-img" src="src/assets/images/brandS/singhalJain.webp" alt="singhalJain">
-            
+
         </div>
 
     </section>
     <section id="about" class="about">
-        <img class="about-img" src="src/assets/images/me.png" alt="My Profile Photo">
+        <img id="about-img" class="about-img" src="src/assets/images/me.png" alt="My Profile Photo">
 
         <div class="about-data">
             <div class="data-holder">
-                <h2 class="section-title">Hello there! I’m<br />Suyash Vashishtha</h2>
-                <p class="description">
+                <h2 id="about-title" class="section-title about-title">Hello there! I’m<br />Suyash Vashishtha</h2>
+                <p id="about-para" class="description">
                     With 4 years of experience in the industry, I have honed my skills to craft beautiful and scalable
                     mobile
                     applications that transcend borders. Having collaborated with esteemed international clients from
@@ -125,16 +126,16 @@
                     </span>
 
                 </p>
-                <div onclick="openContactModal()" class="cta-button">Get In Touch</div>
+                <div id="about-cta" onclick="openContactModal()" class="about-cta cta-button">Get In Touch</div>
             </div>
 
         </div>
     </section>
 
     <section id="work" class="section work">
-        <h2 class="section-title">My Work</h2>
+        <h2 id="work-title" class="work-title section-title">My Work</h2>
 
-        <div id="macbook" class="macbook">
+        <div id="macbook" class="macbook ">
             <div class="pc taskbar">
                 <img class="taskbar-app venyou" onmouseover="changeApp('venyouScreenshot')"
                     onmouseout="changeToDummy('venyouScreenshot')" src="src/assets/images/icons/apps/venyou.jpeg"
@@ -359,9 +360,10 @@
 
 
     </section>
+
     <section id="services" class="section services">
         <div class="sheader">
-            <h2 class="section-title">Services</h2>
+            <h2 id="service-title" class="service-title section-title">Services</h2>
 
             <p class="description">
                 Whether it is a Cross-platform app or Native iOS / Android app, I got you covered. With my experience
@@ -372,7 +374,7 @@
         </div>
 
         <div class="card-holder service-holder">
-            <div class="card service">
+            <div id="cross-service" class="card service">
                 <img class="card-img" src="src/assets/images/services/crossPlatform.png" alt="Cross platform icon">
                 <div class="card-about">
 
@@ -384,7 +386,7 @@
                 </div>
             </div>
 
-            <div class="card service">
+            <div id="cross-ios" class="card service">
                 <img class="card-img" src="src/assets/images/services/ios.png" alt="ios icon">
                 <div class="card-about">
                     <h3 class="card-title">iOS App</h3>
@@ -396,7 +398,7 @@
                 </div>
             </div>
 
-            <div class="card service">
+            <div id="cross-android" class="card service">
                 <img class="card-img" src="src/assets/images/services/android.png" alt="android icon">
                 <div class="card-about">
                     <h3 class="card-title">Android App</h3>
@@ -412,12 +414,11 @@
         </div>
     </section>
 
-
     <section id="clients" class="section tests">
-        <h2 class="section-title">Trusted by startups worldwide</h2>
+        <h2 id="test-title" class="test-title section-title">Trusted by startups worldwide</h2>
 
-        <div class="card-holder test-holder">
-            <div class="card test">
+        <div id="test-holder" class="card-holder test-holder">
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
                 <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
                 <div class="card-about">
                     <p class="description">
@@ -435,7 +436,7 @@
                 </div>
             </div>
 
-            <div class="card test">
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
                 <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
                 <div class="card-about">
 
@@ -452,7 +453,7 @@
                 </div>
             </div>
 
-            <div class="card test">
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
                 <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
                 <div class="card-about">
 
@@ -469,6 +470,136 @@
                 </div>
             </div>
 
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
+                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
+                <div class="card-about">
+
+                    <p class="description">
+                        Suyash is one of the best among all the people I have ever worked with. As I remember, Suyash
+                        was a very productive person, a hardworking, broad-minded, and forward-thinking individual.
+                        Intelligent, ambitious, energetic, and proactive perfectionist. The desire for proficiency and
+                        education makes Suyash a valuable asset to the team. Working with Suyash is a signature of
+                        success
+                    </p>
+                    <span>Read more</span>
+                    <div class="test-footer">
+                        <span class="test-author">Harsh Maheshwari</span>
+                        <p class="description test-location">India</p>
+                    </div>
+                </div>
+            </div>
+
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
+                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
+                <div class="card-about">
+
+                    <p class="description">
+                        I worked with suyash to develop several mobile apps and I would describe him as professional
+                        and enthusiastic developer who is proficient in his work. Suyash not only develops the app but
+                        also contributes to business through his experience and suggest best way to execute any flow. Me
+                        and my team has been working with suyash from last few months and he always amazes us with his
+                        remarkable skills.
+                    </p>
+                    <span>Read more</span>
+                    <div class="test-footer">
+                        <span class="test-author">Kartik Prajapat</span>
+                        <p class="description test-location">India</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COPIES START -->
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
+                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
+                <div class="card-about">
+                    <p class="description">
+                        I had the pleasure of working with Suyash for over a years at Playnoot, collaborating on several
+                        project requirements and problems. As a mobile developer, Suyash has been an invaluable asset to
+                        our ...
+                    </p>
+
+                    <span onclick="openTest('ajay')">Read more</span>
+
+                    <div class="test-footer">
+                        <span class="test-author">Ajay Kumar</span>
+                        <p class="description test-location">India</p>
+                    </div>
+                </div>
+            </div>
+
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
+                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
+                <div class="card-about">
+
+                    <p class="description">
+                        I hired Suyash to build a React Native App that we a currently working on together. I started
+                        building the app but with full-time work I found it hard to develop on my own. I spent such a
+                        long time looking via...
+                    </p>
+                    <span onclick="openTest('spiro')">Read more</span>
+                    <div class="test-footer">
+                        <span class="test-author">Spiro Alsandtos</span>
+                        <p class="description test-location">Australia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
+                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
+                <div class="card-about">
+
+                    <p class="description">
+                        Suyash is an exceptional mobile application developer with a keen eye for detail and a passion
+                        for creating high-quality, user-friendly applications. He has a thorough understanding of mobile
+                        application development and is proficient in various programming ...
+                    </p>
+                    <span onclick="openTest('sunny')">Read more</span>
+                    <div class="test-footer">
+                        <span class="test-author">Sunny Paliwal</span>
+                        <p class="description test-location">India</p>
+                    </div>
+                </div>
+            </div>
+
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
+                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
+                <div class="card-about">
+
+                    <p class="description">
+                        Suyash is one of the best among all the people I have ever worked with. As I remember, Suyash
+                        was a very productive person, a hardworking, broad-minded, and forward-thinking individual.
+                        Intelligent, ambitious, energetic, and proactive perfectionist. The desire for proficiency and
+                        education makes Suyash a valuable asset to the team. Working with Suyash is a signature of
+                        success
+                    </p>
+                    <span>Read more</span>
+                    <div class="test-footer">
+                        <span class="test-author">Harsh Maheshwari</span>
+                        <p class="description test-location">India</p>
+                    </div>
+                </div>
+            </div>
+
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
+                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
+                <div class="card-about">
+
+                    <p class="description">
+                        I worked with suyash to develop several mobile apps and I would describe him as professional
+                        and enthusiastic developer who is proficient in his work. Suyash not only develops the app but
+                        also contributes to business through his experience and suggest best way to execute any flow. Me
+                        and my team has been working with suyash from last few months and he always amazes us with his
+                        remarkable skills.
+                    </p>
+                    <span>Read more</span>
+                    <div class="test-footer">
+                        <span class="test-author">Kartik Prajapat</span>
+                        <p class="description test-location">India</p>
+                    </div>
+                </div>
+            </div>
+
+
 
         </div>
 
@@ -477,7 +608,7 @@
     </section>
 
     <section id="blogs" class="section blogs">
-        <h2 class="section-title">My Blogs</h2>
+        <h2 id="blog-title" class="blog-title section-title">My Blogs</h2>
         <div class="card-holder blog-holder">
             <a href="https://dev.to/suyashdev/google-authsignin-in-react-native-without-firebase-43n" target="_blank"
                 class="card type2 blog">
@@ -527,7 +658,7 @@
     </section>
 
     <section id="contact" class="cta-section">
-        <h2 class="section-title">Let’s take your app to the next level</h2>
+        <h2 class="cta-title section-title showTitle">Let’s take your app to the next level</h2>
         <div class="cta-data">
             <p class="description">
                 Whether you are an entrepreneur, business owner, or visionary looking to bring your mobile app idea to
@@ -542,7 +673,7 @@
     <section class="modal backdrop">
         <div class="contactModal">
             <div class="formHeader">
-                <h2 class="section-title">Get In Touch !</h2>
+                <h2 class="contactModal-title section-title">Get In Touch !</h2>
                 <span onclick="closeContactModal()" id="closeForm" class="close">&times;</span>
             </div>
             <div class="form">
@@ -707,7 +838,7 @@
     <footer>
         <div class="f1">
             <p class="description">Say Hi !</p>
-            <h2 class="section-title footer-title">suyashvashishtha@gmail.com</h2>
+            <h2 class="section-title footer-title showTitle">suyashvashishtha@gmail.com</h2>
         </div>
 
         <div class="icon-holder">
@@ -737,11 +868,11 @@
 
 </body>
 
-
-
+<script src="src/js/domObserver.js"></script>
 <script src="src/js/workHandler.js"></script>
 <script src="src/js/contactFormHandler.js"></script>
 <script src="src/js/testimonialModalHandler.js"></script>
+<script src="src/js/testScrollHandler.js"></script>
 
 
 </html>
