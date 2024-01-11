@@ -8,6 +8,27 @@
     scroll-behavior: smooth;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(0, 0, 0); 
+    border-radius: 12px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #bf8527; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #bf8527; 
+  }
 
 
 @font-face {
@@ -508,6 +529,7 @@ h2.section-title {
     align-items: center;
     flex-direction: column;
     height: 20vh;
+    overflow-x: hidden;
 }
 
 .heading {
@@ -527,19 +549,34 @@ h2.section-title {
     background-color: #666666;
 }
 
+@keyframes infiniteScroll {
+    from {transform: translateX(0)}
+    to {transform: translateX(-50%)}
+  }
+
+
+
 .brand-holder {
-    width: 100%;
+    width: 2400px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
     margin-top: 20px;
+    animation-name: infiniteScroll;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
 }
 
 .brand-holder>img {
-    height: 60px;
+    height:65px;
     margin: 0px 20px;
+     white-space: nowrap;
+
 }
+
 
 .about {
     width: 100%;
@@ -665,6 +702,8 @@ h2.section-title {
     width: 320px;
     height: auto;
 }
+
+
 
 .card.test>.card-about>span {
     font-size: 14px;
@@ -978,6 +1017,12 @@ footer>div {
 
 
 
+/* ######################################################################################################################################################################## */
+/* ######################################################################################################################################################################## */
+/* ######################################################################################################################################################################## */
+/* ######################################################################################################################################################################## */
+/* ######################################################################################################################################################################## */
+/* ######################################################################################################################################################################## */
 
 
 @media only screen and (max-width: 768px) {
@@ -1062,6 +1107,7 @@ footer>div {
         height: auto;
         margin-top: 20px;
         margin-bottom: 20px;
+        overflow: hidden;
     }
 
     .brand-holder {
@@ -1070,8 +1116,8 @@ footer>div {
         justify-content: space-evenly;
         align-items: center;
         flex-direction: row;
-        flex-wrap: wrap;
         margin-top: 20px;
+        animation-duration: 10s;
 
     }
 
@@ -1100,7 +1146,7 @@ footer>div {
         padding: 0px;
 
         position: unset;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
 
     }
 
