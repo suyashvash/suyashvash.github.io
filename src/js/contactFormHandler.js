@@ -78,8 +78,8 @@ const submitForm = async () => {
     } else {
         const body = {
             email,
-            firstname: name,
-            lastname: name,
+            name,
+            service:serviceType,
             message: message,
             sentOn: `${new Date()}`,
             timestamp: dateTime,
@@ -95,7 +95,7 @@ const submitForm = async () => {
         closeButton.onclick = null
 
 
-        fetch("https://suyashvashishthabackend.azurewebsites.net/api/v8/enquiries/submit", {
+        await fetch("https://suyashvashishthabackend.cyclic.app/api/v10/enquiries/submit", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -118,6 +118,7 @@ const submitForm = async () => {
 
 
             }).catch(err => {
+                console.log(err)
                 gtag("event", "form_submit_error");
                 alert("Something went wrong. Please try again later.")
 

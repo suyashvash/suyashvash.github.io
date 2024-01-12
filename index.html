@@ -34,7 +34,7 @@
 
 
 
-    <section class="hero">
+    <section id="home" class="hero">
         <video autoplay muted loop id="heroVideo" playsinline>
             <source src="src/assets/videos/hero-bg.mp4" type="video/mp4">
         </video>
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="link-holder">
-                    <a class="nav_links" href="/">Home</a>
+                    <a class="nav_links" href="#home">Home</a>
                     <a class="nav_links" href="#about">About</a>
                     <a class="nav_links" href="#work">Work</a>
                     <a class="nav_links" href="#services">Services</a>
@@ -702,6 +702,10 @@
                             <input type="radio" class="serviceRadio" id="service3" name="service" value="android">
                             <label for="service3">Android App</label>
                         </div>
+                        <div class="radio">
+                            <input type="radio" class="serviceRadio" id="service4" name="service" value="other">
+                            <label for="service4">Other</label>
+                        </div>
                     </div>
                 </div>
 
@@ -842,6 +846,10 @@
         </div>
 
         <div class="icon-holder">
+
+            <a href="https://github.com/suyashvash" target="_blank">
+                <img src="src/assets/images/icons/github.svg" alt="logo">
+            </a>
             <a href="https://www.linkedin.com/in/suyashvashishtha/" target="_blank">
                 <img src="src/assets/images/icons/linkedin.png" alt="logo">
             </a>
@@ -867,6 +875,15 @@
 
 
 </body>
+
+<script>
+    console.log(`%c%s%c%s`,
+        'color: #EEB75D; font-size: 14px;background: #101010;padding:5px', // style for heading (yellow color, bigger font)
+        'Ohh so you like stalking, huh ?',
+        'color: #9f9f9f; font-size: 12px;background: #101010;padding:5px', // style for body (red color, smaller font)
+        'If you want to know how I built this website, you can check out the source code at - \nhttps://github.com/suyashvash/suyashvash.github.io '
+    );
+</script>
 
 <script src="src/js/domObserver.js"></script>
 <script src="src/js/workHandler.js"></script>
