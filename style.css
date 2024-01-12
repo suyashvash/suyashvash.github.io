@@ -899,18 +899,31 @@ h2.section-title {
     margin-bottom: 20px;
 }
 
+.blog-holder{   
+
+    justify-content: space-evenly;
+    width: 100%;
+}
+
 .card.blog {
-    width: 35%;
+    width: 25%;
     height: auto;
     background-color: transparent;
     cursor: pointer;
+    text-decoration: none;
 
 }
 
-.card.blog:visited+.card.blog>.card-about>.blog-footer>.blog-title {
+.card.blog:visited {
     color: white;
     text-decoration: none;
 }
+/* 
+.card.blog:active+ .blog-title {
+    color: white;
+    text-decoration: none;
+}
+ */
 
 
 
@@ -1285,18 +1298,21 @@ footer>div {
     }
 
     .hero-title {
-        font-size: 1.2rem;
+        font-size: 1.19rem;
         padding-bottom: 0px;
         padding-top: 0px;
         border-top-right-radius: 8px;
         border-top-left-radius: 0px;
         border-bottom-right-radius: 0px;
+        line-height: 2.2;
     }
 
     .hero-data>p {
-        width: 100%;
+        width: 95%;
         font-size: 14px;
         padding-top: 0px;
+        border-top-right-radius: 20px;
+        line-height: 1.5;
     }
 
 
@@ -1377,7 +1393,7 @@ footer>div {
     }
 
     .about-data>.data-holder>.description {
-        width: 100%;
+        width: 90%;
         padding: 15px;
         padding-top: 7px;
         font-size: 13.5px;
@@ -1658,6 +1674,8 @@ footer>div {
 
     .cta-section>.section-title {
         width: 100%;
+         background-position: center;
+         background-size: cover;
         padding-left: 0px;
     }
 
