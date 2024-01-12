@@ -35,8 +35,8 @@
 
 
     <section id="home" class="hero">
-        <video autoplay muted loop id="heroVideo" playsinline>
-            <source src="src/assets/videos/hero-bg.mp4" type="video/mp4">
+        <video autoplay muted loop id="heroVideo" playsinline poster="src/assets/videos/thumb.png">
+            <source  src="src/assets/videos/hero-bg.mp4" type="video/mp4">
         </video>
 
         <div class="hero-content">
@@ -887,6 +887,11 @@
     );
 </script>
 
+<script >
+    function signalDOM(){
+        console.log("Video Loaded");
+    }
+</script>
 <script src="src/js/domObserver.js"></script>
 <script src="src/js/workHandler.js"></script>
 <script src="src/js/contactFormHandler.js"></script>
