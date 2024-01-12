@@ -1,8 +1,11 @@
 My portfolio webiste
 
-Current Live Version - 8
+Current Live Version - 10
 
 http://www.suyashvashishtha.com/
 
 
-In Development - Version 9
+In Development - Version 10
+
+- Designed by - Naman Sharma
+- Developed by - Suyash Vashishtha
