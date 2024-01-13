@@ -35,8 +35,8 @@
 
 
     <section id="home" class="hero">
-        <video autoplay muted loop id="heroVideo" playsinline>
-            <source src="src/assets/videos/hero-bg.mp4" type="video/mp4">
+        <video autoplay muted loop id="heroVideo" playsinline poster="src/assets/videos/thumb.png">
+            <source  src="src/assets/videos/hero-bg.mp4" type="video/mp4">
         </video>
 
         <div class="hero-content">
@@ -207,7 +207,7 @@
                         </p>
 
 
-                        <div class="app-link-holder">
+                        <!-- <div class="app-link-holder">
                             <a class="app-link" href="https://play.google.com/store/apps/details?id=gg.playwise.mobile"
                                 target="_blank">
                                 <img class="app-link" src="src/assets/images/playstore.png"
@@ -218,7 +218,7 @@
                                 <img class="app-link" src="src/assets/images/appstore.png"
                                     alt="App store button for Playnoot">
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 </img>
@@ -481,7 +481,7 @@
                         education makes Suyash a valuable asset to the team. Working with Suyash is a signature of
                         success
                     </p>
-                    <span>Read more</span>
+                    <span style="opacity: 0;">Read more</span>
                     <div class="test-footer">
                         <span class="test-author">Harsh Maheshwari</span>
                         <p class="description test-location">India</p>
@@ -500,7 +500,7 @@
                         and my team has been working with suyash from last few months and he always amazes us with his
                         remarkable skills.
                     </p>
-                    <span>Read more</span>
+                    <span style="opacity: 0;">Read more</span>
                     <div class="test-footer">
                         <span class="test-author">Kartik Prajapat</span>
                         <p class="description test-location">India</p>
@@ -572,7 +572,7 @@
                         education makes Suyash a valuable asset to the team. Working with Suyash is a signature of
                         success
                     </p>
-                    <span>Read more</span>
+                    <span style="opacity: 0;">Read more</span>
                     <div class="test-footer">
                         <span class="test-author">Harsh Maheshwari</span>
                         <p class="description test-location">India</p>
@@ -591,7 +591,7 @@
                         and my team has been working with suyash from last few months and he always amazes us with his
                         remarkable skills.
                     </p>
-                    <span>Read more</span>
+                    <span style="opacity: 0;">Read more</span>
                     <div class="test-footer">
                         <span class="test-author">Kartik Prajapat</span>
                         <p class="description test-location">India</p>
@@ -615,7 +615,7 @@
                 <img class="card-img blog-img" src="src/assets/images/blogs/b1.webp" alt="service">
                 <div class="card-about">
                     <div class="blog-footer">
-                        <span class="blog-title">Google Auth/Signin in React Native without Firebase.</span>
+                        <span id="blog-title" class="blog-title">Google Auth/Signin in React Native without Firebase.</span>
                         <p class="description blog-desc">
                             Google auth is one of the most commonly used Authentication methods in Mobile and web apps.
                             Well, it is also a tricky one as compared to normal user email and password auth.
@@ -887,6 +887,11 @@
     );
 </script>
 
+<script >
+    function signalDOM(){
+        console.log("Video Loaded");
+    }
+</script>
 <script src="src/js/domObserver.js"></script>
 <script src="src/js/workHandler.js"></script>
 <script src="src/js/contactFormHandler.js"></script>
