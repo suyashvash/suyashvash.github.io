@@ -36,7 +36,7 @@
 
     <section id="home" class="hero">
         <video autoplay muted loop id="heroVideo" playsinline poster="src/assets/videos/thumb.png">
-            <source  src="src/assets/videos/hero-bg.mp4" type="video/mp4">
+            <source src="src/assets/videos/hero-bg.mp4" type="video/mp4">
         </video>
 
         <div class="hero-content">
@@ -458,6 +458,27 @@
                 <div class="card-about">
 
                     <p class="description">
+                        Suyash joined our Mobile Development team to develop React Native Mobile application for Haul’r,
+                        for both iOS and Android. Haul’r connects Construction Companies with Truckers.
+
+                        He quickly becomes key player to the team. His knowledge, experience and boldness to step into
+                        unknown, presentation, communication skills help him to work remotely and independently. He is
+                        always available, in spite of being an offshore resource.
+                        Suyash is an asset to team and easy to work.
+                    </p>
+                    <span onclick="openTest('samson')">Read more</span>
+                    <div class="test-footer">
+                        <span class="test-author">Samson Gudise</span>
+                        <p class="description test-location">United States ( US )</p>
+                    </div>
+                </div>
+            </div>
+
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
+                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
+                <div class="card-about">
+
+                    <p class="description">
                         Suyash is an exceptional mobile application developer with a keen eye for detail and a passion
                         for creating high-quality, user-friendly applications. He has a thorough understanding of mobile
                         application development and is proficient in various programming ...
@@ -549,6 +570,27 @@
                 <div class="card-about">
 
                     <p class="description">
+                        Suyash joined our Mobile Development team to develop React Native Mobile application for Haul’r,
+                        for both iOS and Android. Haul’r connects Construction Companies with Truckers.
+
+                        He quickly becomes key player to the team. His knowledge, experience and boldness to step into
+                        unknown, presentation, communication skills help him to work remotely and independently. He is
+                        always available, in spite of being an offshore resource.
+                        Suyash is an asset to team and easy to work.
+                    </p>
+                    <span onclick="openTest('samson')">Read more</span>
+                    <div class="test-footer">
+                        <span class="test-author">Samson Gudise</span>
+                        <p class="description test-location">United States ( US )</p>
+                    </div>
+                </div>
+            </div>
+
+            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
+                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
+                <div class="card-about">
+
+                    <p class="description">
                         Suyash is an exceptional mobile application developer with a keen eye for detail and a passion
                         for creating high-quality, user-friendly applications. He has a thorough understanding of mobile
                         application development and is proficient in various programming ...
@@ -599,6 +641,8 @@
                 </div>
             </div>
 
+            
+
 
 
         </div>
@@ -615,7 +659,8 @@
                 <img class="card-img blog-img" src="src/assets/images/blogs/b1.webp" alt="service">
                 <div class="card-about">
                     <div class="blog-footer">
-                        <span id="blog-title" class="blog-title">Google Auth/Signin in React Native without Firebase.</span>
+                        <span id="blog-title" class="blog-title">Google Auth/Signin in React Native without
+                            Firebase.</span>
                         <p class="description blog-desc">
                             Google auth is one of the most commonly used Authentication methods in Mobile and web apps.
                             Well, it is also a tricky one as compared to normal user email and password auth.
@@ -837,6 +882,33 @@
                 </div>
             </div>
         </div>
+
+        <div class="testModal samson">
+            <div class="testModalHeader">
+                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
+                <img onclick="closeTest('samson')" class="card-img cross" src="src/assets/images/icons/cross.png"
+                    alt="service">
+            </div>
+
+            <div class="card-about">
+                <p class="description">
+                    Suyash joined our Mobile Development team to develop React Native Mobile application for Haul’r, for both iOS and Android. Haul’r connects Construction Companies with Truckers. 
+                    <br /><br />
+                    He quickly becomes key player to the team. His knowledge, experience and boldness to step into unknown, presentation, communication skills help him to work remotely and independently. He is always available, in spite of being an offshore resource. 
+                    Suyash is an asset to team and easy to work. 
+                    <br /><br />
+                    
+                    Please do not hesitate to contact me if you require any further information.
+                </p>
+
+
+                <div class="test-footer">
+                    <span class="test-author">Samson Gudise</span>
+                    <p class="description test-desig">Sarithm Solutions</p>
+                    <p class="description test-location">United States ( US )</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -864,7 +936,7 @@
     </footer>
 
     <div class="meta-data">
-        <p class="description">Developed By - 
+        <p class="description">Developed By -
             <a href="https://www.linkedin.com/in/suyashvashishtha/" target="_blank">Suyash Vashishtha</a>
         </p>
         <p class="description">Designed by -
@@ -887,8 +959,8 @@
     );
 </script>
 
-<script >
-    function signalDOM(){
+<script>
+    function signalDOM() {
         console.log("Video Loaded");
     }
 </script>
