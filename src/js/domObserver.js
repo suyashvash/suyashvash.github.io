@@ -113,6 +113,39 @@ function handleClientIntersection(entries, observer) {
     });
 }
 
+function disableScroll() {
+
+    // Get the current page scroll position
+    scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop;
+    scrollLeft =
+        window.pageXOffset ||
+        document.documentElement.scrollLeft,
+
+        // if any scroll is attempted,
+        // set this to the previous value
+        window.onscroll = function () {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+}
+
+function openContactModal() {
+    gtag("event", "form_open");
+    disableScroll();
+    document.querySelector(".modal.backdrop").classList.add("show");
+    document.querySelector(".contactModal-title").classList.add("showTitle");
+}
+
+
+function closeContactModal() {
+    gtag("event", "form_close");
+    enableScroll();
+    document.querySelector(".modal.backdrop").classList.remove("show");
+    document.querySelector(".contactModal-title").classList.remove("showTitle");
+}
+
+
 
 // Observers
 serviceObserver.observe(serviceSection);

@@ -19,6 +19,15 @@
     <meta property="og:description"
         content="Suyash vashishtha Mobile App developer | Helping  start-ups and businesses to build powerful and scalable mobile apps across the globe !" />
     <meta property="og:image" content="src/assets/images/me.png" />
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"></script>
+ 
+    <script type="module" src="src/js/firebase-config.js"></script>
+
+    <script type="module">
+        import { submitForm } from './src/js/contactFormHandler.js';
+        window.submitForm = submitForm;
+      </script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3L954H8EQD"></script>
     <script>
@@ -947,7 +956,6 @@
     </div>
 
 
-
 </body>
 
 <script>
@@ -955,7 +963,7 @@
         'color: #EEB75D; font-size: 14px;background: #101010;padding:5px', // style for heading (yellow color, bigger font)
         'Ohh so you like stalking, huh ?',
         'color: #9f9f9f; font-size: 12px;background: #101010;padding:5px', // style for body (red color, smaller font)
-        'If you want to know how I built this website, you can check out the source code at - \nhttps://github.com/suyashvash/suyashvash.github.io '
+        'Really Dude ? 😂'
     );
 </script>
 
@@ -966,7 +974,7 @@
 </script>
 <script src="src/js/domObserver.js"></script>
 <script src="src/js/workHandler.js"></script>
-<script src="src/js/contactFormHandler.js"></script>
+
 <script src="src/js/testimonialModalHandler.js"></script>
 <script src="src/js/testScrollHandler.js"></script>
 

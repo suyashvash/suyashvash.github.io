@@ -1,31 +1,9 @@
-function disableScroll() {
-    // Get the current page scroll position
-    scrollTop =
-        window.pageYOffset ||
-        document.documentElement.scrollTop;
-    scrollLeft =
-        window.pageXOffset ||
-        document.documentElement.scrollLeft,
-
-        // if any scroll is attempted,
-        // set this to the previous value
-        window.onscroll = function () {
-            window.scrollTo(scrollLeft, scrollTop);
-        };
-}
+import { db, collection, addDoc } from './firebase-config.js';
 
 function enableScroll() {
     window.onscroll = function () { };
 }
 
-
-
-function openContactModal() {
-    gtag("event", "form_open");
-    disableScroll();
-    document.querySelector(".modal.backdrop").classList.add("show");
-    document.querySelector(".contactModal-title").classList.add("showTitle");
-}
 
 function closeContactModal() {
     gtag("event", "form_close");
@@ -36,7 +14,9 @@ function closeContactModal() {
 
 
 
-const submitForm = async () => {
+async function submitForm() {
+
+
     gtag("event", "form_submit");
     var name = document.getElementById("inputName").value;
 
@@ -47,6 +27,10 @@ const submitForm = async () => {
     var closeButton = document.getElementById("closeForm")
 
     const dateTime = new Date().getTime();
+    const userAgent = navigator.userAgent;
+    const referrer = document.referrer;
+    const language = navigator.language || navigator.userLanguage;
+
 
     var mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
@@ -81,11 +65,15 @@ const submitForm = async () => {
         const body = {
             email,
             name,
-            service:serviceType,
+            service: serviceType,
             message: message,
             sentOn: `${new Date()}`,
             timestamp: dateTime,
             status: "none",
+            userAgent,
+            referrer,
+            language,
+
         }
         formButton.innerHTML = "Loading..."
         formButton.onclick = null
@@ -97,44 +85,62 @@ const submitForm = async () => {
         closeButton.onclick = null
 
 
-        await fetch("https://suyashvashishthabackend.cyclic.app/api/v10/enquiries/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(body)
-        }).then(res => res.json())
-            .then(data => {
-                gtag("event", "form_submit_success");
-                alert("Thank you for contacting me. I will get back to you soon.")
+        try {
+            await addDoc(collection(db, 'leads'), body);
+            gtag("event", "form_submit_success");
+            alert("Thank you for contacting me. I will get back to you soon.")
 
-                formButton.innerHTML = "Submit"
-                formButton.onclick = submitForm
-                formButton.style.cursor = "pointer"
-                formButton.style.opacity = "1"
+            formButton.innerHTML = "Submit"
+            formButton.onclick = submitForm
+            formButton.style.cursor = "pointer"
+            formButton.style.opacity = "1"
 
-                closeButton.style.cursor = "pointer"
-                closeButton.style.opacity = "1"
-                closeButton.onclick = closeContactModal
+            closeButton.style.cursor = "pointer"
+            closeButton.style.opacity = "1"
+            closeButton.onclick = closeContactModal
+        } catch (error) {
+            console.error('Error adding document: ', error);
+
+            if (error.code === "permission-denied") {
+                gtag("event", "form_permission_denied");
+            }
+
+            if (error.code === "unavailable") {
+                gtag("event", "form_unavailable");
+            }
+
+            if (error.code === "resource-exhausted") {
+                gtag("event", "form_resource_exhausted");
+            }
+
+            if (error.code === "internal") {
+                gtag("event", "form_internal_error");
+            }
+
+            if (error.code === "cancelled") {
+                gtag("event", "form_cancelled");
+            }
+
+            if (error.code === "deadline-exceeded") {
+                gtag("event", "form_deadline_exceeded");
+            }
 
 
+            gtag("event", "form_submit_error");
+            alert("Something went wrong. Please try reaching me out on suyashvashishtha@gmail.com !")
 
-            }).catch(err => {
-                console.log(err)
-                gtag("event", "form_submit_error");
-                alert("Something went wrong. Please try again later.")
+            formButton.innerHTML = "Submit"
+            formButton.onclick = submitForm
+            formButton.style.cursor = "pointer"
+            formButton.style.opacity = "1"
 
-                formButton.innerHTML = "Submit"
-                formButton.onclick = submitForm
-                formButton.style.cursor = "pointer"
-                formButton.style.opacity = "1"
-
-                closeButton.style.cursor = "pointer"
-                closeButton.style.opacity = "1"
-                closeButton.onclick = closeContactModal
-            })
-
-
+            closeButton.style.cursor = "pointer"
+            closeButton.style.opacity = "1"
+            closeButton.onclick = closeContactModal
+        }
 
     }
 }
+
+// Export the function to use in HTML
+export { submitForm };
