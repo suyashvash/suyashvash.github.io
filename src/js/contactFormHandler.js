@@ -21,12 +21,14 @@ function enableScroll() {
 
 
 function openContactModal() {
+    gtag("event", "form_open");
     disableScroll();
     document.querySelector(".modal.backdrop").classList.add("show");
     document.querySelector(".contactModal-title").classList.add("showTitle");
 }
 
 function closeContactModal() {
+    gtag("event", "form_close");
     enableScroll();
     document.querySelector(".modal.backdrop").classList.remove("show");
     document.querySelector(".contactModal-title").classList.remove("showTitle");
