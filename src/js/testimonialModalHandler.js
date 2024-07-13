@@ -20,6 +20,7 @@ function enableScroll() {
 
 
 function openTest(className) {
+    gtag("event", `open_client_${className}`);
     disableScroll();
     document.querySelector(".test.backdrop").classList.add("show");
     document.querySelector(`.testModal.${className}`).classList.add("showTest");
@@ -27,6 +28,7 @@ function openTest(className) {
 }
 
 function closeTest(className) {
+    gtag("event", `close_client_${className}`);
     enableScroll();
     document.querySelector(".test.backdrop").classList.remove("show");
     document.querySelector(`.testModal.${className}`).classList.remove("showTest");
