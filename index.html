@@ -21,13 +21,15 @@
     <meta property="og:image" content="src/assets/images/me.png" />
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"></script>
- 
+
     <script type="module" src="src/js/firebase-config.js"></script>
 
     <script type="module">
         import { submitForm } from './src/js/contactFormHandler.js';
+        import { logFirebase } from './src/js/firbaseLogs.js';
         window.submitForm = submitForm;
-      </script>
+        window.logFirebase = logFirebase;
+    </script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3L954H8EQD"></script>
     <script>
@@ -66,7 +68,7 @@
                 </div>
 
                 <div class="cta-holder">
-                    <div class="cta-button" onclick="openContactModal()">Contact</div>
+                    <div class="cta-button" onclick="handleOpenForm()">Contact</div>
                 </div>
 
                 <!-- <div class="cta-holder mobile">
@@ -135,7 +137,7 @@
                     </span>
 
                 </p>
-                <div id="about-cta" onclick="openContactModal()" class="about-cta cta-button">Get In Touch</div>
+                <div id="about-cta" onclick="handleOpenForm()" class="about-cta cta-button">Get In Touch</div>
             </div>
 
         </div>
@@ -650,7 +652,7 @@
                 </div>
             </div>
 
-            
+
 
 
 
@@ -720,7 +722,7 @@
                 <br /> <br />
                 Let's embark on a journey and elevate your idea to new realities —where excellence knows no boundaries.
             </p>
-            <div class="cta-button" onclick="openContactModal()">Get In Touch</div>
+            <div class="cta-button" onclick="handleOpenForm()">Get In Touch</div>
         </div>
     </section>
 
@@ -733,11 +735,13 @@
             <div class="form">
                 <div class="fieldHolder">
                     <span class="fieldTitle">Full Name</span>
-                    <input id="inputName" class="field" type="text" placeholder="Enter your name">
+                    <input id="inputName" class="field" type="text" placeholder="Enter your name"
+                        onblur="recordInputEvent('form_firstName','inputName')">
                 </div>
                 <div class="fieldHolder">
                     <span class="fieldTitle">Email</span>
-                    <input id="inputEmail" class="field" type="text" placeholder="Enter your email">
+                    <input id="inputEmail" class="field" type="text" placeholder="Enter your email"
+                        onblur="recordInputEvent('form_email','inputEmail')">
                 </div>
 
                 <div class="fieldHolder">
@@ -901,12 +905,15 @@
 
             <div class="card-about">
                 <p class="description">
-                    Suyash joined our Mobile Development team to develop React Native Mobile application for Haul’r, for both iOS and Android. Haul’r connects Construction Companies with Truckers. 
+                    Suyash joined our Mobile Development team to develop React Native Mobile application for Haul’r, for
+                    both iOS and Android. Haul’r connects Construction Companies with Truckers.
                     <br /><br />
-                    He quickly becomes key player to the team. His knowledge, experience and boldness to step into unknown, presentation, communication skills help him to work remotely and independently. He is always available, in spite of being an offshore resource. 
-                    Suyash is an asset to team and easy to work. 
+                    He quickly becomes key player to the team. His knowledge, experience and boldness to step into
+                    unknown, presentation, communication skills help him to work remotely and independently. He is
+                    always available, in spite of being an offshore resource.
+                    Suyash is an asset to team and easy to work.
                     <br /><br />
-                    
+
                     Please do not hesitate to contact me if you require any further information.
                 </p>
 
@@ -972,6 +979,50 @@
         console.log("Video Loaded");
     }
 </script>
+
+<script>
+    function handleOpenForm() {
+        openContactModal()
+
+        const dateTime = new Date().getTime();
+        const userAgent = navigator.userAgent;
+        const referrer = document.referrer;
+        const language = navigator.language || navigator.userLanguage;
+
+        const body = {
+            dateTime,
+            userAgent,
+            referrer,
+            language,
+            eventName: 'form_opened',
+            data: null
+        }
+        logFirebase(body)
+    }
+</script>
+
+<script>
+    function recordInputEvent(eventName, id) {
+        const dateTime = new Date().getTime();
+        const userAgent = navigator.userAgent;
+        const referrer = document.referrer;
+        const language = navigator.language || navigator.userLanguage;
+
+        const body = {
+            dateTime,
+            userAgent,
+            referrer,
+            language,
+            eventName,
+            data: document.getElementById(id).value
+        }
+        logFirebase(body)
+        gtag('event', body.eventName)
+    }
+
+</script>
+
+
 <script src="src/js/domObserver.js"></script>
 <script src="src/js/workHandler.js"></script>
 
