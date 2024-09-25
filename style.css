@@ -867,7 +867,7 @@ h2.section-title {
 
 
 .test-holder {
-    width: 5700px;
+    width: 7000px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -1502,9 +1502,18 @@ footer>div {
         transform: translateY(10px);
         transition: 0.3s ease-in-out;
     }
-
+/* 
     .playwiseScreenshot {
         background: url('src/assets/images/screenshots/playwise.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(10px);
+        transition: 0.3s ease-in-out;
+    } */
+
+    .chanakyaScreenshot {
+        background: url('src/assets/images/screenshots/chanakya.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -1522,8 +1531,17 @@ footer>div {
     }
 
 
-    .singhalJainScreenshot {
+    /* .singhalJainScreenshot {
         background: url('src/assets/images/screenshots/singhaljain.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(10px);
+        transition: 0.3s ease-in-out;
+    } */
+
+    .ayuraidScreenshot {
+        background: url('src/assets/images/screenshots/ayuraid.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -1637,7 +1655,7 @@ footer>div {
     }
 
     .test-holder {
-        width: 3300px;
+        width: 5300px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
