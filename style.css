@@ -49,11 +49,11 @@
 body {
     background-color: var(--background-color);
     color: var(--text);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 16px;
     margin: 0;
     padding: 0;
-    font-family: 'Unbounded', sans-serif;
+    font-family: 'Unbounded', Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -203,7 +203,7 @@ body {
 .formHeader>h2.section-title {
     font-size: 35px;
     font-weight: 300;
-    font-family: 'Unbounded-Light';
+    font-family: 'Unbounded-Light', Arial, Helvetica, sans-serif;
     margin: 0px;
 }
 
@@ -211,7 +211,7 @@ body {
     font-size: 30px;
     font-weight: 300;
     cursor: pointer;
-    font-family: 'Unbounded-Light';
+    font-family: 'Unbounded-Light', Arial, Helvetica, sans-serif;
 }
 
 .form {
@@ -236,7 +236,7 @@ body {
 .fieldTitle {
     font-size: 14px;
     font-weight: 300;
-    font-family: 'Unbounded-Light';
+    font-family: 'Unbounded-Light', Arial, Helvetica, sans-serif;
     margin-bottom: 10px;
 }
 
@@ -378,14 +378,14 @@ input[type='radio']:checked:after {
     font-size: 14px;
     line-height: 24px;
     font-weight: 300;
-    font-family: 'Unbounded-Light';
+    font-family: 'Unbounded-Light', Arial, Helvetica, sans-serif;
     margin-bottom: 10px;
 }
 
 h2.section-title {
     font-size: 40px;
     font-weight: 300;
-    font-family: 'Unbounded-Light';
+    font-family: 'Unbounded-Light', Arial, Helvetica, sans-serif;
     color: var(--primary-color);
     margin: 0px;
 
@@ -503,7 +503,7 @@ h2.section-title {
     line-height: 50px;
     font-weight: 300;
     border-radius: 20px;
-    font-family: 'Unbounded-Light';
+    font-family: 'Unbounded-Light', Arial, Helvetica, sans-serif;
     color: var(--primary-color);
     margin: 0px;
 }
@@ -521,7 +521,7 @@ h2.section-title {
     font-size: 16px;
     line-height: 28px;
     font-weight: 300;
-    font-family: 'Unbounded-Light';
+    font-family: 'Unbounded-Light', Arial, Helvetica, sans-serif;
     color: var(--description);
     margin: 0px;
     width: 45%;
@@ -867,7 +867,7 @@ h2.section-title {
 
 
 .test-holder {
-    width: 4500px;
+    width: 7000px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -1400,7 +1400,7 @@ footer>div {
         line-height: 24px;
         font-weight: 300;
         padding-bottom: 0px;
-        font-family: 'Unbounded-Light';
+        font-family: 'Unbounded-Light' , Arial, Helvetica, sans-serif;
         margin-bottom: 0px;
 
     }
@@ -1502,9 +1502,18 @@ footer>div {
         transform: translateY(10px);
         transition: 0.3s ease-in-out;
     }
-
+/* 
     .playwiseScreenshot {
         background: url('src/assets/images/screenshots/playwise.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(10px);
+        transition: 0.3s ease-in-out;
+    } */
+
+    .chanakyaScreenshot {
+        background: url('src/assets/images/screenshots/chanakya.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -1522,8 +1531,17 @@ footer>div {
     }
 
 
-    .singhalJainScreenshot {
+    /* .singhalJainScreenshot {
         background: url('src/assets/images/screenshots/singhaljain.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(10px);
+        transition: 0.3s ease-in-out;
+    } */
+
+    .ayuraidScreenshot {
+        background: url('src/assets/images/screenshots/ayuraid.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -1637,7 +1655,7 @@ footer>div {
     }
 
     .test-holder {
-        width: 3300px;
+        width: 5300px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
