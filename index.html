@@ -1,1165 +1,601 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suyash Vashishtha | Mobile App Developer | React Native | Swift UI | Kotlin | Cross Platform</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cosmic Shaft — Product Engineering Firm | Jaipur, India</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta name="description" content="Cosmic Shaft is a product engineering firm in Jaipur, India. We take a vision from zero to shipped — mobile apps, platforms, and the engineering behind them. Work live in four countries.">
+<meta name="theme-color" content="#08090C">
+<link rel="canonical" href="https://cosmicshaft.com/">
 
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cosmic Shaft">
+<meta property="og:title" content="Cosmic Shaft — Product Engineering Firm">
+<meta property="og:description" content="We move what you imagine. Product engineering firm. Jaipur, India. Est. 2024.">
+<meta property="og:url" content="https://cosmicshaft.com/">
+<meta property="og:image" content="https://cosmicshaft.com/assets/img/og/cosmic-shaft-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cosmic Shaft — Product Engineering Firm">
+<meta name="twitter:description" content="We move what you imagine. Product engineering firm. Jaipur, India. Est. 2024.">
+<meta name="twitter:image" content="https://cosmicshaft.com/assets/img/og/cosmic-shaft-og.jpg">
 
-    <link rel="icon" type="image/png" href="src/assets/images/logomark.png" />
+<link rel="icon" href="./assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="./site.webmanifest">
 
-    <meta name="description" CONTENT="Suyash vashishtha Mobile App Developer React Native Javascript ">
-    <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=" />
-    <link rel="canonical" href="https://suyashvashishtha.com/" />
+<link rel="preload" href="./assets/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
 
-    <meta property="og:title" content="Mobile App developer | React Native | SwiftUI | Kotlin | JavaScript" />
-    <meta property="og:description"
-        content="Suyash vashishtha Mobile App developer | Helping  start-ups and businesses to build powerful and scalable mobile apps across the globe !" />
-    <meta property="og:image" content="src/assets/images/me.png" />
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"></script>
+<link rel="stylesheet" href="./styles/01-tokens.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/02-reset.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/03-type.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/04-layout.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/05-motion.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/06-icons.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/10-nav.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/11-preloader.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/12-hero.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/13-beats.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/14-work.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/15-proof.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/16-firm.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/17-contact.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/90-tiers.css?v=2026-09-15">
+<link rel="stylesheet" href="./styles/91-reduced-motion.css?v=2026-09-15">
 
-    <script type="module" src="src/js/firebase-config.js"></script>
+<script>
+  /* Set before first paint. Every hidden-initial state in CSS is scoped to
+     .js, so if JS never runs the page renders fully visible instead of blank. */
+  document.documentElement.classList.add('js');
+</script>
 
-    <script type="module">
-        import { submitForm } from './src/js/contactFormHandler.js';
-        import { logFirebase } from './src/js/firbaseLogs.js';
-        window.submitForm = submitForm;
-        window.logFirebase = logFirebase;
-    </script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3L954H8EQD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-3L954H8EQD');
-    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Cosmic Shaft",
+  "description": "Product engineering firm building mobile apps, platforms and the engineering behind them.",
+  "url": "https://cosmicshaft.com/",
+  "email": "suyashvashishtha@gmail.com",
+  "telephone": "+91-6378138062",
+  "foundingDate": "2024-04-01",
+  "identifier": { "@type": "PropertyValue", "name": "Udyam Registration", "value": "UDYAM-RJ-17-0684883" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "95, Anand Vihar, Jagatpura",
+    "addressLocality": "Jaipur",
+    "addressRegion": "Rajasthan",
+    "postalCode": "302017",
+    "addressCountry": "IN"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Suyash Vashishtha",
+    "jobTitle": "Founder & Principal Engineer"
+  },
+  "areaServed": ["IN", "US", "AU", "GB"],
+  "knowsAbout": ["Mobile application development", "React Native", "Product engineering", "Software architecture"]
+}
+</script>
 </head>
 
 <body>
 
-
-
-    <section id="home" class="hero">
-        <video autoplay muted loop id="heroVideo" playsinline poster="src/assets/videos/thumb.png">
-            <source src="src/assets/videos/hero-bg.mp4" type="video/mp4">
-        </video>
-
-        <div class="hero-content">
-            <div class="nav">
-                <div class="head">
-                    <img src="src/assets/images/logomark.png" alt="My Logo">
-                    <span>Suyash Vashishtha</span>
-                </div>
-
-                <div class="link-holder">
-                    <a class="nav_links" href="#home">Home</a>
-                    <a class="nav_links" href="#about">About</a>
-                    <a class="nav_links" href="#work">Work</a>
-                    <a class="nav_links" href="#services">Services</a>
-                    <a class="nav_links" href="#clients">Testimonials</a>
-                    <a class="nav_links" href="#blogs">Blogs</a>
-                    <a class="nav_links" href="#contact">Contact</a>
-                </div>
-
-                <div class="cta-holder">
-                    <div class="cta-button" onclick="handleOpenForm()">Contact</div>
-                </div>
-
-                <!-- <div class="cta-holder mobile">
-
-                    <img onclick="openMenu()" class="menu-icon" src="src/assets/images/icons/menu-icon.png"
-                        alt="whatsapp icon">
-                </div> -->
-            </div>
-
-            <div class="hero-data">
-                <h2 class="hero-title t1">Your Vision, Our Code: </h2>
-                <h2 class="hero-title t2">Elevating Mobile Experiences.</h2>
-                <p>Helping businesses and start-ups to build powerful and scalable mobile apps across the globe ! </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="brands">
-        <div class="heading">
-            <hr class="heading-line">
-            <h2>Trusted by startups worldwide</h2>
-            <hr class="heading-line">
-        </div>
-        <div class="brand-holder">
-            <img class="brand-img" src="src/assets/images/brands/playwise.webp" alt="playwise">
-            <img class="brand-img" src="src/assets/images/brands/venyou.webp" alt="Venyou">
-            <img class="brand-img" src="src/assets/images/brands/Haulr.webp" alt="Halr">
-            <img class="brand-img" src="src/assets/images/brands/sarithm.webp" alt="Sarithm">
-            <img class="brand-img" src="src/assets/images/brands/playnoot.webp" alt="playnoot">
-            <img class="brand-img" src="src/assets/images/brands/singhalJain.webp" alt="singhalJain">
-            <img class="brand-img" src="src/assets/images/brands/chanakya.webp" alt="chanakya">
-
-            <img class="brand-img" src="src/assets/images/brands/playwise.webp" alt="playwise">
-            <img class="brand-img" src="src/assets/images/brands/venyou.webp" alt="Venyou">
-            <img class="brand-img" src="src/assets/images/brands/Haulr.webp" alt="Halr">
-            <img class="brand-img" src="src/assets/images/brands/sarithm.webp" alt="Sarithm">
-            <img class="brand-img" src="src/assets/images/brands/playnoot.webp" alt="playnoot">
-            <img class="brand-img" src="src/assets/images/brands/singhalJain.webp" alt="singhalJain">
-            <img class="brand-img" src="src/assets/images/brands/chanakya.webp" alt="chanakya">
-
-
-            <img class="brand-img" src="src/assets/images/brands/playwise.webp" alt="playwise">
-            <img class="brand-img" src="src/assets/images/brands/venyou.webp" alt="Venyou">
-            <img class="brand-img" src="src/assets/images/brands/Haulr.webp" alt="Halr">
-            <img class="brand-img" src="src/assets/images/brands/sarithm.webp" alt="Sarithm">
-            <img class="brand-img" src="src/assets/images/brands/playnoot.webp" alt="playnoot">
-            <img class="brand-img" src="src/assets/images/brands/singhalJain.webp" alt="singhalJain">
-            <img class="brand-img" src="src/assets/images/brands/chanakya.webp" alt="chanakya">
-
-
-        </div>
-
-    </section>
-    <section id="about" class="about">
-        <img id="about-img" class="about-img" src="src/assets/images/me.png" alt="My Profile Photo">
-
-        <div class="about-data">
-            <div class="data-holder">
-                <h2 id="about-title" class="section-title about-title">Hello there! I’m<br />Suyash Vashishtha</h2>
-                <p id="about-para" class="description">
-                    With 3.5 years of experience in the industry, I have honed my skills to craft beautiful and scalable
-                    mobile
-                    applications that transcend borders. Having collaborated with esteemed international clients from
-                    the USA, UK, Australia, Mexico, and beyond, my work is a testament to a global perspective.
-                    <br /> <br />
-
-                    <span>
-
-                        Whether you are an entrepreneur, business owner, or visionary looking to bring your mobile app
-                        idea to life, I offer a bespoke and professional service tailored to your needs.
-
-                        <br /> <br />
-                        Let's embark on a
-                        journey and elevate your idea to new realities —where excellence knows no boundaries.
-                    </span>
-
-                </p>
-                <div id="about-cta" onclick="handleOpenForm()" class="about-cta cta-button">Get In Touch</div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="work" class="section work">
-        <h2 id="work-title" class="work-title section-title">My Work</h2>
-
-        <div id="macbook" class="macbook ">
-            <div class="pc taskbar">
-                <img class="taskbar-app venyou" onmouseover="changeApp('venyouScreenshot')"
-                    onmouseout="changeToDummy('venyouScreenshot')" src="src/assets/images/icons/apps/venyou.jpeg"
-                    alt="venyou app icon">
-                <div class="app-content venyou">
-                    <img class="app-img" src="src/assets/images/screenshots/venyou.png" alt="venyou screenshot">
-                    <div class="app-box">
-                        <div class="app-header">
-                            <h2 class="app-title">Venyou </h2>
-                            <span class="app-location"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" id="location">
-                                    <g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="1.5" transform="translate(3.5 2)">
-                                        <path
-                                            d="M0.739130438,8.39130439 C0.753537867,4.15071799 4.2028919,0.72472301 8.4434783,0.739085164 C12.6840647,0.753537867 16.1100597,4.2028919 16.0956975,8.4434783 L16.0956975,8.53043483 C16.0434783,11.2869566 14.5043479,13.8347827 12.6173914,15.826087 C11.5382412,16.9467164 10.3331375,17.9388114 9.026087,18.7826088 C8.67659293,19.0849173 8.15818976,19.0849173 7.80869569,18.7826088 C5.86019813,17.5143538 4.15006533,15.9131279 2.75652175,14.052174 C1.51448066,12.4293903 0.809295599,10.4597355 0.739130438,8.41739135 L0.739130438,8.39130439 Z">
-                                        </path>
-                                        <circle cx="8.417" cy="8.539" r="2.461"></circle>
-                                    </g>
-                                </svg> Australia</span>
-                        </div>
-
-                        <p class="description">
-                            Venyou is a platform where you can find the best venues for your events. You can
-                            search for venues based on your location, budget, and other requirements. You can
-                            also book the venue directly from the app or invite your friends to an event and meet with
-                            the attendees of the event.
-                        </p>
-                        <div class="app-link-holder">
-                            <a class="app-link" href="https://play.google.com/store/apps/details?id=com.venyou.app"
-                                target="_blank">
-                                <img class="app-link" src="src/assets/images/playstore.png"
-                                    alt="google play store button for Venyou">
-                            </a>
-                            <a class="app-link" href="https://apps.apple.com/us/app/venyou/id6471592710"
-                                target="_blank">
-                                <img class="app-link" src="src/assets/images/appstore.png"
-                                    alt="App store button for Venyou">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                </img>
-                <img class="taskbar-app playnoot" onmouseover="changeApp('playnootScreenshot')"
-                    onmouseout="changeToDummy('playnootScreenshot')" src="src/assets/images/icons/apps/playnoot.png"
-                    alt="playnoot app icon">
-                <div class="app-content playnoot">
-                    <img class="app-img" src="src/assets/images/screenshots/playnoot.png" alt="playnoot screenshot">
-                    <div class="app-box">
-                        <div class="app-header">
-                            <h2 class="app-title">Playnoot </h2>
-                            <span class="app-location"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" id="location">
-                                    <g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="1.5" transform="translate(3.5 2)">
-                                        <path
-                                            d="M0.739130438,8.39130439 C0.753537867,4.15071799 4.2028919,0.72472301 8.4434783,0.739085164 C12.6840647,0.753537867 16.1100597,4.2028919 16.0956975,8.4434783 L16.0956975,8.53043483 C16.0434783,11.2869566 14.5043479,13.8347827 12.6173914,15.826087 C11.5382412,16.9467164 10.3331375,17.9388114 9.026087,18.7826088 C8.67659293,19.0849173 8.15818976,19.0849173 7.80869569,18.7826088 C5.86019813,17.5143538 4.15006533,15.9131279 2.75652175,14.052174 C1.51448066,12.4293903 0.809295599,10.4597355 0.739130438,8.41739135 L0.739130438,8.39130439 Z">
-                                        </path>
-                                        <circle cx="8.417" cy="8.539" r="2.461"></circle>
-                                    </g>
-                                </svg> India</span>
-                        </div>
-                        <p class="description">
-                            Playnoot is an online platfrom to browse,search and book your faviorate sports venue near
-                            you. It offers Slot bookings and Subscriptions for the users.
-                            It also offers a platform for the venue owners to list their venues and manage their
-                            bookings.
-
-
-                        </p>
-
-
-                        <div class="app-link-holder">
-                            <a class="app-link" href="https://play.google.com/store/apps/details?id=com.playnoot"
-                                target="_blank">
-                                <img class="app-link" src="src/assets/images/playstore.png"
-                                    alt="google play store button for Playnoot">
-                            </a>
-                            <a class="app-link" href="https://apps.apple.com/in/app/playnoot/id6476102938"
-                                target="_blank">
-                                <img class="app-link" src="src/assets/images/appstore.png"
-                                    alt="App store button for Playnoot">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                </img>
-
-                <img class="taskbar-app chanakya" onmouseover="changeApp('chanakyaScreenshot')"
-                    onmouseout="changeToDummy('chanakyaScreenshot')" src="src/assets/images/icons/apps/chanakya.webp"
-                    alt="Chanakya app icon">
-                <div class="app-content chanakya">
-                    <img class="app-img" src="src/assets/images/screenshots/chanakya.png" alt="chanakya screenshot">
-                    <div class="app-box">
-                        <div class="app-header">
-                            <h2 class="app-title">Chanakya Ai</h2>
-                            <span class="app-location"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" id="location">
-                                    <g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="1.5" transform="translate(3.5 2)">
-                                        <path
-                                            d="M0.739130438,8.39130439 C0.753537867,4.15071799 4.2028919,0.72472301 8.4434783,0.739085164 C12.6840647,0.753537867 16.1100597,4.2028919 16.0956975,8.4434783 L16.0956975,8.53043483 C16.0434783,11.2869566 14.5043479,13.8347827 12.6173914,15.826087 C11.5382412,16.9467164 10.3331375,17.9388114 9.026087,18.7826088 C8.67659293,19.0849173 8.15818976,19.0849173 7.80869569,18.7826088 C5.86019813,17.5143538 4.15006533,15.9131279 2.75652175,14.052174 C1.51448066,12.4293903 0.809295599,10.4597355 0.739130438,8.41739135 L0.739130438,8.39130439 Z">
-                                        </path>
-                                        <circle cx="8.417" cy="8.539" r="2.461"></circle>
-                                    </g>
-                                </svg> India</span>
-                        </div>
-                        <p class="description">
-                            Discover Chanakya: Your Ultimate AI-Powered Assistant Tailored for India!
-                            <br>
-                            Unlock the power of Chanakya, the ultimate AI assistant designed exclusively for the Indian
-                            audience! With its state-of-the-art natural language processing capabilities, Chanakya
-                            understands and responds to your queries in multiple Indian languages, including Hindi,
-                            Tamil, Telugu, Bengali, Marathi, Kannada, Gujarati, Malayalam, and Punjabi.
-                        </p>
-
-
-                        <div class="app-link-holder">
-                            <a class="app-link"
-                                href="https://play.google.com/store/apps/details?id=tech.neurobridge.chanakya&hl=en_IN"
-                                target="_blank">
-                                <img class="app-link" src="src/assets/images/playstore.png"
-                                    alt="google play store button for Chanakya">
-                            </a>
-                            <a class="app-link" href="https://apps.apple.com/us/app/chanakya-ai/id6504797681"
-                                target="_blank">
-                                <img class="app-link" src="src/assets/images/appstore.png"
-                                    alt="App store button for Chanakya">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-                </img>
-                <img class="taskbar-app haulr" onmouseover="changeApp('haulrScreenshot')"
-                    onmouseout="changeToDummy('haulrScreenshot')" src="src/assets/images/icons/apps/haulr.png"
-                    alt="arrow">
-                <div class="app-content haulr">
-                    <img class="app-img" src="src/assets/images/screenshots/haulr.png" alt="venyou">
-                    <div class="app-box">
-                        <div class="app-header">
-                            <h2 class="app-title">Haulr </h2>
-                            <span class="app-location"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" id="location">
-                                    <g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="1.5" transform="translate(3.5 2)">
-                                        <path
-                                            d="M0.739130438,8.39130439 C0.753537867,4.15071799 4.2028919,0.72472301 8.4434783,0.739085164 C12.6840647,0.753537867 16.1100597,4.2028919 16.0956975,8.4434783 L16.0956975,8.53043483 C16.0434783,11.2869566 14.5043479,13.8347827 12.6173914,15.826087 C11.5382412,16.9467164 10.3331375,17.9388114 9.026087,18.7826088 C8.67659293,19.0849173 8.15818976,19.0849173 7.80869569,18.7826088 C5.86019813,17.5143538 4.15006533,15.9131279 2.75652175,14.052174 C1.51448066,12.4293903 0.809295599,10.4597355 0.739130438,8.41739135 L0.739130438,8.39130439 Z">
-                                        </path>
-                                        <circle cx="8.417" cy="8.539" r="2.461"></circle>
-                                    </g>
-                                </svg> United States ( US )</span>
-                        </div>
-                        <p class="description">
-                            Haulr is a app which connects the costruction companies with the truck drivers. It allows
-                            the users to create projects/jobs and assign them to the drivers. The drivers can accept the
-                            jobs and complete them. The app also allows the users to track the drivers in real time.
-                        </p>
-
-
-                        <div class="app-link-holder">
-                            <a class="app-link"
-                                href="https://play.google.com/store/apps/details?id=com.sarithm.haulrcorp"
-                                target="_blank">
-                                <img class="app-link" src="src/assets/images/playstore.png"
-                                    alt="google play store button for Haulr">
-                            </a>
-                            <a class="app-link" href="https://apps.apple.com/us/app/haulr-corp/id6477397600"
-                                target="_blank">
-                                <img class="app-link" src="src/assets/images/appstore.png"
-                                    alt="App store button for Halr">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                </img>
-
-                <!-- SINGHAL JAIN CONTENT -->
-                <img class="taskbar-app ayuraid" onmouseover="changeApp('ayuraidScreenshot')"
-                    onmouseout="changeToDummy('ayuraidScreenshot')" src="src/assets/images/icons/apps/ayuraid.webp"
-                    alt="arrow">
-                <div class="app-content ayuraid">
-                    <img class="app-img" src="src/assets/images/screenshots/ayuraid.png" alt="AyurAid App screenshot">
-                    <div class="app-box">
-                        <div class="app-header">
-                            <h2 class="app-title">AyurAid Ai</h2>
-                            <span class="app-location"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" id="location">
-                                    <g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="1.5" transform="translate(3.5 2)">
-                                        <path
-                                            d="M0.739130438,8.39130439 C0.753537867,4.15071799 4.2028919,0.72472301 8.4434783,0.739085164 C12.6840647,0.753537867 16.1100597,4.2028919 16.0956975,8.4434783 L16.0956975,8.53043483 C16.0434783,11.2869566 14.5043479,13.8347827 12.6173914,15.826087 C11.5382412,16.9467164 10.3331375,17.9388114 9.026087,18.7826088 C8.67659293,19.0849173 8.15818976,19.0849173 7.80869569,18.7826088 C5.86019813,17.5143538 4.15006533,15.9131279 2.75652175,14.052174 C1.51448066,12.4293903 0.809295599,10.4597355 0.739130438,8.41739135 L0.739130438,8.39130439 Z">
-                                        </path>
-                                        <circle cx="8.417" cy="8.539" r="2.461"></circle>
-                                    </g>
-                                </svg> India</span>
-                        </div>
-                        <p class="description">
-                            AyurAid revolutionizes the world of Ayurveda by introducing a cutting-edge mobile app that
-                            harnesses the power of artificial intelligence to deliver a personalized and user-friendly
-                            Ayurvedic experience. Designed as a comprehensive platform, AyurAid goes beyond traditional
-                            remedies, offering an innovative approach to Ayurvedic wellness.
-
-                        </p>
-
-
-                        <div class="app-link-holder">
-                            <a class="app-link"
-                                href="https://play.google.com/store/apps/details?id=com.ayuraid.mobile&hl=en_IN"
-                                target="_blank">
-                                <img class="app-link" src="src/assets/images/playstore.png"
-                                    alt="google play store button got Singhal Jain App">
-                            </a>
-                            <!-- <a class="app-link" href="https://apps.apple.com/in/app/singhal-jain-co/id1623310438"
-                                target="_blank">
-                                <img class="app-link" src="src/assets/images/appstore.png"
-                                    alt="App store button got Singhal Jain App">
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-                </img>
-
-            </div>
-        </div>
-
-
-    </section>
-
-    <section id="services" class="section services">
-        <div class="sheader">
-            <h2 id="service-title" class="service-title section-title">Services</h2>
-
-            <p class="description">
-                Whether it is a Cross-platform app or Native iOS / Android app, I got you covered. With my experience
-                and
-                skills I can develop mobile apps in React Native, Swift UI, and Kotlin that not just meet your
-                expectations but to exceed them.
-            </p>
-        </div>
-
-        <div class="card-holder service-holder">
-            <div id="cross-service" class="card service">
-                <img class="card-img" src="src/assets/images/services/crossPlatform.png" alt="Cross platform icon">
-                <div class="card-about">
-
-                    <h3 class="card-title">Cross Platform</h3>
-                    <p class="description">
-                        I leverage React Native to craft
-                        dynamic mobile apps that seamlessly run on both iOS and Android.
-                    </p>
-                </div>
-            </div>
-
-            <div id="cross-ios" class="card service">
-                <img class="card-img" src="src/assets/images/services/ios.png" alt="ios icon">
-                <div class="card-about">
-                    <h3 class="card-title">iOS App</h3>
-                    <p class="description">
-                        Elevate your iOS experience with Swift UI mastery. I can create sleek and intuitive
-                        apps tailored to the unique design principles of Swift UI.
-                    </p>
-
-                </div>
-            </div>
-
-            <div id="cross-android" class="card service">
-                <img class="card-img" src="src/assets/images/services/android.png" alt="android icon">
-                <div class="card-about">
-                    <h3 class="card-title">Android App</h3>
-                    <p class="description">
-                        Dive into seamless app development that merges performance and innovation, ensuring your
-                        app stands out with elegance and efficiency.
-                    </p>
-
-                </div>
-            </div>
-
-
-        </div>
-    </section>
-
-    <section id="clients" class="section tests">
-        <h2 id="test-title" class="test-title section-title">Trusted by startups worldwide</h2>
-
-        <div id="test-holder" class="card-holder test-holder">
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-                    <p class="description">
-                        I had the pleasure of working with Suyash for over a years at Playnoot, collaborating on several
-                        project requirements and problems. As a mobile developer, Suyash has been an invaluable asset to
-                        our ...
-                    </p>
-
-                    <span onclick="openTest('ajay')">Read more</span>
-
-                    <div class="test-footer">
-                        <span class="test-author">Ajay Kumar</span>
-                        <p class="description test-location">India</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        I hired Suyash to build a React Native App that we a currently working on together. I started
-                        building the app but with full-time work I found it hard to develop on my own. I spent such a
-                        long time looking via...
-                    </p>
-                    <span onclick="openTest('spiro')">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Spiro Alsandtos</span>
-                        <p class="description test-location">Australia</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        I'm pleased to recommend Suyash, who has been an invaluable addition to our team! His
-                        exceptional skills have significantly enhanced the performance of our flagship product, Chanakya
-                        AI app. Notably, his contributions have resulted in substantial reductions in app size and
-                        remarkable improvements in its speed. His dedication, expertise, and collaborative spirit have
-                        made him an indispensable resource for our organization.
-                    </p>
-                    <span style="opacity: 0;">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Atharv Garg</span>
-                        <p class="description test-location">India</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        Suyash joined our Mobile Development team to develop React Native Mobile application for Haul’r,
-                        for both iOS and Android. Haul’r connects Construction Companies with Truckers.
-
-                        He quickly becomes key player to the team. His knowledge, experience and boldness to step into
-                        unknown, presentation, communication skills help him to work remotely and independently. He is
-                        always available, in spite of being an offshore resource.
-                        Suyash is an asset to team and easy to work.
-                    </p>
-                    <span onclick="openTest('samson')">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Samson Gudise</span>
-                        <p class="description test-location">United States ( US )</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        I am pleased to provide this recommendation for Suyash, who has been an invaluable asset as one
-                        of our lead developers at Haulr Corp.
-
-                        Suyash's expertise, dedication, and professionalism have significantly contributed to the
-                        success of our project. His technical proficiency and problem-solving skills have consistently
-                        impressed our team, and his ability to translate complex requirements into efficient and
-                        scalable solutions has been instrumental in driving our development efforts forward.
-                    </p>
-                    <span onclick="openTest('miguel')">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Miguel Brizuela</span>
-                        <p class="description test-location">United States ( US )</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        Suyash is an exceptional mobile application developer with a keen eye for detail and a passion
-                        for creating high-quality, user-friendly applications. He has a thorough understanding of mobile
-                        application development and is proficient in various programming ...
-                    </p>
-                    <span onclick="openTest('sunny')">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Sunny Paliwal</span>
-                        <p class="description test-location">India</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        Suyash is one of the best among all the people I have ever worked with. As I remember, Suyash
-                        was a very productive person, a hardworking, broad-minded, and forward-thinking individual.
-                        Intelligent, ambitious, energetic, and proactive perfectionist. The desire for proficiency and
-                        education makes Suyash a valuable asset to the team. Working with Suyash is a signature of
-                        success
-                    </p>
-                    <span style="opacity: 0;">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Harsh Maheshwari</span>
-                        <p class="description test-location">India</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        I worked with suyash to develop several mobile apps and I would describe him as professional
-                        and enthusiastic developer who is proficient in his work. Suyash not only develops the app but
-                        also contributes to business through his experience and suggest best way to execute any flow. Me
-                        and my team has been working with suyash from last few months and he always amazes us with his
-                        remarkable skills.
-                    </p>
-                    <span style="opacity: 0;">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Kartik Prajapat</span>
-                        <p class="description test-location">India</p>
-                    </div>
-                </div>
-            </div>
-
-         
-            <!-- COPIES START -->
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-                    <p class="description">
-                        I had the pleasure of working with Suyash for over a years at Playnoot, collaborating on several
-                        project requirements and problems. As a mobile developer, Suyash has been an invaluable asset to
-                        our ...
-                    </p>
-
-                    <span onclick="openTest('ajay')">Read more</span>
-
-                    <div class="test-footer">
-                        <span class="test-author">Ajay Kumar</span>
-                        <p class="description test-location">India</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        I hired Suyash to build a React Native App that we a currently working on together. I started
-                        building the app but with full-time work I found it hard to develop on my own. I spent such a
-                        long time looking via...
-                    </p>
-                    <span onclick="openTest('spiro')">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Spiro Alsandtos</span>
-                        <p class="description test-location">Australia</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        I'm pleased to recommend Suyash, who has been an invaluable addition to our team! His
-                        exceptional skills have significantly enhanced the performance of our flagship product, Chanakya
-                        AI app. Notably, his contributions have resulted in substantial reductions in app size and
-                        remarkable improvements in its speed. His dedication, expertise, and collaborative spirit have
-                        made him an indispensable resource for our organization.
-                    </p>
-                    <span style="opacity: 0;">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Atharv Garg</span>
-                        <p class="description test-location">India</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        Suyash joined our Mobile Development team to develop React Native Mobile application for Haul’r,
-                        for both iOS and Android. Haul’r connects Construction Companies with Truckers.
-
-                        He quickly becomes key player to the team. His knowledge, experience and boldness to step into
-                        unknown, presentation, communication skills help him to work remotely and independently. He is
-                        always available, in spite of being an offshore resource.
-                        Suyash is an asset to team and easy to work.
-                    </p>
-                    <span onclick="openTest('samson')">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Samson Gudise</span>
-                        <p class="description test-location">United States ( US )</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        I am pleased to provide this recommendation for Suyash, who has been an invaluable asset as one
-                        of our lead developers at Haulr Corp.
-
-                        Suyash's expertise, dedication, and professionalism have significantly contributed to the
-                        success of our project. His technical proficiency and problem-solving skills have consistently
-                        impressed our team, and his ability to translate complex requirements into efficient and
-                        scalable solutions has been instrumental in driving our development efforts forward.
-                    </p>
-                    <span onclick="openTest('miguel')">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Miguel Brizuela</span>
-                        <p class="description test-location">United States ( US )</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        Suyash is an exceptional mobile application developer with a keen eye for detail and a passion
-                        for creating high-quality, user-friendly applications. He has a thorough understanding of mobile
-                        application development and is proficient in various programming ...
-                    </p>
-                    <span onclick="openTest('sunny')">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Sunny Paliwal</span>
-                        <p class="description test-location">India</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        Suyash is one of the best among all the people I have ever worked with. As I remember, Suyash
-                        was a very productive person, a hardworking, broad-minded, and forward-thinking individual.
-                        Intelligent, ambitious, energetic, and proactive perfectionist. The desire for proficiency and
-                        education makes Suyash a valuable asset to the team. Working with Suyash is a signature of
-                        success
-                    </p>
-                    <span style="opacity: 0;">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Harsh Maheshwari</span>
-                        <p class="description test-location">India</p>
-                    </div>
-                </div>
-            </div>
-
-            <div onmouseover="slowTestScroll()" onmouseleave="resumeTestScroll()" class="card test">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <div class="card-about">
-
-                    <p class="description">
-                        I worked with suyash to develop several mobile apps and I would describe him as professional
-                        and enthusiastic developer who is proficient in his work. Suyash not only develops the app but
-                        also contributes to business through his experience and suggest best way to execute any flow. Me
-                        and my team has been working with suyash from last few months and he always amazes us with his
-                        remarkable skills.
-                    </p>
-                    <span style="opacity: 0;">Read more</span>
-                    <div class="test-footer">
-                        <span class="test-author">Kartik Prajapat</span>
-                        <p class="description test-location">India</p>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-        </div>
-
-        <a class="cta-button" href="https://www.linkedin.com/in/suyashvashishtha/details/recommendations/"
-            target="_blank">View More</a>
-    </section>
-
-    <section id="blogs" class="section blogs">
-        <h2 id="blog-title" class="blog-title section-title">My Blogs</h2>
-        <div class="card-holder blog-holder">
-            <a href="https://dev.to/suyashdev/google-authsignin-in-react-native-without-firebase-43n" target="_blank"
-                class="card type2 blog">
-                <img class="card-img blog-img" src="src/assets/images/blogs/b1.webp" alt="service">
-                <div class="card-about">
-                    <div class="blog-footer">
-                        <span id="blog-title" class="blog-title">Google Auth/Signin in React Native without
-                            Firebase.</span>
-                        <p class="description blog-desc">
-                            Google auth is one of the most commonly used Authentication methods in Mobile and web apps.
-                            Well, it is also a tricky one as compared to normal user email and password auth.
-                        </p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://dev.to/suyashdev/google-authsignin-in-react-native-without-firebase-43n" target="_blank"
-                class="card type2 blog">
-                <img class="card-img blog-img" src="src/assets/images/blogs/b2.webp" alt="service">
-                <div class="card-about">
-                    <div class="blog-footer">
-                        <span class="blog-title">Loading Modal in React Native with Activity Indicator</span>
-                        <p class="description blog-desc">
-                            Loading Modal in React Native with Activity Indicator
-                        </p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://dev.to/suyashdev/google-authsignin-in-react-native-without-firebase-43n" target="_blank"
-                class="card type2 blog">
-                <img class="card-img blog-img" src="src/assets/images/blogs/b3.webp" alt="service">
-                <div class="card-about">
-                    <div class="blog-footer">
-                        <span class="blog-title">How to open UPI Apps in React Native | UPI Integration with React
-                            Native</span>
-                        <p class="description blog-desc">
-                            This post is going to be more specific for Indian clients or Indian Developers as it targets
-                            UPI payment (Unified Payments Interface) which is used in India Only.
-                        </p>
-                    </div>
-                </div>
-            </a>
-
-
-        </div>
-        <a class="cta-button" href="https://dev.to/suyashdev" target="_blank">Read More</a>
-    </section>
-
-    <section id="contact" class="cta-section">
-        <h2 class="cta-title section-title showTitle">Let’s take your app to the next level</h2>
-        <div class="cta-data">
-            <p class="description">
-                Whether you are an entrepreneur, business owner, or visionary looking to bring your mobile app idea to
-                life, I offer a bespoke and professional service tailored to your needs.
-                <br /> <br />
-                Let's embark on a journey and elevate your idea to new realities —where excellence knows no boundaries.
-            </p>
-            <div class="cta-button" onclick="handleOpenForm()">Get In Touch</div>
-        </div>
-    </section>
-
-    <section class="modal backdrop">
-        <div class="contactModal">
-            <div class="formHeader">
-                <h2 class="contactModal-title section-title">Get In Touch !</h2>
-                <span onclick="closeContactModal()" id="closeForm" class="close">&times;</span>
-            </div>
-            <div class="form">
-                <div class="fieldHolder">
-                    <span class="fieldTitle">Full Name</span>
-                    <input id="inputName" class="field" type="text" placeholder="Enter your name"
-                        onblur="recordInputEvent('form_firstName','inputName')">
-                </div>
-                <div class="fieldHolder">
-                    <span class="fieldTitle">Email</span>
-                    <input id="inputEmail" class="field" type="text" placeholder="Enter your email"
-                        onblur="recordInputEvent('form_email','inputEmail')">
-                </div>
-
-                <div class="fieldHolder">
-                    <span class="fieldTitle">Select Service</span>
-                    <div class="radioHolder">
-                        <div class="radio">
-                            <input type="radio" class="serviceRadio" id="service1" name="service"
-                                value="cross-platform">
-                            <label for="service1">Cross Platform</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" class="serviceRadio" id="service2" name="service" value="ios">
-                            <label for="service2">iOS App</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" class="serviceRadio" id="service3" name="service" value="android">
-                            <label for="service3">Android App</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" class="serviceRadio" id="service4" name="service" value="other">
-                            <label for="service4">Other</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="fieldHolder">
-                    <span class="fieldTitle">Message</span>
-                    <textarea id="inputMessage" class="field" placeholder="Enter your message"></textarea>
-                </div>
-                <div class="fieldHolder">
-                    <div id="formButton" class="cta-button" onclick="submitForm()">Submit</div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="test backdrop">
-        <div class="testModal ajay">
-            <div class="testModalHeader">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <img onclick="closeTest('ajay')" class="card-img cross" src="src/assets/images/icons/cross.png"
-                    alt="service">
-            </div>
-
-            <div class="card-about">
-                <p class="description">
-                    I had the pleasure of working with Suyash for over a years at Playnoot, collaborating on several
-                    project requirements and problems. As a mobile developer, Suyash has been an invaluable asset to our
-                    team. Their expertise in mobile development, particularly with React Native, is impressive and has
-                    resulted in highly efficient and user-friendly mobile applications.
-                    <br /><br />
-                    Suyash is not only technically skilled but also has a creative approach to problem-solving that has
-                    led to innovative solutions for our projects. They consistently meet deadlines and are always
-                    willing to go the extra mile to ensure the quality of their work.
-                    <br /><br />
-                    Beyond their technical skills, Suyash is a joy to work with. They are a team player who brings a
-                    positive attitude to the workplace and is always ready to help others.
-                    <br /><br />
-                    I wholeheartedly recommend Suyash for any mobile development position. Their blend of technical
-                    skills, work ethic, and teamwork makes them an asset to any team.
-                </p>
-
-
-                <div class="test-footer">
-                    <span class="test-author">Ajay Kumar</span>
-                    <p class="description test-desig">CEO / Founder, Playnoot</p>
-                    <p class="description test-location">India</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="testModal spiro">
-            <div class="testModalHeader">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <img onclick="closeTest('spiro')" class="card-img cross" src="src/assets/images/icons/cross.png"
-                    alt="service">
-            </div>
-
-            <div class="card-about">
-                <p class="description">
-                    I hired Suyash to build a React Native App that we a currently working on together. I started
-                    building the app but with full-time work I found it hard to develop on my own. I spent such a long
-                    time looking via freelancer pages and contacting developers directly but I wasn't happy with any of
-                    the options. I found Suyash via a recommendation and my search was over.
-                    <br /><br />
-                    This developer is exceptionally talented. After reviewing the work he's been doing for me I was
-                    impressed to read code so easily. His architecture is logical and robust as well. I was able to
-                    follow the code straight away as soon as he shared it with me. This developer writes clean code.
-                    He's also very responsive, as soon as I message him, within 30 mins he's responded. He will even
-                    take the time to respond during non working hours. I hesitate to contact him at times because I know
-                    he'll stop what he's doing to answer me. I have worked with a lot or IT engineers throughout my 18
-                    year career and I have to say he's one of the best.
-                    <br /><br />
-                    I'm quite pedantic about my product and will make suggestions on the app from a client and developer
-                    perspective. Suyash will listen and make changes as you wish with no hesitation, he's ability to
-                    also respond with even better suggestions makes you want to learn from him. His ability to find a
-                    solution so quick for a specific problem that is unique to the project is uncanny.
-                    <br /><br />
-                    I have a few projects that I want to bring to life and Suyash is the developer I will always use. If
-                    you're looking for a React Native or MERN developer you've come to the right page.
-                </p>
-
-
-                <div class="test-footer">
-                    <span class="test-author">Spiro Alisandratos</span>
-                    <p class="description test-desig">CEO / Founder, Venyou</p>
-                    <p class="description test-location">Australia</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="testModal sunny">
-            <div class="testModalHeader">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <img onclick="closeTest('sunny')" class="card-img cross" src="src/assets/images/icons/cross.png"
-                    alt="service">
-            </div>
-
-            <div class="card-about">
-                <p class="description">
-                    Suyash is an exceptional mobile application developer with a keen eye for detail and a passion for
-                    creating high-quality, user-friendly applications. He has a thorough understanding of mobile
-                    application development and is proficient in various programming languages and frameworks, including
-                    JavaScript and React Native. Suyash is always up-to-date with the latest technologies and trends in
-                    mobile development, and he continuously seeks ways to improve his skills and knowledge.
-                    <br /><br />
-                    One of the most impressive things about Suyash is his ability to work well in a team environment. He
-                    is a great communicator and collaborator, always willing to lend a helping hand and share his
-                    expertise with others. Suyash has a positive attitude and is always eager to take on new challenges
-                    and projects.
-                    <br /><br />
-                    During his time at Playwise, Suyash played a crucial role in developing our flagship mobile
-                    application. He was involved in the entire development process, from ideation and prototyping to
-                    deployment and maintenance. Suyash's contributions to the project were significant, and his
-                    attention to detail and problem-solving skills were instrumental in ensuring its success.
-                    <br /><br />
-                    In summary, Suyash is a talented and dedicated mobile application developer who would be an
-                    excellent addition to any team. I highly recommend him for the position of mobile application
-                    developer at your organization, and I am confident that he will make a valuable contribution to your
-                    team.
-                    <br /><br />
-                    Please do not hesitate to contact me if you require any further information.
-                </p>
-
-
-                <div class="test-footer">
-                    <span class="test-author">Sunny Paliwal</span>
-                    <p class="description test-desig">CEO / Founder, Playwise</p>
-                    <p class="description test-location">India</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="testModal samson">
-            <div class="testModalHeader">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <img onclick="closeTest('samson')" class="card-img cross" src="src/assets/images/icons/cross.png"
-                    alt="service">
-            </div>
-
-            <div class="card-about">
-                <p class="description">
-                    Suyash joined our Mobile Development team to develop React Native Mobile application for Haul’r, for
-                    both iOS and Android. Haul’r connects Construction Companies with Truckers.
-                    <br /><br />
-                    He quickly becomes key player to the team. His knowledge, experience and boldness to step into
-                    unknown, presentation, communication skills help him to work remotely and independently. He is
-                    always available, in spite of being an offshore resource.
-                    Suyash is an asset to team and easy to work.
-                    <br /><br />
-
-                    Please do not hesitate to contact me if you require any further information.
-                </p>
-
-
-                <div class="test-footer">
-                    <span class="test-author">Samson Gudise</span>
-                    <p class="description test-desig">Manager, Sarithm Solutions</p>
-                    <p class="description test-location">United States ( US )</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="testModal miguel">
-            <div class="testModalHeader">
-                <img class="card-img" src="src/assets/images/icons/quote.png" alt="service">
-                <img onclick="closeTest('miguel')" class="card-img cross" src="src/assets/images/icons/cross.png"
-                    alt="service">
-            </div>
-
-            <div class="card-about">
-                <p class="description">
-                    I am pleased to provide this recommendation for Suyash, who has been an invaluable asset as one of
-                    our lead developers at Haulr Corp.
-                    <br /><br />
-                    Suyash's expertise, dedication, and professionalism have significantly contributed to the success of
-                    our project. His technical proficiency and problem-solving skills have consistently impressed our
-                    team, and his ability to translate complex requirements into efficient and scalable solutions has
-                    been instrumental in driving our development efforts forward.
-                    <br /><br />
-
-                    Beyond his technical abilities, Suyash is a proactive and collaborative team member who is always
-                    willing to go above and beyond to ensure project success. His strong communication skills and
-                    positive attitude make him a pleasure to work with, and his commitment to delivering high-quality
-                    work on time and within budget has earned him the respect and admiration of his peers.
-                    <br /><br />
-                    I have no hesitation in recommending Suyash for any freelance opportunities he pursues. His talent,
-                    professionalism, and dedication make him an invaluable addition to any project or team
-                </p>
-
-
-                <div class="test-footer">
-                    <span class="test-author">Miguel Brizuela</span>
-                    <p class="description test-desig">CEO / Founder, Haul’r Corp</p>
-                    <p class="description test-location">United States ( US )</p>
-                </div>
-            </div>
-        </div>
-        
-    </section>
-
-    <footer>
-        <div class="f1">
-            <p class="description">Say Hi !</p>
-            <h2 class="section-title footer-title showTitle">suyashvashishtha@gmail.com</h2>
-        </div>
-
-        <div class="icon-holder">
-
-            <a href="https://github.com/suyashvash" target="_blank">
-                <img src="src/assets/images/icons/github.svg" alt="logo">
-            </a>
-            <a href="https://www.linkedin.com/in/suyashvashishtha/" target="_blank">
-                <img src="src/assets/images/icons/linkedin.png" alt="logo">
-            </a>
-            <a href="https://www.instagram.com/suyash.codes/" target="_blank">
-                <img src="src/assets/images/icons/instagram.png" alt="logo">
-            </a>
-            <a href="https://twitter.com/SuyashVashisht1" target="_blank">
-                <img src="src/assets/images/icons/twitter.png" alt="logo">
-            </a>
-
-        </div>
-    </footer>
-
-    <div class="meta-data">
-        <p class="description">Developed By -
-            <a href="https://www.linkedin.com/in/suyashvashishtha/" target="_blank">Suyash Vashishtha</a>
-        </p>
-        <p class="description">Designed by -
-            <a href="https://www.madebynaman.com/" target="_blank">Naman Sharma</a>
-        </p>
-
-        <p class="description">© 2020 All rights reserved.</p>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Fallback backdrop. Always present; the WebGL canvas layers over it when
+     the device can take it, so tier 0 is never an empty black page. -->
+<div id="backdrop-still" aria-hidden="true"></div>
+<canvas id="starfield" aria-hidden="true"></canvas>
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<!-- ====================================================================
+     BEAT 0 — IGNITION
+     Resolves on DOMContentLoaded + fonts, NEVER on the 3D scene. Worst
+     case the visitor gets the finished page with a static backdrop.
+     ==================================================================== -->
+<div id="preloader" class="preloader" aria-hidden="true">
+  <div class="preloader-line"><i></i></div>
+  <p class="preloader-reg mono">UDYAM-RJ-17-0684883</p>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner shell">
+    <a class="nav-brand" href="#top" aria-label="Cosmic Shaft, home">
+      <span class="nav-mark" aria-hidden="true"></span>
+      <span class="nav-word">Cosmic&nbsp;Shaft</span>
+    </a>
+
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#firm">Firm</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-primary nav-cta" href="#contact">Start a project</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-progress" id="nav-progress" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+
+<!-- ====================================================================
+     BEAT 1 — DEEP FIELD
+     ==================================================================== -->
+<section class="hero" id="top">
+  <div class="shell hero-inner">
+    <p class="eyebrow hero-eyebrow reveal">Product engineering firm &nbsp;·&nbsp; Jaipur, India &nbsp;·&nbsp; Est. 2024</p>
+
+    <h1 class="hero-title">
+      <span class="line-mask" style="--i:0"><span>We move</span></span>
+      <span class="line-mask" style="--i:1"><span>what you</span></span>
+      <span class="line-mask" style="--i:2"><span class="gold">imagine.</span></span>
+    </h1>
+
+    <p class="lede hero-lede reveal" style="--i:3">
+      Cosmic Shaft takes a vision from zero to shipped — apps, platforms,
+      and the engineering behind them. We are not a vendor you brief.
+      We work your product like it is our own.
+    </p>
+
+    <div class="hero-actions reveal" style="--i:4">
+      <a class="btn btn-primary" href="#contact">Start a project</a>
+      <a class="btn btn-ghost" href="#work">See the work</a>
+    </div>
+  </div>
+
+  <!-- Telemetry. Tiny, deliberately instrumented — quality signalled as
+       texture rather than claimed in a sentence. -->
+  <div class="hero-telemetry shell" aria-hidden="true">
+    <span class="mono">UDYAM-RJ-17-0684883 · MICRO · SERVICES</span>
+    <span class="mono">7 PRODUCTS SHIPPED</span>
+    <span class="mono">4 COUNTRIES</span>
+    <span class="mono" id="telemetry-omega">ω 0.150 rad·s⁻¹</span>
+  </div>
+</section>
+
+<!-- Brand marquee -->
+<section class="brands defer" aria-label="Clients and products">
+  <div class="shell">
+    <p class="eyebrow brands-label">Shipped for</p>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <img src="./assets/img/brands/chanakya.webp" alt="Chanakya AI" width="150" height="48" loading="lazy" decoding="async">
+      <img src="./assets/img/brands/Haulr.webp" alt="Haulr Corp" width="150" height="48" loading="lazy" decoding="async">
+      <img src="./assets/img/brands/venyou.webp" alt="Venyou" width="150" height="48" loading="lazy" decoding="async">
+      <img src="./assets/img/brands/playnoot.webp" alt="Playnoot" width="150" height="48" loading="lazy" decoding="async">
+      <img src="./assets/img/brands/playwise.webp" alt="Playwise" width="150" height="48" loading="lazy" decoding="async">
+      <img src="./assets/img/brands/sarithm.webp" alt="sariThm" width="150" height="48" loading="lazy" decoding="async">
+      <img src="./assets/img/brands/singhalJain.webp" alt="Singhal Jain and Co." width="150" height="48" loading="lazy" decoding="async">
+      <span aria-hidden="true" class="marquee-dupe">
+        <img src="./assets/img/brands/chanakya.webp" alt="" width="150" height="48" loading="lazy" decoding="async">
+        <img src="./assets/img/brands/Haulr.webp" alt="" width="150" height="48" loading="lazy" decoding="async">
+        <img src="./assets/img/brands/venyou.webp" alt="" width="150" height="48" loading="lazy" decoding="async">
+        <img src="./assets/img/brands/playnoot.webp" alt="" width="150" height="48" loading="lazy" decoding="async">
+        <img src="./assets/img/brands/playwise.webp" alt="" width="150" height="48" loading="lazy" decoding="async">
+        <img src="./assets/img/brands/sarithm.webp" alt="" width="150" height="48" loading="lazy" decoding="async">
+        <img src="./assets/img/brands/singhalJain.webp" alt="" width="150" height="48" loading="lazy" decoding="async">
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     BEAT 2 — THESIS
+     ==================================================================== -->
+<section class="section thesis defer" aria-label="What we believe">
+  <div class="shell">
+    <p class="thesis-statement brighten display">
+      <span>Cosmic energy has no limit.</span>
+      <span>A shaft gives it direction.</span>
+    </p>
+    <p class="thesis-gloss reveal">
+      Creativity is abundant. Almost nobody is short of ideas. What turns an
+      idea into a business is the machine that transmits it — the discipline,
+      the engineering, and the will to get it out of the door. That is the
+      part we are.
+    </p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     BEAT 3 — INTAKE
+     ==================================================================== -->
+<section class="section intake defer" aria-label="What we take on">
+  <div class="shell intake-grid">
+    <div class="section-head">
+      <span class="eyebrow">Intake</span>
+      <h2>What you bring us</h2>
+    </div>
+    <ul class="intake-list">
+      <li class="intake-item reveal" style="--i:0" data-pulse><span class="mono">01</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.5 18.5h5M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5.9 1.1.9 1.8v.3h5.2v-.3c0-.7.3-1.3.9-1.8A6 6 0 0 0 12 3Z"/></svg><span>A vision.</span></li>
+      <li class="intake-item reveal" style="--i:1" data-pulse><span class="mono">02</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M9 2h6"/></svg><span>A deadline.</span></li>
+      <li class="intake-item reveal" style="--i:2" data-pulse><span class="mono">03</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18Z"/></svg><span>A market.</span></li>
+    </ul>
+    <p class="intake-note reveal" style="--i:3">
+      You do not need a spec. Most of our best work started as a conversation
+      and a rough sense of who it was for.
+    </p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     BEAT 4 — COUPLINGS (capabilities)
+     ==================================================================== -->
+<section class="section capabilities defer" id="capabilities" aria-labelledby="cap-h">
+  <div class="shell">
+    <div class="section-head">
+      <span class="eyebrow">Capabilities</span>
+      <h2 id="cap-h">Four couplings on&nbsp;one&nbsp;shaft</h2>
+      <p class="lede">
+        Strategy through to shipping. Most firms hand you off between these;
+        we do not, which is why things actually land.
+      </p>
     </div>
 
+    <div class="cap-grid" id="cap-grid">
+      <article class="card cap reveal" style="--i:0" data-coupling="0">
+        <div class="cap-head"><span class="icon-frame"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span><p class="mono cap-index">01</p></div>
+        <h3>Product strategy</h3>
+        <p>We start where most firms start coding. What to build, what to cut, and what has to be true for it to work.</p>
+        <ul class="cap-points">
+          <li>Scope and roadmap</li><li>Product-market fit consulting</li><li>Go-to-market input</li>
+        </ul>
+      </article>
+      <article class="card cap reveal" style="--i:1" data-coupling="1">
+        <div class="cap-head"><span class="icon-frame"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 5.5h3"/><path d="M11 18.5h2"/></svg></span><p class="mono cap-index">02</p></div>
+        <h3>Mobile engineering</h3>
+        <p>Cross-platform and native. Apps live on both stores in four countries, carrying real users and real money.</p>
+        <ul class="cap-points">
+          <li>React Native</li><li>SwiftUI &amp; Kotlin</li><li>Payments, maps, real-time</li>
+        </ul>
+      </article>
+      <article class="card cap reveal" style="--i:2" data-coupling="2">
+        <div class="cap-head"><span class="icon-frame"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M6.5 7h.01M6.5 17h.01"/></svg></span><p class="mono cap-index">03</p></div>
+        <h3>Web &amp; platform</h3>
+        <p>The systems behind the app — APIs, dashboards, and the architecture that keeps them standing as load grows.</p>
+        <ul class="cap-points">
+          <li>React &amp; TypeScript</li><li>API and systems design</li><li>Performance and scale</li>
+        </ul>
+      </article>
+      <article class="card cap reveal" style="--i:3" data-coupling="3">
+        <div class="cap-head"><span class="icon-frame"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c3 2.2 4.8 5.6 4.8 9.4L12 17l-4.8-4.6C7.2 8.6 9 5.2 12 3Z"/><path d="M7.2 12.4 4.5 14l1.2 3.4 2.4-1.2M16.8 12.4 19.5 14l-1.2 3.4-2.4-1.2"/><circle cx="12" cy="9.5" r="1.6"/></svg></span><p class="mono cap-index">04</p></div>
+        <h3>Ship &amp; scale</h3>
+        <p>Getting it out, and keeping it out. Release pipelines, store submission, and team practices that survive you.</p>
+        <ul class="cap-points">
+          <li>CI/CD pipelines</li><li>Store submission</li><li>Team leadership and mentoring</li>
+        </ul>
+      </article>
+    </div>
 
+    <dl class="metrics" aria-label="Representative outcomes">
+      <div class="metric reveal" style="--i:0">
+        <dt class="mono"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2Z"/></svg> App performance</dt>
+        <dd class="metric-value gold-flat" data-count="80" data-prefix="+" data-suffix="%">+80%</dd>
+      </div>
+      <div class="metric reveal" style="--i:1">
+        <dt class="mono"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 8.5 4.5L12 12 3.5 7.5 12 3Z"/><path d="m3.5 12 8.5 4.5 8.5-4.5"/><path d="m3.5 16.5 8.5 4.5 8.5-4.5"/></svg> Codebase reduced</dt>
+        <dd class="metric-value gold-flat" data-count="70" data-prefix="−" data-suffix="%">−70%</dd>
+      </div>
+      <div class="metric reveal" style="--i:2">
+        <dt class="mono"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5a6 6 0 0 1 12 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6M17.5 19.5a6 6 0 0 0-2-4.5"/></svg> Engineers mentored</dt>
+        <dd class="metric-value gold-flat" data-count="5" data-suffix="+">5+</dd>
+      </div>
+      <div class="metric reveal" style="--i:3">
+        <dt class="mono"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3.5 9.5h17M3.5 14.5h17"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18Z"/></svg> Countries shipped in</dt>
+        <dd class="metric-value gold-flat" data-count="4">4</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ====================================================================
+     BEAT 5 — OUTPUT (work)
+     The WebGL dims to 0.25 through this section. Non-negotiable: the work
+     has to win, and the spectacle has to know when to get out of the way.
+     ==================================================================== -->
+<section class="section work defer" id="work" aria-labelledby="work-h">
+  <div class="shell">
+    <div class="section-head">
+      <span class="eyebrow">Output</span>
+      <h2 id="work-h">The work</h2>
+      <p class="lede">
+        Engagements led by our founder and the teams he ran — the practice
+        Cosmic Shaft was built to formalise. Seven products, four countries,
+        live on both stores.
+      </p>
+    </div>
+  </div>
+
+  <div class="work-list shell">
+
+    <article class="work-row reveal">
+      <div class="work-link" data-href="./work/chanakya-ai/">
+        <div class="work-media"><div class="device wipe">
+          <img src="./assets/img/work/chanakya.webp" alt="Chanakya AI application interface" width="327" height="663" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="work-body">
+          <p class="mono work-meta">Neurobridge Tech · India · 2024 — present</p>
+          <div class="icon-row work-title-row"><img class="app-icon" src="./assets/img/apps/chanakya.webp" alt="" width="56" height="56" loading="lazy" decoding="async"><h3 class="work-name"><a href="./work/chanakya-ai/">Chanakya AI</a></h3></div>
+          <p class="work-summary">An AI assistant for India, answering in nine Indian languages. Exam automation at national scale.</p>
+          <ul class="work-outcomes">
+            <li><b class="gold-flat">+80%</b> app performance</li>
+            <li><b class="gold-flat">−70%</b> codebase size</li>
+            <li><b class="gold-flat">5+</b> engineers mentored</li>
+          </ul>
+          <p class="mono work-stack">React Native · TypeScript · CI/CD · AppCenter</p>
+          <a class="work-more mono" href="./work/chanakya-ai/">Read the case study<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          <span class="store-badges"><a href="https://apps.apple.com/app/id6504797681" rel="noopener" aria-label="Chanakya AI on the App Store"><img src="./assets/img/appstore.png" alt="" width="102" height="34" loading="lazy" decoding="async"></a><a href="https://play.google.com/store/apps/details?id=tech.neurobridge.chanakya" rel="noopener" aria-label="Chanakya AI on Google Play"><img src="./assets/img/playstore.png" alt="" width="114" height="34" loading="lazy" decoding="async"></a></span>
+        </div>
+      </div>
+    </article>
+
+    <article class="work-row reveal">
+      <div class="work-link" data-href="./work/haulr/">
+        <div class="work-media"><div class="device wipe">
+          <img src="./assets/img/work/haulr.webp" alt="Haulr logistics application interface" width="327" height="663" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="work-body">
+          <p class="mono work-meta">Haulr Corp · United States · 2023 — present</p>
+          <div class="icon-row work-title-row"><img class="app-icon" src="./assets/img/apps/haulr.webp" alt="" width="56" height="56" loading="lazy" decoding="async"><h3 class="work-name"><a href="./work/haulr/">Haulr</a></h3></div>
+          <p class="work-summary">Construction logistics. Connects contractors with truck drivers, and tracks every load in real time.</p>
+          <ul class="work-outcomes">
+            <li><b class="gold-flat">Real-time</b> GPS fleet tracking</li>
+            <li><b class="gold-flat">Multi-tier</b> user architecture</li>
+            <li><b class="gold-flat">End-to-end</b> invoicing</li>
+          </ul>
+          <p class="mono work-stack">React Native · GPS / Maps · REST · Real-time</p>
+          <a class="work-more mono" href="./work/haulr/">Read the case study<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          <span class="store-badges"><a href="https://apps.apple.com/app/id6477397600" rel="noopener" aria-label="Haulr on the App Store"><img src="./assets/img/appstore.png" alt="" width="102" height="34" loading="lazy" decoding="async"></a><a href="https://play.google.com/store/apps/details?id=com.sarithm.haulrcorp" rel="noopener" aria-label="Haulr on Google Play"><img src="./assets/img/playstore.png" alt="" width="114" height="34" loading="lazy" decoding="async"></a></span>
+        </div>
+      </div>
+    </article>
+
+    <article class="work-row reveal">
+      <div class="work-link" data-href="./work/venyou/">
+        <div class="work-media"><div class="device wipe">
+          <img src="./assets/img/work/venyou.webp" alt="Venyou event discovery application interface" width="327" height="663" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="work-body">
+          <p class="mono work-meta">Venyou · Melbourne, Australia · 2021 — 2023</p>
+          <div class="icon-row work-title-row"><img class="app-icon" src="./assets/img/apps/venyou.webp" alt="" width="56" height="56" loading="lazy" decoding="async"><h3 class="work-name"><a href="./work/venyou/">Venyou</a></h3></div>
+          <p class="work-summary">Find a venue, book it, and meet everyone else who is going. Event discovery for the Australian market.</p>
+          <ul class="work-outcomes">
+            <li><b class="gold-flat">4</b> engineers led</li>
+            <li><b class="gold-flat">Real-time</b> chat over sockets</li>
+            <li><b class="gold-flat">OAuth2</b> social login</li>
+          </ul>
+          <p class="mono work-stack">React Native · Sockets · OAuth2 · Maps</p>
+          <a class="work-more mono" href="./work/venyou/">Read the case study<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          <span class="store-badges"><a href="https://apps.apple.com/app/id6471592710" rel="noopener" aria-label="Venyou on the App Store"><img src="./assets/img/appstore.png" alt="" width="102" height="34" loading="lazy" decoding="async"></a><a href="https://play.google.com/store/apps/details?id=com.venyou.app" rel="noopener" aria-label="Venyou on Google Play"><img src="./assets/img/playstore.png" alt="" width="114" height="34" loading="lazy" decoding="async"></a></span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="shell">
+    <h3 class="work-also-h eyebrow">Also shipped</h3>
+    <div class="work-also">
+      <article class="card work-mini reveal" style="--i:0">
+        <div class="icon-row work-mini-head"><img class="app-icon app-icon-sm" src="./assets/img/apps/playnoot.webp" alt="" width="38" height="38" loading="lazy" decoding="async"><h4>Playnoot</h4></div>
+        <p class="mono">India · 2022 — 2024</p>
+        <p>Sports venue booking with payments, slots and subscriptions. <b class="gold-flat">+70%</b> user engagement.</p>
+      </article>
+      <article class="card work-mini reveal" style="--i:1">
+        <div class="icon-row work-mini-head"><img class="app-icon app-icon-sm" src="./assets/img/apps/playwise.webp" alt="" width="38" height="38" loading="lazy" decoding="async"><h4>Playwise</h4></div>
+        <p class="mono">India · 2022 — 2023</p>
+        <p>A social platform for competitive gamers, live on iOS and Android.</p>
+      </article>
+      <article class="card work-mini reveal" style="--i:2">
+        <div class="icon-row work-mini-head"><img class="app-icon app-icon-sm" src="./assets/img/apps/ayuraid.webp" alt="" width="38" height="38" loading="lazy" decoding="async"><h4>AyurAid AI</h4></div>
+        <p class="mono">India · 2024 · Original</p>
+        <p>Ayurveda meets modern healthcare — personalised well-being, driven by AI.</p>
+      </article>
+      <article class="card work-mini reveal" style="--i:3">
+        <div class="icon-row work-mini-head"><img class="app-icon app-icon-sm" src="./assets/img/apps/singhaljain.webp" alt="" width="38" height="38" loading="lazy" decoding="async"><h4>Singhal Jain &amp; Co.</h4></div>
+        <p class="mono">India · 2022</p>
+        <p>Practice management for a chartered accountancy firm.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     BEAT 6 — PROOF
+     ==================================================================== -->
+<section class="section proof defer" aria-labelledby="proof-h">
+  <div class="shell">
+    <div class="section-head">
+      <span class="eyebrow">Proof</span>
+      <h2 id="proof-h">In their words</h2>
+    </div>
+
+    <div class="proof-grid">
+      <blockquote class="proof-quote reveal" style="--i:0">
+        <p>An invaluable asset as one of our lead developers. His technical proficiency and problem-solving skills have consistently impressed our team.</p>
+        <footer><cite><b>Miguel Brizuela</b><span class="mono">Founder &amp; President, Haulr Corp · United States</span><img class="proof-logo" src="./assets/img/brands/Haulr.webp" alt="" width="96" height="28" loading="lazy" decoding="async"></cite></footer>
+      </blockquote>
+      <blockquote class="proof-quote reveal" style="--i:1">
+        <p>Reduced our app size and made it dramatically faster. An indispensable resource on Chanakya AI.</p>
+        <footer><cite><b>Atharv Garg</b><span class="mono">AI/ML Lead, Neurobridge Tech · India</span><img class="proof-logo" src="./assets/img/brands/chanakya.webp" alt="" width="96" height="28" loading="lazy" decoding="async"></cite></footer>
+      </blockquote>
+      <blockquote class="proof-quote reveal" style="--i:2">
+        <p>Works independently and communicates clearly as an offshore resource — quickly becomes a key player on the team.</p>
+        <footer><cite><b>Samson Gudise</b><span class="mono">Product &amp; Cloud, sariThm · United States</span><img class="proof-logo" src="./assets/img/brands/sarithm.webp" alt="" width="96" height="28" loading="lazy" decoding="async"></cite></footer>
+      </blockquote>
+      <blockquote class="proof-quote reveal" style="--i:3">
+        <p>Deep React Native expertise and a genuinely creative approach to problem-solving. We worked together for over a year.</p>
+        <footer><cite><b>Ajay Kumar Sharma</b><span class="mono">Full Stack Developer, Playnoot · India</span><img class="proof-logo" src="./assets/img/brands/playnoot.webp" alt="" width="96" height="28" loading="lazy" decoding="async"></cite></footer>
+      </blockquote>
+      <blockquote class="proof-quote reveal" style="--i:4">
+        <p>An exceptional mobile application developer with a keen eye for detail and a thorough understanding of the craft.</p>
+        <footer><cite><b>Sunny Paliwal</b><span class="mono">Founder, Playwise · India</span><img class="proof-logo" src="./assets/img/brands/playwise.webp" alt="" width="96" height="28" loading="lazy" decoding="async"></cite></footer>
+      </blockquote>
+      <blockquote class="proof-quote reveal" style="--i:5">
+        <p>I struggled to find the right freelancer elsewhere. Exceptionally talented — he built exactly what we needed.</p>
+        <footer><cite><b>Spiro Alisandratos</b><span class="mono">Founder, Venyou · Australia</span><img class="proof-logo" src="./assets/img/brands/venyou.webp" alt="" width="96" height="28" loading="lazy" decoding="async"></cite></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     BEAT 7 — THE FIRM
+     ==================================================================== -->
+<section class="section firm defer" id="firm" aria-labelledby="firm-h">
+  <div class="shell firm-grid">
+    <div>
+      <div class="section-head">
+        <span class="eyebrow">The firm</span>
+        <h2 id="firm-h">Registered, and accountable</h2>
+      </div>
+      <p class="lede">
+        Cosmic Shaft is a registered proprietorship in Jaipur, India. That
+        matters more than it sounds: you are contracting with a firm that has
+        a registration number, an address, and something to lose.
+      </p>
+      <p>
+        We also publish our own products — software and games — under the same
+        name. The standard we hold client work to is the standard we hold our
+        own to.
+      </p>
+    </div>
+
+    <div class="firm-col">
+    <div class="firm-badge reveal"><span class="icon-frame"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5 4.5 5.5V11c0 5 3.2 9 7.5 10.5C16.3 20 19.5 16 19.5 11V5.5L12 2.5Z"/><path d="m9 11.8 2.2 2.2 4-4.2"/></svg></span><div><p class="mono">Government of India · MSME</p><p class="firm-badge-num">UDYAM-RJ-17-0684883</p></div></div>
+    <dl class="firm-facts">
+      <div class="firm-fact reveal" style="--i:0"><dt class="mono">Udyam registration</dt><dd>UDYAM-RJ-17-0684883</dd></div>
+      <div class="firm-fact reveal" style="--i:1"><dt class="mono">Enterprise type</dt><dd>Micro · Services</dd></div>
+      <div class="firm-fact reveal" style="--i:2"><dt class="mono">Incorporated</dt><dd>01 April 2024</dd></div>
+      <div class="firm-fact reveal" style="--i:3"><dt class="mono">Registered office</dt><dd>Jagatpura, Jaipur, Rajasthan 302017, India</dd></div>
+      <div class="firm-fact reveal" style="--i:4"><dt class="mono">Classified activity</dt><dd>Computer programming · Software publishing · Game publishing</dd></div>
+    </dl>
+    </div>
+  </div>
+
+  <div class="shell founder">
+    <picture class="founder-portrait reveal">
+      <source srcset="./assets/img/founder-720.webp" media="(min-width: 700px)">
+      <img src="./assets/img/founder-420.webp" alt="Suyash Vashishtha, Founder and Principal Engineer"
+           width="420" height="420" loading="lazy" decoding="async">
+    </picture>
+    <div class="founder-body reveal">
+      <p class="eyebrow">Founder</p>
+      <h3>Suyash Vashishtha</h3>
+      <p class="mono">Founder &amp; Principal Engineer</p>
+      <p>
+        Five years building and leading product teams across AI, EdTech,
+        logistics and SaaS — for clients in India, the United States and
+        Australia. Engineering lead on Chanakya AI. Jury member and mentor at
+        Smart India Hackathon 2025, Ministry of Education.
+      </p>
+      <p class="founder-links mono">
+        <a href="https://www.linkedin.com/in/suyashvashishtha" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7.5 10.5v6M7.5 7.6v.01"/><path d="M11.5 16.5v-6M11.5 13a2.5 2.5 0 0 1 5 0v3.5"/></svg> LinkedIn</a>
+        <a href="https://github.com/suyashvash" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 19c-4 1.2-4-2.2-5.5-2.8M15 21v-3.4a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6 2.6 5 2.9 5 2.9a4.3 4.3 0 0 0-.1 3.2A4.7 4.7 0 0 0 3.5 9.3c0 4.7 2.8 5.7 5.5 6a3 3 0 0 0-.8 2.3V21"/></svg> GitHub</a>
+        <a href="https://suyashvashishtha.com" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 14v4.5A1.5 1.5 0 0 1 16.5 20h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/></svg> Personal portfolio</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     BEAT 8 — CONTACT
+     ==================================================================== -->
+<section class="section contact defer" id="contact" aria-labelledby="contact-h">
+  <div class="shell contact-inner">
+    <div class="section-head">
+      <span class="eyebrow">Contact</span>
+      <h2 id="contact-h">Let's put it in motion.</h2>
+      <p class="lede">
+        Tell us what you are building and roughly when it needs to exist.
+        You will hear back from the person who would run the work, not a
+        salesperson.
+      </p>
+    </div>
+
+    <form class="contact-form" id="contact-form" novalidate>
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
+        <p class="field-error" id="e-name" hidden></p>
+      </div>
+
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email">
+        <p class="field-error" id="e-email" hidden></p>
+      </div>
+
+      <fieldset class="field field-group">
+        <legend>What do you need?</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="need" value="product" checked><span>Product strategy</span></label>
+          <label class="chip"><input type="radio" name="need" value="mobile"><span>Mobile app</span></label>
+          <label class="chip"><input type="radio" name="need" value="platform"><span>Web &amp; platform</span></label>
+          <label class="chip"><input type="radio" name="need" value="team"><span>A team</span></label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="f-message">What are you building?</label>
+        <textarea id="f-message" name="message" rows="5" required aria-describedby="e-message"></textarea>
+        <p class="field-error" id="e-message" hidden></p>
+      </div>
+
+      <button class="btn btn-primary contact-submit" type="submit">Send it</button>
+      <p class="form-status mono" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="contact-direct">
+      <p class="eyebrow">Or directly</p>
+      <p class="icon-row"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><a href="mailto:suyashvashishtha@gmail.com">suyashvashishtha@gmail.com</a></p>
+      <p class="icon-row"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5L16 12l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3Z"/></svg><a href="tel:+916378138062">+91 63781 38062</a></p>
+      <p class="mono icon-row"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Jagatpura, Jaipur, Rajasthan 302017, India</span></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ====================================================================
+     BEAT 9 — FOOTER
+     ==================================================================== -->
+<footer class="footer">
+  <div class="shell">
+    <p class="footer-word gold" aria-hidden="true">COSMIC SHAFT</p>
+    <div class="footer-meta">
+      <p class="mono">Cosmic Shaft · Udyam UDYAM-RJ-17-0684883 · Jaipur, India</p>
+      <nav class="footer-links mono" aria-label="Footer">
+        <a href="#work">Work</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#firm">Firm</a>
+        <a href="./legal/privacy/">Privacy</a>
+        <a href="./legal/terms/">Terms</a>
+      </nav>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/suyashvashishtha" rel="noopener" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7.5 10.5v6M7.5 7.6v.01"/><path d="M11.5 16.5v-6M11.5 13a2.5 2.5 0 0 1 5 0v3.5"/></svg></a>
+        <a href="https://github.com/suyashvash" rel="noopener" aria-label="GitHub"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 19c-4 1.2-4-2.2-5.5-2.8M15 21v-3.4a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6 2.6 5 2.9 5 2.9a4.3 4.3 0 0 0-.1 3.2A4.7 4.7 0 0 0 3.5 9.3c0 4.7 2.8 5.7 5.5 6a3 3 0 0 0-.8 2.3V21"/></svg></a>
+        <a href="https://twitter.com/SuyashVashisht1" rel="noopener" aria-label="X"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 3h4.2l5 6.8L17.8 3H21l-7.3 8.6L21.4 21h-4.2l-5.3-7.2L5.6 21H2.4l7.7-9L3 3Z"/></svg></a>
+        <a href="https://instagram.com/suyash.codes" rel="noopener" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8h.01"/></svg></a>
+      </div>
+      <p class="mono">© 2026 Cosmic Shaft. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="./js/main.js?v=2026-09-15"></script>
 </body>
-
-<script>
-    console.log(`%c%s%c%s`,
-        'color: #EEB75D; font-size: 14px;background: #101010;padding:5px', // style for heading (yellow color, bigger font)
-        'Ohh so you like stalking, huh ?',
-        'color: #9f9f9f; font-size: 12px;background: #101010;padding:5px', // style for body (red color, smaller font)
-        'Really Dude ? 😂'
-    );
-</script>
-
-<script>
-    function signalDOM() {
-        console.log("Video Loaded");
-    }
-</script>
-
-<script>
-    function handleOpenForm() {
-        openContactModal()
-
-        const dateTime = new Date().getTime();
-        const userAgent = navigator.userAgent;
-        const referrer = document.referrer;
-        const language = navigator.language || navigator.userLanguage;
-
-        const body = {
-            dateTime,
-            userAgent,
-            referrer,
-            language,
-            eventName: 'form_opened',
-            data: null
-        }
-        logFirebase(body)
-    }
-</script>
-
-<script>
-    function recordInputEvent(eventName, id) {
-        const dateTime = new Date().getTime();
-        const userAgent = navigator.userAgent;
-        const referrer = document.referrer;
-        const language = navigator.language || navigator.userLanguage;
-
-        const body = {
-            dateTime,
-            userAgent,
-            referrer,
-            language,
-            eventName,
-            data: document.getElementById(id).value
-        }
-        logFirebase(body)
-        gtag('event', body.eventName)
-    }
-
-</script>
-
-
-<script src="src/js/domObserver.js"></script>
-<script src="src/js/workHandler.js"></script>
-
-<script src="src/js/testimonialModalHandler.js"></script>
-<script src="src/js/testScrollHandler.js"></script>
-
-
 </html>

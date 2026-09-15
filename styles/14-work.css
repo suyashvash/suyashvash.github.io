@@ -1,0 +1,150 @@
+/* ========================================================================== Work */
+
+.work-list { display: grid; gap: var(--s-32); margin-bottom: var(--s-32); }
+
+.work-link {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--s-16);
+  align-items: center;
+  padding: var(--s-8);
+  margin-inline: calc(var(--s-8) * -1);
+  border: 1px solid transparent;
+  border-radius: var(--r-2);
+  transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+}
+.work-link:hover { border-color: var(--hairline); background: rgba(229,180,95,.03); }
+
+.work-row:nth-child(even) .work-link { direction: rtl; }
+.work-row:nth-child(even) .work-body { direction: ltr; }
+
+/* The device frame is drawn in CSS rather than loaded as a 729 KB PNG —
+   a few hundred bytes, and crisp at every device pixel ratio. */
+.work-media {
+  display: grid;
+  place-items: center;
+  padding-block: var(--s-8);
+  position: relative;
+}
+/* A gold pool of light behind the phone, so it sits in the scene. */
+.work-media::before {
+  content: '';
+  position: absolute;
+  inset: 12% 8%;
+  background: radial-gradient(ellipse at center, rgba(229,180,95,.13), transparent 68%);
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.device {
+  position: relative;
+  width: min(268px, 72%);
+  aspect-ratio: 327 / 663;
+  padding: 9px;
+  border-radius: 34px;
+  background: linear-gradient(155deg, #33384A, #14171F 45%, #0E1017 70%, #2A2F3D);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.07),
+    0 24px 60px -18px rgba(0,0,0,.85),
+    0 0 48px -14px rgba(229,180,95,.22);
+  transition: transform var(--dur-3) var(--ease), box-shadow var(--dur-3) var(--ease);
+}
+.device-lg { width: min(320px, 80%); }
+
+.device img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 26px;
+  background: var(--surface-2);
+}
+
+/* Notch. */
+.device::before {
+  content: '';
+  position: absolute;
+  top: 9px; left: 50%;
+  transform: translateX(-50%);
+  width: 34%; height: 18px;
+  background: #0B0D13;
+  border-radius: 0 0 12px 12px;
+  z-index: 2;
+}
+/* Screen sheen — a single diagonal highlight reads as glass. */
+.device::after {
+  content: '';
+  position: absolute;
+  inset: 9px;
+  border-radius: 26px;
+  background: linear-gradient(118deg, rgba(255,255,255,.10) 0%, transparent 34%, transparent 70%, rgba(255,255,255,.05) 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.work-link:hover .device {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 0 1px rgba(229,180,95,.22),
+    0 34px 70px -18px rgba(0,0,0,.9),
+    0 0 64px -12px rgba(229,180,95,.34);
+}
+
+.work-meta { margin-bottom: var(--s-4); }
+.work-name { font-size: var(--step-5); margin-bottom: var(--s-4); }
+.work-summary { font-size: var(--step-1); color: var(--text-2); margin-bottom: var(--s-6); max-width: 40ch; }
+
+.work-outcomes { display: grid; gap: var(--s-2); margin-bottom: var(--s-6); }
+.work-outcomes li {
+  font-size: var(--step--1);
+  color: var(--text-3);
+  font-family: var(--font-mono);
+}
+.work-outcomes b { font-family: var(--font-display); font-weight: 300; margin-right: var(--s-2); }
+
+.work-stack { margin-bottom: var(--s-6); color: var(--text-3); }
+
+.work-more {
+  color: var(--gold-500);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: letter-spacing var(--dur-2) var(--ease);
+}
+.work-link:hover .work-more { letter-spacing: .2em; }
+
+.work-also-h { margin-bottom: var(--s-8); }
+.work-also {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--s-4);
+}
+.work-mini h4 { margin-bottom: var(--s-2); }
+.work-mini .mono { margin-bottom: var(--s-4); display: block; }
+.work-mini p { font-size: var(--step--1); }
+
+@media (max-width: 860px) {
+  .work-link,
+  .work-row:nth-child(even) .work-link { grid-template-columns: 1fr; direction: ltr; gap: var(--s-8); }
+  .work-list { gap: var(--s-24); }
+  /* The bleed-out negative margin made the row wider than the viewport. */
+  .work-link { padding: var(--s-4); margin-inline: calc(var(--s-4) * -1); }
+  .device { width: min(232px, 66%); }
+}
+
+@media (max-width: 420px) {
+  .work-link { padding: var(--s-2); margin-inline: 0; }
+}
+
+/* The CTA arrow was wrapping onto its own line. */
+.work-more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  white-space: nowrap;
+}
+.work-name a { transition: color var(--dur-1) var(--ease); }
+.work-link:hover .work-name a { color: var(--gold-300); }
+
+/* The whole card is clickable as an enhancement; the real anchors above
+   are what keyboard and screen-reader users actually traverse. */
+.work-link[data-href] { cursor: pointer; }

@@ -1,0 +1,44 @@
+/* ========================================================================== Preloader
+   Loading progress IS the line's height — no spinner, no percentage.
+   The line is the shaft seen end-on, in silhouette.
+
+   It resolves on DOMContentLoaded + fonts, never on the 3D scene, and has
+   its own hard timeout in JS. A low-end device must never sit here. */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  display: grid;
+  place-content: center;
+  gap: var(--s-8);
+  justify-items: center;
+  background: var(--void);
+  transition: opacity var(--dur-3) var(--ease), visibility var(--dur-3);
+}
+.preloader.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.preloader-line {
+  width: 1px;
+  height: 120px;
+  background: var(--hairline-2);
+  transition: transform var(--dur-3) var(--ease);
+}
+/* At 100% the line rotates into horizontal rather than fading. */
+.preloader.is-done .preloader-line { transform: rotate(90deg); }
+
+.preloader-line i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-500);
+  box-shadow: 0 0 16px rgba(229,180,95,.7);
+  transform: scaleY(var(--load, 0));
+  transform-origin: bottom;
+  transition: transform var(--dur-2) var(--ease);
+}
+
+.preloader-reg { color: var(--text-3); letter-spacing: .32em; }
+
+/* No JS, no preloader — otherwise it would cover the page forever. */
+html:not(.js) .preloader { display: none; }

@@ -1,0 +1,12 @@
+{
+  "name": "Cosmic Shaft",
+  "short_name": "Cosmic Shaft",
+  "description": "Product engineering firm. Jaipur, India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08090C",
+  "theme_color": "#08090C",
+  "icons": [
+    { "src": "/assets/favicon/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

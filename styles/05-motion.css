@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Motion / reveals
+
+   These run at EVERY tier including tier 0 — they are pure CSS and cost
+   nothing. This is why the fallback still feels premium: the typography was
+   always doing most of the work.
+
+   CRITICAL: every hidden-initial state is scoped to .js, which an inline
+   script in <head> sets before first paint. Without that scope, a JS failure
+   would leave a blank page — and Googlebot would index nothing.
+   ========================================================================== */
+
+/* ---- Masked line reveal — the single technique that does most of the
+   heavy lifting in making type feel expensive. ------------------------- */
+
+.line-mask {
+  display: block;
+  overflow: hidden;
+}
+
+.js .line-mask > span {
+  display: block;
+  transform: translateY(110%);
+  transition: transform var(--dur-4) var(--ease);
+}
+
+.js .is-in .line-mask > span,
+.js .line-mask.is-in > span {
+  transform: translateY(0);
+}
+
+/* Stagger via a per-element index set in markup or by JS. */
+.js .line-mask > span { transition-delay: calc(var(--i, 0) * var(--stagger)); }
+
+/* ---- Fade + rise ------------------------------------------------------- */
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-3) var(--ease), transform var(--dur-3) var(--ease);
+  transition-delay: calc(var(--i, 0) * var(--stagger));
+}
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+/* ---- Hairline draw ----------------------------------------------------- */
+
+.js .draw {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-3) var(--ease);
+  transition-delay: calc(var(--i, 0) * var(--stagger));
+}
+.js .draw.is-in { transform: scaleX(1); }
+
+/* ---- Image wipe — a clip-path inset plus a counter-scale reads as a lens,
+   not a fade. --------------------------------------------------------- */
+
+.js .wipe { overflow: hidden; }
+.js .wipe > img {
+  clip-path: inset(0 0 100% 0);
+  transform: scale(1.06);
+  transition: clip-path var(--dur-4) var(--ease), transform 1400ms var(--ease);
+}
+.js .wipe.is-in > img {
+  clip-path: inset(0 0 0 0);
+  transform: scale(1);
+}
+
+/* ---- Brightening text — colour only, no transform ---------------------- */
+
+.brighten span {
+  color: var(--text-3);
+  transition: color var(--dur-2) var(--ease);
+}
+.brighten span.is-lit { color: var(--text-1); }
+
+/* ---- Marquee ----------------------------------------------------------- */
+
+.marquee {
+  overflow: hidden;
+  max-width: 100vw;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: var(--s-16);
+  width: max-content;
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+/* ---- Starfield drift — two layers, opposite directions, different speeds.
+   Transform-only, so it runs on the compositor: 0% main thread, no rAF. -- */
+
+.drift-a { animation: drift-a 180s linear infinite; }
+.drift-b { animation: drift-b 300s linear infinite; }
+@keyframes drift-a {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-6%, 4%, 0); }
+}
+@keyframes drift-b {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(5%, -3%, 0); }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Venyou — Cosmic Shaft</title>
+<meta name="description" content="Event and venue discovery for the Australian market, with real-time chat and GPS-based search.">
+<meta name="theme-color" content="#08090C">
+<link rel="canonical" href="https://cosmicshaft.com/work/venyou/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cosmic Shaft">
+<meta property="og:title" content="Venyou — Cosmic Shaft">
+<meta property="og:description" content="Event and venue discovery for the Australian market, with real-time chat and GPS-based search.">
+<meta property="og:url" content="https://cosmicshaft.com/work/venyou/">
+<meta property="og:image" content="https://cosmicshaft.com/assets/img/og/cosmic-shaft-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../styles/01-tokens.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/02-reset.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/03-type.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/04-layout.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/05-motion.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/06-icons.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/10-nav.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/17-contact.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/20-case.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/91-reduced-motion.css?v=2026-09-15">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Venyou",
+  "about": "Event and venue discovery for the Australian market, with real-time chat and GPS-based search.",
+  "url": "https://cosmicshaft.com/work/venyou/",
+  "creator": { "@type": "Organization", "name": "Cosmic Shaft", "url": "https://cosmicshaft.com/" }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="backdrop-still" aria-hidden="true"></div>
+
+<header class="nav is-stuck" id="nav">
+  <div class="nav-inner shell">
+    <a class="nav-brand" href="../../" aria-label="Cosmic Shaft, home">
+      <span class="nav-mark" aria-hidden="true"></span>
+      <span class="nav-word">Cosmic&nbsp;Shaft</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="../../#work">Work</a>
+      <a href="../../#capabilities">Capabilities</a>
+      <a href="../../#firm">Firm</a>
+      <a href="../../#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary nav-cta" href="../../#contact">Start a project</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article>
+<section class="case-hero shell">
+  <a class="case-back" href="../../#work">← All work</a>
+  <p class="eyebrow">Venyou · Melbourne, Australia</p>
+  <h1 class="case-title">Venyou</h1>
+  <p class="lede">Find a venue, book it, and meet everyone else who is going. Event discovery built for the Australian market — and the first team our founder led end to end.</p>
+
+  <dl class="case-meta">
+    <div><dt>Client</dt><dd>Venyou</dd></div>
+    <div><dt>Engagement</dt><dd>2021 — 2023</dd></div>
+    <div><dt>Role</dt><dd>Lead developer, 4-person team</dd></div>
+    <div><dt>Stack</dt><dd>React Native · Sockets · OAuth2 · Maps</dd></div>
+  </dl>
+
+  <figure class="case-figure"><div class="device device-lg wipe">
+    <img src="../../assets/img/work/venyou.webp" alt="Venyou application interface" width="327" height="663" fetchpriority="high" decoding="async">
+    </div>
+  </figure>
+</section>
+
+<section class="shell case-body">
+  <div>
+    <h2>The problem</h2>
+    <p>Venue discovery apps usually solve half the problem: they help you find somewhere, then abandon you. Venyou's thesis was that the interesting part is social — that the reason you go to an event is partly who else is going, and an app that knows that can do something the listing sites cannot.</p>
+    <p>That makes it a harder build than it looks. Discovery, booking, and real-time social all in one product, for a market with its own expectations.</p>
+  </div>
+
+  <div>
+    <h2>What we built</h2>
+    <ul>
+      <li>GPS-based discovery of events and venues, with maps and pathfinding for getting there</li>
+      <li>Real-time chat over sockets, so attendees of an event can actually talk before it happens</li>
+      <li>OAuth2 authentication with social login, because friction at sign-up kills a social product</li>
+      <li>Direct venue booking from inside the app</li>
+      <li>An ads and notifications layer for the business model</li>
+    </ul>
+    <p>Shipped on both the App Store and Google Play.</p>
+  </div>
+
+  <div>
+    <h2>Leading the team</h2>
+    <p>This was a four-person engineering team, and the first one our founder ran end to end. Real-time features are where a team either learns to coordinate or produces something that works on one machine and nowhere else — socket state, presence, and reconnection logic do not survive four people each solving them their own way.</p>
+    <p>Spiro Alisandratos, Venyou's founder, had struggled to find the right freelancer before this engagement. That is a common story, and it is part of why Cosmic Shaft exists as a firm rather than an individual: a firm can be held to a standard, and can put more than one person behind a commitment.</p>
+  </div>
+
+  <dl class="case-outcomes">
+    <div class="case-outcome reveal" style="--i:0"><dt>Engineers led</dt><dd>4</dd></div>
+    <div class="case-outcome reveal" style="--i:1"><dt>Chat</dt><dd>Real-time</dd></div>
+    <div class="case-outcome reveal" style="--i:2"><dt>Auth</dt><dd>OAuth2</dd></div>
+    <div class="case-outcome reveal" style="--i:3"><dt>Platforms</dt><dd>iOS + Android</dd></div>
+  </dl>
+
+  <div class="case-next">
+    <a class="btn btn-primary" href="../../#contact">Start a project</a>
+    <a class="btn btn-ghost" href="../../#work">See other work</a>
+  </div>
+</section>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-meta">
+      <p class="mono">Cosmic Shaft · Udyam UDYAM-RJ-17-0684883 · Jaipur, India</p>
+      <nav class="footer-links mono" aria-label="Footer">
+        <a href="../../#work">Work</a>
+        <a href="../../#firm">Firm</a>
+        <a href="../../legal/privacy/">Privacy</a>
+        <a href="../../legal/terms/">Terms</a>
+      </nav>
+      <p class="mono">© 2026 Cosmic Shaft.</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+  import { initNav } from '../../js/ui/nav.js';
+  import { initReveals } from '../../js/ui/reveal.js';
+  initNav();
+  initReveals();
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* ========================================================================== Contact + footer */
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--s-16);
+  align-items: start;
+}
+.contact-inner .section-head { grid-column: 1 / -1; }
+
+.contact-form { display: grid; gap: var(--s-8); }
+
+.field { display: grid; gap: var(--s-3); }
+.field label,
+.field legend {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.field input,
+.field textarea {
+  width: 100%;
+  padding: var(--s-4) var(--s-5);
+  min-height: 48px;
+  background: var(--surface-1);
+  border: 1px solid var(--hairline-2);
+  border-radius: var(--r-1);
+  color: var(--text-1);
+  transition: border-color var(--dur-1) var(--ease), background var(--dur-1) var(--ease);
+}
+.field input:hover, .field textarea:hover { border-color: var(--rule); }
+.field input:focus, .field textarea:focus { border-color: var(--gold-500); background: var(--surface-2); }
+.field textarea { resize: vertical; }
+
+.field-group { border: 0; padding: 0; margin: 0; display: grid; gap: var(--s-3); }
+
+.field-error { color: #FF9B8A; font-family: var(--font-mono); font-size: var(--step--1); }
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] { border-color: #FF9B8A; }
+
+.chips { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+.chip { position: relative; }
+.chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--s-3) var(--s-6);
+  border: 1px solid var(--hairline-2);
+  border-radius: var(--r-1);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: .08em;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: border-color var(--dur-1) var(--ease), color var(--dur-1) var(--ease), background var(--dur-1) var(--ease);
+}
+.chip input:checked + span { border-color: var(--gold-500); color: var(--gold-500); background: rgba(229,180,95,.07); }
+.chip input:focus-visible + span { outline: 2px solid var(--gold-500); outline-offset: 3px; }
+
+.contact-submit { justify-self: start; margin-top: var(--s-2); }
+.form-status { min-height: 1.5em; color: var(--text-3); }
+.form-status[data-state="ok"] { color: var(--gold-500); }
+.form-status[data-state="error"] { color: #FF9B8A; }
+
+.contact-direct { display: grid; gap: var(--s-3); align-content: start; }
+.contact-direct p { margin: 0; }
+.contact-direct a {
+  color: var(--text-1);
+  border-bottom: 1px solid var(--hairline);
+  transition: color var(--dur-1) var(--ease), border-color var(--dur-1) var(--ease);
+}
+.contact-direct a:hover { color: var(--gold-500); border-bottom-color: var(--gold-500); }
+
+@media (max-width: 860px) {
+  .contact-inner { grid-template-columns: 1fr; }
+}
+
+/* ---- Footer ------------------------------------------------------------ */
+
+.footer {
+  position: relative;
+  z-index: var(--z-content);
+  padding-block: var(--s-24) var(--s-8);
+  border-top: 1px solid var(--hairline-2);
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.5));
+}
+
+/* Very large outline wordmark that fills with gold as it scrolls in. */
+.footer-word {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--step-mega);
+  line-height: .85;
+  letter-spacing: -.04em;
+  white-space: nowrap;
+  margin-bottom: var(--s-12);
+  background-size: 220% 100%;
+  background-position: var(--sheen-pos, 100%) 0;
+  transition: background-position 1600ms var(--ease);
+}
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-4);
+  padding-top: var(--s-8);
+  border-top: 1px solid var(--hairline-2);
+}
+.footer-meta p { margin: 0; color: var(--text-3); }
+.footer-links { display: flex; flex-wrap: wrap; gap: var(--s-6); }
+.footer-links a { color: var(--text-3); transition: color var(--dur-1) var(--ease); }
+.footer-links a:hover { color: var(--gold-500); }

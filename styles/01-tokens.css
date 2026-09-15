@@ -1,0 +1,104 @@
+/* ==========================================================================
+   COSMIC SHAFT — design tokens
+   Palette: "Vacuum & Filament"
+   ========================================================================== */
+
+:root {
+  /* ---- Void -------------------------------------------------------------
+     Not pure black. #000 under gold reads harsh and cheap on OLED;
+     a blue-black reads as space. */
+  --void:        #08090C;
+  --surface-1:   #14171E;
+  --surface-2:   #1C2029;
+  --rule:        #262B36;
+  --hairline:    rgba(229, 180, 95, .14);
+  --hairline-2:  rgba(255, 255, 255, .06);
+
+  /* ---- Gold — the machine, and its output -------------------------------
+     A half-step cooler and brassier than the inherited #EEB75D so brand
+     equity carries over from the personal site.
+
+     ⚠ CONTRAST RULE: gold buttons take NEAR-BLACK labels.
+       #08090C on --gold-500 = 10.45:1  ✓
+       #FFFFFF on --gold-500 =  1.90:1  ✗ forbidden */
+  --gold-100:    #F7E3BC;
+  --gold-300:    #EFCB8E;
+  --gold-500:    #E5B45F;
+  --gold-600:    #C9963F;
+  --gold-800:    #8A6526;
+  --gold-sheen:  linear-gradient(105deg, #8A6526, #F7E3BC 45%, #E5B45F 60%, #8A6526);
+
+  /* ---- Plasma — raw energy ----------------------------------------------
+     ⚠ BRAND RULE: plasma may appear ONLY in light and motion — nebula,
+     particles, glows. NEVER in UI chrome, borders, or type. That discipline
+     is what stops this becoming a generic purple-gradient SaaS site.
+
+     --plasma-violet is decorative only (3.88:1 on surface-2 — fails AA).
+     Text-safe plasma is --plasma-300 (10.74:1). */
+  --plasma-300:   #A9BCFF;
+  --plasma-500:   #6C8CFF;
+  --plasma-violet:#7B61FF;
+  --plasma-deep:  #2B2270;
+
+  /* ---- Ink — warm off-white, never pure #FFF ---------------------------- */
+  --text-1:      #F7F5F1;   /* 17.81:1 on void */
+  --text-2:      #CFCCC5;   /*  9.83:1 */
+  --text-3:      #A3A199;   /*  6.48:1 — the muted FLOOR, do not go darker */
+
+  /* ---- Type ------------------------------------------------------------- */
+  --font-display: 'Unbounded', 'Unbounded Fallback', system-ui, sans-serif;
+  --font-body:    'Instrument Sans', 'Instrument Sans Fallback', system-ui, sans-serif;
+  --font-mono:    ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+
+  /* Fluid modular scale — base 17px, ratio 1.25, 390px → 1440px */
+  --step--1: clamp(0.8438rem, 0.832rem + 0.048vw, 0.875rem);
+  --step-0:  clamp(1.0625rem, 1.03rem + 0.12vw, 1.125rem);
+  --step-1:  clamp(1.125rem,  1.055rem + 0.286vw, 1.312rem);
+  --step-2:  clamp(1.312rem,  1.185rem + 0.524vw, 1.656rem);
+  --step-3:  clamp(1.5rem,    1.291rem + 0.857vw, 2.062rem);
+  --step-4:  clamp(1.75rem,   1.437rem + 1.286vw, 2.594rem);
+  --step-5:  clamp(2rem,      1.536rem + 1.905vw, 3.25rem);
+  --step-6:  clamp(2.375rem,  1.748rem + 2.571vw, 4.062rem);
+  --step-7:  clamp(2.75rem,   1.891rem + 3.524vw, 5.062rem);
+  --step-8:  clamp(3.125rem,  1.941rem + 4.857vw, 6.312rem);
+  --step-9:  clamp(3.5rem,    1.852rem + 6.762vw, 7.938rem);
+  --step-mega: clamp(4rem, 1rem + 16vw, 16rem);
+
+  /* ---- Space — 4px base, generous tail ---------------------------------- */
+  --s-1: .25rem;  --s-2: .5rem;   --s-3: .75rem;  --s-4: 1rem;
+  --s-6: 1.5rem;  --s-8: 2rem;    --s-12: 3rem;   --s-16: 4rem;
+  --s-24: 6rem;   --s-32: 8rem;   --s-40: 10rem;  --s-50: 12.5rem;
+
+  --section-pad: clamp(4.5rem, 2.457rem + 8.381vw, 10rem);
+  --gutter:      clamp(1.25rem, 0.6rem + 2.667vw, 3rem);
+  --measure:     68ch;
+  --max-w:       1440px;
+
+  /* ---- Motion — ONE curve, four durations, one stagger, no exceptions.
+     Uniform easing across the whole site is the actual mechanism by which
+     restraint reads as expensive. ----------------------------------------- */
+  --ease:       cubic-bezier(.16, 1, .3, 1);
+  --ease-inout: cubic-bezier(.65, 0, .35, 1);
+  --dur-1: 200ms;
+  --dur-2: 450ms;
+  --dur-3: 900ms;
+  --dur-4: 1100ms;
+  --stagger: 90ms;
+
+  /* ---- Radii — luxury and mechanical both mean SHARP -------------------- */
+  --r-1: 2px;
+  --r-2: 4px;
+
+  --z-canvas: 0;
+  --z-content: 1;
+  --z-nav: 50;
+  --z-preloader: 100;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --hairline:   rgba(229, 180, 95, .45);
+    --hairline-2: rgba(255, 255, 255, .28);
+    --text-3:     var(--text-2);
+  }
+}

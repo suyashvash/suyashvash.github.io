@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chanakya AI — Cosmic Shaft</title>
+<meta name="description" content="How Cosmic Shaft made an AI EdTech product 80% faster while cutting 70% of its codebase.">
+<meta name="theme-color" content="#08090C">
+<link rel="canonical" href="https://cosmicshaft.com/work/chanakya-ai/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cosmic Shaft">
+<meta property="og:title" content="Chanakya AI — Cosmic Shaft">
+<meta property="og:description" content="How Cosmic Shaft made an AI EdTech product 80% faster while cutting 70% of its codebase.">
+<meta property="og:url" content="https://cosmicshaft.com/work/chanakya-ai/">
+<meta property="og:image" content="https://cosmicshaft.com/assets/img/og/cosmic-shaft-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../styles/01-tokens.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/02-reset.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/03-type.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/04-layout.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/05-motion.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/06-icons.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/10-nav.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/17-contact.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/20-case.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/91-reduced-motion.css?v=2026-09-15">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Chanakya AI",
+  "about": "How Cosmic Shaft made an AI EdTech product 80% faster while cutting 70% of its codebase.",
+  "url": "https://cosmicshaft.com/work/chanakya-ai/",
+  "creator": { "@type": "Organization", "name": "Cosmic Shaft", "url": "https://cosmicshaft.com/" }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="backdrop-still" aria-hidden="true"></div>
+
+<header class="nav is-stuck" id="nav">
+  <div class="nav-inner shell">
+    <a class="nav-brand" href="../../" aria-label="Cosmic Shaft, home">
+      <span class="nav-mark" aria-hidden="true"></span>
+      <span class="nav-word">Cosmic&nbsp;Shaft</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="../../#work">Work</a>
+      <a href="../../#capabilities">Capabilities</a>
+      <a href="../../#firm">Firm</a>
+      <a href="../../#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary nav-cta" href="../../#contact">Start a project</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article>
+<section class="case-hero shell">
+  <a class="case-back" href="../../#work">← All work</a>
+  <p class="eyebrow">Neurobridge Tech · India</p>
+  <h1 class="case-title">Chanakya AI</h1>
+  <p class="lede">An AI assistant built for India, answering in nine Indian languages — and the engineering work that made it fast enough to be usable at national scale.</p>
+
+  <dl class="case-meta">
+    <div><dt>Client</dt><dd>Neurobridge Tech</dd></div>
+    <div><dt>Engagement</dt><dd>2024 — present</dd></div>
+    <div><dt>Role</dt><dd>Engineering lead, product &amp; delivery</dd></div>
+    <div><dt>Stack</dt><dd>React Native · TypeScript · CI/CD</dd></div>
+  </dl>
+
+  <figure class="case-figure"><div class="device device-lg wipe">
+    <img src="../../assets/img/work/chanakya.webp" alt="Chanakya AI application interface" width="327" height="663" fetchpriority="high" decoding="async">
+    </div>
+  </figure>
+</section>
+
+<section class="shell case-body">
+  <div>
+    <h2>The problem</h2>
+    <p>Chanakya AI had product-market fit and a serious engineering problem. The app worked, but it was heavy, slow to start, and getting slower with every release. Technical debt had reached the point where shipping a feature meant risking a regression somewhere unrelated, and the team was spending more time firefighting than building.</p>
+    <p>The brief was not "add features". It was: make this fast, make it maintainable, and make releases boring.</p>
+  </div>
+
+  <div>
+    <h2>What we did</h2>
+    <h3>Performance</h3>
+    <p>The biggest wins came from how the app handled real-time server-side events. We introduced batch and frame processing so that a burst of incoming events no longer blocked the UI thread — the difference between an app that stutters under load and one that does not.</p>
+    <p>Alongside that, we went after app size and start-up cost directly: dead code removal, dependency audit, and rebuilding the parts of the render tree that were doing far more work than they needed to.</p>
+
+    <h3>Codebase</h3>
+    <p>Roughly seventy per cent of the codebase came out. Not by deleting features — by removing duplication, collapsing three near-identical implementations of the same thing into one, and deleting code paths that had been dead for months but were still being maintained by accident.</p>
+
+    <h3>Release process</h3>
+    <p>We put CI/CD pipelines in through AppCenter. Releases went from a manual event that someone had to own for a day, to something that happened on merge.</p>
+
+    <h3>The team</h3>
+    <p>Five-plus engineers were mentored through this, with coding standards documented and enforced rather than assumed. The point of that work is that the improvement survives us — a codebase that gets fast once and slowly degrades again has not actually been fixed.</p>
+  </div>
+
+  <div>
+    <h2>Beyond the code</h2>
+    <p>We consulted directly with the founders on product-market fit and go-to-market strategy. That is not scope creep; it is the reason the engineering decisions were the right ones. Knowing which markets mattered most told us which languages to optimise the model routing for first.</p>
+  </div>
+
+  <dl class="case-outcomes">
+    <div class="case-outcome reveal" style="--i:0"><dt>App performance</dt><dd>+80%</dd></div>
+    <div class="case-outcome reveal" style="--i:1"><dt>Codebase reduced</dt><dd>−70%</dd></div>
+    <div class="case-outcome reveal" style="--i:2"><dt>Engineers mentored</dt><dd>5+</dd></div>
+    <div class="case-outcome reveal" style="--i:3"><dt>Release cycle</dt><dd>Automated</dd></div>
+  </dl>
+
+  <div class="case-next">
+    <a class="btn btn-primary" href="../../#contact">Start a project</a>
+    <a class="btn btn-ghost" href="../../#work">See other work</a>
+  </div>
+</section>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-meta">
+      <p class="mono">Cosmic Shaft · Udyam UDYAM-RJ-17-0684883 · Jaipur, India</p>
+      <nav class="footer-links mono" aria-label="Footer">
+        <a href="../../#work">Work</a>
+        <a href="../../#firm">Firm</a>
+        <a href="../../legal/privacy/">Privacy</a>
+        <a href="../../legal/terms/">Terms</a>
+      </nav>
+      <p class="mono">© 2026 Cosmic Shaft.</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+  import { initNav } from '../../js/ui/nav.js';
+  import { initReveals } from '../../js/ui/reveal.js';
+  initNav();
+  initReveals();
+</script>
+</body>
+</html>

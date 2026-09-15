@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Tier overrides — [data-tier="0|1|2|3"] on <html>
+
+   THE CONTRACT: tier 0 must look like the SAME SITE. Same palette, same type
+   scale, same layout, same copy, same gold hairlines. Only motion and depth
+   degrade. A visitor on a budget Android should feel they got a fast, calm
+   version of a premium site — not the cheap version.
+
+   Everything below therefore changes DEPTH and MOTION only. There is not one
+   rule here that alters a colour, a font size, or a layout.
+   ========================================================================== */
+
+/* ---- Tier 0 — no WebGL at all ------------------------------------------ */
+
+[data-tier="0"] #stage { display: none; }
+
+/* The still backdrop is declared unconditionally in 04-layout.css, so it is
+   present with JS off, at tier 0, and as an instant backdrop before WebGL
+   boots at higher tiers — no black flash, ever. Tier 0 only adds the drift. */
+
+/* A slow parallax on the still, standing in for the camera dolly.
+   Transform-only, so it stays on the compositor. */
+[data-tier="0"] #backdrop-still {
+  animation: still-drift 120s ease-in-out infinite alternate;
+}
+@keyframes still-drift {
+  from { transform: scale(1.02) translate3d(0, 0, 0); }
+  to   { transform: scale(1.06) translate3d(0, -1%, 0); }
+}
+
+/* The shaft survives as an inline SVG: still gold, still vertical, still
+   rotating on scroll. The metaphor never disappears — only its dimension. */
+[data-tier="0"] .svg-shaft { display: block; }
+[data-tier="3"] .svg-shaft,
+[data-tier="2"] .svg-shaft,
+[data-tier="1"] .svg-shaft { display: none; }
+
+/* ---- Tier 1 — mobile ---------------------------------------------------- */
+
+/* Native scroll on touch. Smooth-scroll libraries on touch are the single
+   biggest cause of "this site feels broken on my phone". */
+[data-tier="1"] { scroll-behavior: auto; }
+
+/* Horizontal pinning is fragile on touch; the work section stacks instead.
+   Same rows, same content, same styling — just vertical. */
+[data-tier="1"] .work-track,
+[data-tier="0"] .work-track {
+  transform: none !important;
+  display: grid;
+  width: 100%;
+}
+
+/* Couplings are not projected onto 3D geometry below tier 2 — the cards
+   simply sit in their normal grid, which is where they already are. */
+[data-tier="1"] .cap[data-coupling],
+[data-tier="0"] .cap[data-coupling] {
+  position: static !important;
+  transform: none !important;
+}
+
+/* ---- Scene dimming ------------------------------------------------------
+   Through the work section the scene drops to 0.25. The work has to win. */
+
+#stage { --scene-dim: 0; }
+#stage.is-live { opacity: calc(1 - var(--scene-dim) * 0.75); }
+
+/* ---- No JS at all -------------------------------------------------------
+   Nothing is hidden, and the decorative layers never appear. */
+
+html:not(.js) #stage,
+html:not(.js) #starfield { display: none; }

@@ -1,0 +1,119 @@
+/* ========================================================================== Nav */
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: var(--z-nav);
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  transition: background var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease),
+              backdrop-filter var(--dur-2) var(--ease);
+}
+/* The bar only materialises after the first viewport. */
+.nav.is-stuck {
+  background: rgba(8, 9, 12, .72);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom-color: var(--hairline-2);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-6);
+  min-height: 72px;
+}
+
+.nav-brand { display: flex; align-items: center; gap: var(--s-3); }
+.nav-word {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--step--1);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--text-1);
+}
+/* The mark is the shaft seen end-on: a gold hairline. */
+.nav-mark {
+  width: 2px; height: 22px;
+  background: var(--gold-500);
+  box-shadow: 0 0 12px rgba(229,180,95,.6);
+}
+
+.nav-links { display: flex; gap: var(--s-8); }
+.nav-links a {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  padding-block: var(--s-2);
+  transition: color var(--dur-1) var(--ease);
+}
+.nav-links a:hover { color: var(--text-1); }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: var(--gold-500);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--dur-2) var(--ease);
+}
+.nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+.nav-actions { display: flex; align-items: center; gap: var(--s-4); }
+.nav-cta { min-height: 40px; padding-inline: var(--s-6); }
+
+.nav-toggle {
+  display: none;
+  width: 44px; height: 44px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px; height: 1px;
+  background: var(--text-1);
+  transition: transform var(--dur-2) var(--ease), opacity var(--dur-1) var(--ease);
+}
+.nav-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:last-child  { transform: translateY(-3.5px) rotate(-45deg); }
+
+/* Scroll progress — a gold filament, the shaft abstracted. */
+.nav-progress {
+  height: 1px;
+  background: var(--gold-500);
+  transform: scaleX(var(--progress, 0));
+  transform-origin: left;
+  will-change: transform;
+}
+
+@media (max-width: 860px) {
+  .nav-toggle { display: flex; }
+  .nav-cta { display: none; }
+
+  .nav-links {
+    position: fixed;
+    inset: 72px 0 auto 0;
+    flex-direction: column;
+    gap: 0;
+    padding: var(--s-4) var(--gutter) var(--s-8);
+    background: rgba(8, 9, 12, .97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--hairline-2);
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease), visibility var(--dur-2);
+  }
+  .nav-links.is-open { opacity: 1; visibility: visible; transform: none; }
+  .nav-links a { padding-block: var(--s-4); border-bottom: 1px solid var(--hairline-2); font-size: var(--step-0); }
+  .nav-links a::after { display: none; }
+}

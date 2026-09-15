@@ -1,0 +1,71 @@
+/* ========================================================================== Thesis / Intake / Capabilities */
+
+.thesis { text-align: left; }
+.thesis-statement {
+  font-size: var(--step-6);
+  max-width: 20ch;
+  margin-bottom: var(--s-12);
+}
+.thesis-statement span { display: block; }
+.thesis-gloss { max-width: 48ch; font-size: var(--step-1); }
+
+/* ---- Intake ---- */
+.intake-grid { display: grid; gap: var(--s-12); }
+.intake-list { display: grid; gap: var(--s-6); max-width: 30rem; }
+.intake-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-6);
+  padding-bottom: var(--s-6);
+  border-bottom: 1px solid var(--hairline-2);
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--step-4);
+  letter-spacing: -.02em;
+  color: var(--text-1);
+}
+.intake-item .mono { color: var(--gold-500); flex-shrink: 0; }
+.intake-note { max-width: 44ch; }
+
+/* ---- Capabilities ---- */
+.cap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--s-6);
+  margin-bottom: var(--s-24);
+}
+.cap-index { color: var(--gold-500); margin-bottom: var(--s-6); }
+.cap h3 { margin-bottom: var(--s-4); }
+.cap p { font-size: var(--step-0); margin-bottom: var(--s-6); }
+.cap-points { display: grid; gap: var(--s-2); }
+.cap-points li {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--text-3);
+  padding-left: var(--s-4);
+  position: relative;
+}
+.cap-points li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: .7em;
+  width: 6px; height: 1px;
+  background: var(--gold-600);
+}
+
+/* ---- Metrics ---- */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--s-8);
+  padding-top: var(--s-12);
+  border-top: 1px solid var(--hairline-2);
+}
+.metric dt { margin-bottom: var(--s-2); }
+.metric-value {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--step-5);
+  letter-spacing: -.03em;
+  font-variant-numeric: tabular-nums;
+}

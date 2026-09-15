@@ -1,0 +1,68 @@
+/* ==========================================================================
+   prefers-reduced-motion
+
+   Beyond the usual checkbox: a sticky stage with its motion removed is an
+   EMPTY PINNED VIEWPORT the user scrolls past blindly. So every sticky beat
+   must collapse to a readable static diagram with all captions visible.
+   JS honours this too — capability.js hard-blocks to tier 0 before any
+   scroll listener is attached.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Force every reveal visible. */
+  .js .reveal,
+  .js .line-mask > span,
+  .js .draw,
+  .js .wipe > img {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .brighten span { color: var(--text-1) !important; }
+
+  .marquee-track { animation: none !important; transform: none !important; }
+  .marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .btn-primary::after { display: none !important; }
+
+  /* Sticky beats become static diagrams. */
+  .beat-sticky {
+    position: static !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .beat-track { height: auto !important; }
+  .beat-caption {
+    opacity: 1 !important;
+    position: static !important;
+    transform: none !important;
+  }
+  .beat-captions {
+    display: grid !important;
+    gap: var(--s-6);
+  }
+
+  /* Work stops being a horizontal pin. */
+  .work-track {
+    transform: none !important;
+    display: grid !important;
+    gap: var(--s-16);
+    width: 100% !important;
+  }
+
+  #stage, #starfield { display: none !important; }
+}

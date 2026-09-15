@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Haulr — Cosmic Shaft</title>
+<meta name="description" content="Construction logistics software connecting US contractors with truck drivers, with real-time fleet tracking.">
+<meta name="theme-color" content="#08090C">
+<link rel="canonical" href="https://cosmicshaft.com/work/haulr/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cosmic Shaft">
+<meta property="og:title" content="Haulr — Cosmic Shaft">
+<meta property="og:description" content="Construction logistics software connecting US contractors with truck drivers, with real-time fleet tracking.">
+<meta property="og:url" content="https://cosmicshaft.com/work/haulr/">
+<meta property="og:image" content="https://cosmicshaft.com/assets/img/og/cosmic-shaft-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../styles/01-tokens.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/02-reset.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/03-type.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/04-layout.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/05-motion.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/06-icons.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/10-nav.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/17-contact.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/20-case.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/91-reduced-motion.css?v=2026-09-15">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Haulr",
+  "about": "Construction logistics software connecting US contractors with truck drivers, with real-time fleet tracking.",
+  "url": "https://cosmicshaft.com/work/haulr/",
+  "creator": { "@type": "Organization", "name": "Cosmic Shaft", "url": "https://cosmicshaft.com/" }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="backdrop-still" aria-hidden="true"></div>
+
+<header class="nav is-stuck" id="nav">
+  <div class="nav-inner shell">
+    <a class="nav-brand" href="../../" aria-label="Cosmic Shaft, home">
+      <span class="nav-mark" aria-hidden="true"></span>
+      <span class="nav-word">Cosmic&nbsp;Shaft</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="../../#work">Work</a>
+      <a href="../../#capabilities">Capabilities</a>
+      <a href="../../#firm">Firm</a>
+      <a href="../../#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary nav-cta" href="../../#contact">Start a project</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article>
+<section class="case-hero shell">
+  <a class="case-back" href="../../#work">← All work</a>
+  <p class="eyebrow">Haulr Corp · United States</p>
+  <h1 class="case-title">Haulr</h1>
+  <p class="lede">Construction logistics for the US market — connecting contractors with truck drivers, and tracking every load in real time.</p>
+
+  <dl class="case-meta">
+    <div><dt>Client</dt><dd>Haulr Corp</dd></div>
+    <div><dt>Engagement</dt><dd>2023 — present</dd></div>
+    <div><dt>Role</dt><dd>Senior engineer</dd></div>
+    <div><dt>Stack</dt><dd>React Native · GPS / Maps · REST</dd></div>
+  </dl>
+
+  <figure class="case-figure"><div class="device device-lg wipe">
+    <img src="../../assets/img/work/haulr.webp" alt="Haulr application interface" width="327" height="663" fetchpriority="high" decoding="async">
+    </div>
+  </figure>
+</section>
+
+<section class="shell case-body">
+  <div>
+    <h2>The problem</h2>
+    <p>Construction companies move enormous volumes of material, and the coordination between the site that needs it and the drivers hauling it has traditionally happened over phone calls and text messages. That works until it does not: a driver goes to the wrong site, a load is counted twice, an invoice is disputed three weeks later and nobody can prove what happened.</p>
+    <p>Haulr Corp wanted a single system where the job, the driver, the route and the invoice were all the same record.</p>
+  </div>
+
+  <div>
+    <h2>What we built</h2>
+    <h3>A permission model that matches the industry</h3>
+    <p>This was the architectural decision everything else depended on. Contractors, dispatchers and drivers see genuinely different applications built from the same codebase — a driver needs their next job and a route; a dispatcher needs the whole fleet; a contractor needs cost and progress. Getting that multi-tier structure right early is what made the rest tractable.</p>
+
+    <h3>Real-time tracking</h3>
+    <p>Live GPS tracking of every vehicle, built to survive the conditions it actually runs in: patchy rural coverage, phones in cradles in direct sun, drivers who are not going to babysit an app. Location updates batch and reconcile rather than assuming a clean connection.</p>
+
+    <h3>Jobs and invoicing</h3>
+    <p>Project and job creation, driver assignment, and invoice management flowing from the same records — so the invoice is generated from what was actually tracked, not re-entered by hand afterwards.</p>
+  </div>
+
+  <div>
+    <h2>Working across time zones</h2>
+    <p>This is a US business served from India, and that shapes the engineering as much as the requirements do. The work is structured so that progress does not depend on real-time availability: clear written handoffs, decisions documented rather than discussed, and enough autonomy to keep moving when the client is asleep.</p>
+    <p>Miguel Brizuela, Haulr Corp's founder, put it as being "an invaluable asset as one of our lead developers" — the word <em>lead</em> is the one that matters there. Offshore does not have to mean order-taking.</p>
+  </div>
+
+  <dl class="case-outcomes">
+    <div class="case-outcome reveal" style="--i:0"><dt>Fleet tracking</dt><dd>Real-time</dd></div>
+    <div class="case-outcome reveal" style="--i:1"><dt>User architecture</dt><dd>Multi-tier</dd></div>
+    <div class="case-outcome reveal" style="--i:2"><dt>Invoicing</dt><dd>End-to-end</dd></div>
+    <div class="case-outcome reveal" style="--i:3"><dt>Engagement</dt><dd>3+ years</dd></div>
+  </dl>
+
+  <div class="case-next">
+    <a class="btn btn-primary" href="../../#contact">Start a project</a>
+    <a class="btn btn-ghost" href="../../#work">See other work</a>
+  </div>
+</section>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-meta">
+      <p class="mono">Cosmic Shaft · Udyam UDYAM-RJ-17-0684883 · Jaipur, India</p>
+      <nav class="footer-links mono" aria-label="Footer">
+        <a href="../../#work">Work</a>
+        <a href="../../#firm">Firm</a>
+        <a href="../../legal/privacy/">Privacy</a>
+        <a href="../../legal/terms/">Terms</a>
+      </nav>
+      <p class="mono">© 2026 Cosmic Shaft.</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+  import { initNav } from '../../js/ui/nav.js';
+  import { initReveals } from '../../js/ui/reveal.js';
+  initNav();
+  initReveals();
+</script>
+</body>
+</html>

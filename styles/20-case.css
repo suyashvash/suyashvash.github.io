@@ -1,0 +1,61 @@
+/* ========================================================================== Case studies
+   Static pages, no WebGL — so there is no context to tear down when you
+   navigate here, and they load instantly. */
+
+.case-hero { padding-block: calc(72px + var(--s-24)) var(--s-16); }
+.case-back {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  font-family: var(--font-mono); font-size: var(--step--1);
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--text-3); margin-bottom: var(--s-12);
+  transition: color var(--dur-1) var(--ease);
+}
+.case-back:hover { color: var(--gold-500); }
+
+.case-title { margin-block: var(--s-4) var(--s-6); }
+.case-meta {
+  display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-8);
+  padding-block: var(--s-6);
+  border-block: 1px solid var(--hairline-2);
+  margin-bottom: var(--s-16);
+}
+.case-meta div { display: grid; gap: var(--s-1); }
+.case-meta dt { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: .14em;
+                text-transform: uppercase; color: var(--text-3); }
+.case-meta dd { font-family: var(--font-display); font-weight: 300; font-size: var(--step-0); }
+
+.case-figure {
+  position: relative;
+  display: grid; place-items: center;
+  padding-block: var(--s-16);
+  border: 1px solid var(--hairline-2); border-radius: var(--r-2);
+  background: radial-gradient(ellipse at 50% 40%, rgba(229,180,95,.09), transparent 62%), var(--surface-1);
+  margin-bottom: var(--s-24);
+}
+
+.case-body { display: grid; gap: var(--s-16); max-width: 46rem; }
+.case-body h2 { font-size: var(--step-4); margin-bottom: var(--s-4); }
+.case-body h3 { font-size: var(--step-2); margin-bottom: var(--s-3); }
+.case-body p + p { margin-top: var(--s-4); }
+.case-body ul { display: grid; gap: var(--s-3); }
+.case-body ul li { padding-left: var(--s-6); position: relative; color: var(--text-2); max-width: var(--measure); }
+.case-body ul li::before {
+  content: ''; position: absolute; left: 0; top: .75em;
+  width: 10px; height: 1px; background: var(--gold-600);
+}
+
+.case-outcomes {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: var(--s-8); padding-block: var(--s-12);
+  border-block: 1px solid var(--hairline-2);
+}
+.case-outcome dt { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: .14em;
+                   text-transform: uppercase; color: var(--text-3); margin-bottom: var(--s-2); }
+.case-outcome dd { font-family: var(--font-display); font-weight: 300; font-size: var(--step-5);
+                   letter-spacing: -.03em; color: var(--gold-500); }
+
+.case-next {
+  display: flex; flex-wrap: wrap; gap: var(--s-4);
+  padding-top: var(--s-16); margin-top: var(--s-16);
+  border-top: 1px solid var(--hairline-2);
+}

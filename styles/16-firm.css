@@ -1,0 +1,45 @@
+/* ========================================================================== The firm */
+
+.firm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-16);
+  align-items: start;
+  margin-bottom: var(--s-24);
+}
+.firm-grid p + p { margin-top: var(--s-4); }
+
+.firm-facts { display: grid; gap: 0; }
+.firm-fact {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--s-6);
+  padding-block: var(--s-4);
+  border-bottom: 1px solid var(--hairline-2);
+}
+.firm-fact:first-child { border-top: 1px solid var(--hairline-2); }
+.firm-fact dt { color: var(--text-3); }
+.firm-fact dd { font-family: var(--font-display); font-weight: 300; font-size: var(--step-0); color: var(--text-1); }
+
+.founder {
+  padding-top: var(--s-16);
+  border-top: 1px solid var(--hairline-2);
+}
+.founder-body { max-width: 56ch; display: grid; gap: var(--s-4); }
+.founder-body h3 { font-size: var(--step-4); }
+.founder-links { display: flex; flex-wrap: wrap; gap: var(--s-6); margin-top: var(--s-2); }
+.founder-links a {
+  color: var(--gold-500);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-1) var(--ease);
+}
+.founder-links a:hover { border-bottom-color: var(--gold-500); }
+
+@media (max-width: 860px) {
+  .firm-grid { grid-template-columns: 1fr; }
+  .firm-fact { grid-template-columns: 1fr; gap: var(--s-1); }
+}
+
+/* Badge + facts are ONE grid cell. As three separate children in a
+   two-column grid the facts table wrapped onto a second row. */
+.firm-col { display: grid; align-content: start; }

@@ -1,0 +1,55 @@
+/* ========================================================================== Hero */
+
+.hero {
+  position: relative;
+  z-index: var(--z-content);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: calc(72px + var(--s-16)) var(--s-24);
+}
+
+/* Left-aligned at roughly the golden section. Centred hero type is what
+   template sites do. */
+.hero-inner { max-width: 62rem; }
+
+.hero-eyebrow { margin-bottom: var(--s-8); }
+
+.hero-title {
+  margin-bottom: var(--s-8);
+  max-width: 16ch;
+}
+
+.hero-lede { margin-bottom: var(--s-8); }
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: var(--s-4); }
+
+.hero-telemetry {
+  position: absolute;
+  left: 0; right: 0; bottom: var(--s-6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-8);
+  color: var(--text-3);
+  font-size: .625rem;
+  letter-spacing: .24em;
+}
+.hero-telemetry .mono { font-size: inherit; letter-spacing: inherit; }
+
+@media (max-width: 700px) {
+  .hero-telemetry { position: static; margin-top: var(--s-16); }
+}
+
+/* ---- Brands marquee ---- */
+.brands { padding-block: var(--s-16); position: relative; z-index: var(--z-content); }
+.brands-label { margin-bottom: var(--s-8); }
+.marquee-track img {
+  height: 30px;
+  width: auto;
+  opacity: .42;
+  filter: grayscale(1);
+  transition: opacity var(--dur-2) var(--ease), filter var(--dur-2) var(--ease);
+}
+.marquee-track img:hover { opacity: 1; filter: grayscale(0); }
+.marquee-dupe { display: flex; align-items: center; gap: var(--s-16); margin-left: var(--s-16); }
