@@ -51,9 +51,14 @@
 }
 
 /* Couplings are not projected onto 3D geometry below tier 2 — the cards
-   simply sit in their normal grid, which is where they already are. */
-[data-tier="1"] .cap[data-coupling],
-[data-tier="0"] .cap[data-coupling] {
+   simply sit in their normal grid, which is where they already are.
+
+   Scoped to .is-projected, the class the projector adds when it takes over
+   positioning. It MUST NOT be a blanket reset on .cap[data-coupling]:
+   `transform: none !important` there also destroys the deal-in reveal and
+   the pointer tilt, which are pure CSS/DOM and should run at every tier. */
+[data-tier="1"] .cap.is-projected,
+[data-tier="0"] .cap.is-projected {
   position: static !important;
   transform: none !important;
 }

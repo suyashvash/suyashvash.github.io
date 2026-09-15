@@ -119,19 +119,30 @@
 /* ---- Founder ------------------------------------------------------------- */
 
 /* Same treatment as a project row: a gold-tinted wash and a hairline that
-   warms on hover, so the founder reads as one more piece of the work. */
+   warms on hover, so the founder reads as one more piece of the work.
+
+   The panel is drawn by a pseudo-element rather than by padding + negative
+   margin on .founder itself. .founder is ALSO .shell, and .shell centres the
+   block with `margin-inline: auto` — overriding that to a negative value
+   knocked the whole founder block out of the page's centred column. */
 .founder {
+  position: relative;
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: var(--s-16);
   align-items: start;
-  padding: var(--s-8);
-  margin-inline: calc(var(--s-8) * -1);
+}
+.founder::before {
+  content: '';
+  position: absolute;
+  inset: calc(var(--s-6) * -1);
+  z-index: -1;
   border: 1px solid transparent;
   border-radius: var(--r-2);
   transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+  pointer-events: none;
 }
-.founder:hover {
+.founder:hover::before {
   border-color: var(--hairline);
   background: rgba(229, 180, 95, .03);
 }
@@ -166,11 +177,9 @@
 .founder-links .icon { width: 1em; height: 1em; }
 
 @media (max-width: 860px) {
-  .founder { grid-template-columns: 1fr; gap: var(--s-8); padding: var(--s-4); margin-inline: calc(var(--s-4) * -1); }
+  .founder { grid-template-columns: 1fr; gap: var(--s-8); }
+  .founder::before { inset: calc(var(--s-4) * -1); }
   .founder-portrait { max-width: 260px; }
-}
-@media (max-width: 420px) {
-  .founder { padding: var(--s-2); margin-inline: 0; }
 }
 
 /* ---- Firm trust badge ---------------------------------------------------- */
