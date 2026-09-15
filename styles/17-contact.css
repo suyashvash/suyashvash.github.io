@@ -88,18 +88,59 @@
   background: linear-gradient(180deg, transparent, rgba(0,0,0,.5));
 }
 
-/* Very large outline wordmark that fills with gold as it scrolls in. */
-.footer-word {
+/* The wordmark runs forever — the infinity half of the brand idea, stated
+   without a word of copy. Eight units, translated -50%: the track is two
+   identical halves, so the wrap point is invisible. */
+.footer-word-marquee {
+  overflow: hidden;
+  max-width: 100vw;
+  margin-bottom: var(--s-12);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.footer-word-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: footer-word 42s linear infinite;
+}
+.footer-word-marquee:hover .footer-word-track { animation-play-state: paused; }
+
+@keyframes footer-word {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+.footer-word-unit {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding-right: clamp(1.5rem, 4vw, 4rem);
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: var(--step-mega);
-  line-height: .85;
-  letter-spacing: -.04em;
+  /* Deliberately NOT --step-mega: at 256px only "COSMIC SH" fits the frame,
+     so the wordmark never reads as a word. This size lets a whole unit pass
+     through view. */
+  font-size: clamp(2.75rem, 7vw, 7rem);
+  line-height: 1;
+  letter-spacing: -.03em;
   white-space: nowrap;
-  margin-bottom: var(--s-12);
-  background-size: 220% 100%;
-  background-position: var(--sheen-pos, 100%) 0;
-  transition: background-position 1600ms var(--ease);
+}
+
+/* Each wordmark carries its own gold sweep rather than sharing one
+   background across the whole track, which would break as it scrolls. */
+.footer-word-unit > .gold {
+  background: linear-gradient(105deg, #8A6526, #F7E3BC 45%, #E5B45F 60%, #8A6526);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-star {
+  font-size: .28em;
+  color: var(--gold-600);
+  opacity: .7;
 }
 
 .footer-meta {

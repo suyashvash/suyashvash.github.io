@@ -66,3 +66,28 @@
 
   #stage, #starfield { display: none !important; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  /* The wordmark stops scrolling but stays legible. */
+  .footer-word-track { animation: none !important; transform: none !important; }
+  .footer-word-marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Cards appear flat and in place — no deal, no tilt, no float. */
+  .js .cap,
+  .js .cap.reveal,
+  .js .cap.is-in,
+  .js .cap.reveal.is-in,
+  .js .cap.is-settled,
+  .js .cap.is-settled:hover {
+    transform: none !important;
+    opacity: 1 !important;
+    --rx: 0deg; --ry: 0deg; --tz: 0px;
+  }
+  .cap::after { display: none !important; }
+
+  /* The rocket becomes a static confirmation rather than a launch. */
+  .launch-rocket, .launch-trail, .launch-spark { animation: none !important; }
+  .launch-rocket { opacity: 1 !important; transform: none !important; }
+}

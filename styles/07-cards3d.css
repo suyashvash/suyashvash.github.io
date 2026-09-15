@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Capability cards — dealt, then floating
+
+   Two distinct motions:
+     1. REVEAL — each card unfolds into place with a rotation, like a playing
+        card being dealt onto a table. Staggered, so they land one after the
+        other rather than all at once.
+     2. HOVER  — the card tilts toward the pointer on two axes, as though it
+        were floating in space and you nudged it. Driven by JS
+        (js/ui/tilt.js) writing --rx / --ry.
+
+   Both need a shared perspective on the CONTAINER, not on each card:
+   per-card perspective gives every card its own vanishing point, which reads
+   as a set of unrelated objects rather than a row on one surface.
+   ========================================================================== */
+
+.cap-grid {
+  perspective: 1400px;
+  perspective-origin: 50% 40%;
+}
+
+.cap {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ---- 1. The deal ------------------------------------------------------- */
+
+.js .cap {
+  /* Folded away from the viewer, hinged along its top edge and pushed back
+     in Z so it arcs in rather than simply rotating on the spot. */
+  transform-origin: 50% 0%;
+  transform: rotateX(-72deg) translateZ(-90px) translateY(18px) scale(.94);
+  opacity: 0;
+  transition:
+    transform 1050ms var(--ease),
+    opacity 620ms var(--ease);
+  transition-delay: calc(var(--i, 0) * 110ms);
+}
+
+.js .cap.is-in {
+  transform: rotateX(0) translateZ(0) translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* The generic .reveal rules would fight the 3D transform above — a plain
+   translateY would overwrite it. Opt these cards out. */
+.js .cap.reveal { transform: rotateX(-72deg) translateZ(-90px) translateY(18px) scale(.94); }
+.js .cap.reveal.is-in { transform: rotateX(0) translateZ(0) translateY(0) scale(1); }
+
+/* ---- 2. The float ------------------------------------------------------ */
+
+/* Once dealt, the card hands transform control to the pointer. A separate
+   class avoids the deal transition fighting the tilt's much faster one. */
+.js .cap.is-settled {
+  transform-origin: 50% 50%;
+  transition: transform 260ms var(--ease), box-shadow 320ms var(--ease),
+              border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+  transform:
+    rotateX(var(--rx, 0deg))
+    rotateY(var(--ry, 0deg))
+    translateZ(var(--tz, 0px));
+}
+
+/* While the pointer is actually moving, drop the easing to near-zero so the
+   card tracks the cursor instead of lagging behind it. */
+.js .cap.is-tilting {
+  transition: transform 90ms linear, box-shadow 320ms var(--ease),
+              border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+}
+
+.js .cap.is-settled:hover {
+  --tz: 26px;
+  border-color: var(--hairline);
+  background: var(--surface-2);
+  box-shadow:
+    0 0 0 1px rgba(229, 180, 95, .10),
+    0 30px 60px -28px rgba(0, 0, 0, .9),
+    0 0 44px -18px rgba(229, 180, 95, .30);
+}
+
+/* A specular sheen that tracks the pointer — the card catching starlight.
+   Sits above the card's own surface but below its text. */
+.cap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 320ms var(--ease);
+  background: radial-gradient(
+    380px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(247, 227, 188, .10),
+    transparent 62%);
+}
+.js .cap.is-settled:hover::after { opacity: 1; }
+
+/* Keep card content above the sheen. */
+.cap > * { position: relative; z-index: 1; }
+
+/* Touch devices get the deal but not the tilt — there is no pointer to
+   follow, and a sticky :hover state on tap looks broken. */
+@media (hover: none) {
+  .js .cap.is-settled { transform: none; }
+  .js .cap.is-settled:hover { --tz: 0px; box-shadow: none; }
+  .cap::after { display: none; }
+}

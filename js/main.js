@@ -22,6 +22,7 @@ import { initNav } from './ui/nav.js';
 import { initReveals, initBrighten, initCardLinks } from './ui/reveal.js';
 import { initCounters } from './ui/counters.js';
 import { initForm } from './ui/form.js';
+import { initTilt } from './ui/tilt.js';
 import { paintStarfield, watchStarfieldResize } from './ui/starfield.js';
 import { initJourney } from './beats/journey.js';
 
@@ -55,6 +56,7 @@ initBrighten();
 initCardLinks();
 initCounters();
 initForm();
+initTilt();
 
 // Starfield: the compositor-driven fallback sky. Below tier 2 it IS the
 // depth; at tier 2+ it sits behind the WebGL scene and adds nothing costly.

@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Launch — the form-submit confirmation
+
+   Sequence, ~3.4s total:
+     0.0s  the page dims to deep space and the overlay fades up
+     0.3s  the rocket lifts, slowly at first, then accelerates away
+     1.5s  it shrinks to a point of light and arcs like a comet
+     2.0s  the comet streaks across and the message resolves
+     3.4s  the overlay clears
+
+   The whole thing is decorative confirmation. The aria-live status message
+   in the form announces the real outcome independently, so a screen-reader
+   user is never waiting on an animation.
+   ========================================================================== */
+
+.launch {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  /* Dim to deep space — the page falls away behind the launch. */
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 78%, rgba(107, 140, 255, .14), transparent 70%),
+    rgba(4, 5, 8, .93);
+  backdrop-filter: blur(3px) saturate(120%);
+  -webkit-backdrop-filter: blur(3px) saturate(120%);
+  transition: opacity 620ms var(--ease), visibility 620ms;
+}
+.launch.is-live { opacity: 1; visibility: visible; pointer-events: auto; }
+
+.launch-stage {
+  position: relative;
+  width: min(420px, 82vw);
+  height: min(460px, 60svh);
+  display: grid;
+  place-items: center;
+}
+
+/* ---- The rocket -------------------------------------------------------- */
+
+.launch-rocket {
+  position: absolute;
+  bottom: 12%;
+  width: 64px;
+  height: 64px;
+  color: var(--gold-500);
+  opacity: 0;
+  transform: translateY(0) scale(1);
+}
+.launch.is-live .launch-rocket {
+  animation: rocket-fly 2100ms cubic-bezier(.55, 0, .35, 1) 260ms forwards;
+}
+
+@keyframes rocket-fly {
+  0%   { opacity: 0; transform: translateY(24px) scale(.82) rotate(0deg); }
+  12%  { opacity: 1; transform: translateY(6px)  scale(1)   rotate(0deg); }
+  /* A beat of hesitation on the pad before it commits. */
+  22%  { transform: translateY(-2px) scale(1) rotate(-1deg); }
+  55%  { opacity: 1; transform: translateY(-42%) scale(.8) rotate(6deg); }
+  100% { opacity: 0; transform: translateY(-150%) scale(.22) rotate(16deg); }
+}
+
+/* Exhaust: a tapering plume under the rocket that stretches as it climbs. */
+.launch-trail {
+  position: absolute;
+  bottom: 12%;
+  width: 5px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--gold-100), rgba(229, 180, 95, .55) 45%, transparent);
+  filter: blur(1px);
+  opacity: 0;
+  transform-origin: 50% 0%;
+}
+.launch.is-live .launch-trail {
+  animation: rocket-trail 2100ms cubic-bezier(.55, 0, .35, 1) 260ms forwards;
+}
+@keyframes rocket-trail {
+  0%   { opacity: 0; transform: translateY(46px) scaleY(.2); }
+  14%  { opacity: .9; transform: translateY(46px) scaleY(1.4); }
+  55%  { opacity: .75; transform: translateY(-38%) scaleY(7); }
+  100% { opacity: 0; transform: translateY(-146%) scaleY(11); }
+}
+
+/* ---- The comet --------------------------------------------------------- */
+
+/* Once the rocket is out of sight it becomes a wish — a comet crossing the
+   frame, which is the note the copy lands on. */
+.launch-comet {
+  position: absolute;
+  top: 26%;
+  left: -14%;
+  width: 190px;
+  height: 2.5px;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, rgba(247, 227, 188, .22), var(--gold-100));
+  border-radius: 999px;
+  filter: blur(.4px);
+}
+.launch-comet::after {
+  content: '';
+  position: absolute;
+  right: -2px; top: 50%;
+  width: 8px; height: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: var(--gold-100);
+  box-shadow: 0 0 20px 5px rgba(247, 227, 188, .8);
+}
+.launch.is-live .launch-comet {
+  animation: comet 1500ms cubic-bezier(.3, 0, .2, 1) 1700ms forwards;
+}
+@keyframes comet {
+  0%   { opacity: 0; transform: translate(0, 0) rotate(14deg) scaleX(.4); }
+  18%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(150%, 130px) rotate(14deg) scaleX(1); }
+}
+
+/* ---- Sparks ------------------------------------------------------------ */
+
+.launch-spark {
+  position: absolute;
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--gold-300);
+  opacity: 0;
+  bottom: 14%;
+}
+.launch.is-live .launch-spark {
+  animation: spark 1400ms var(--ease) var(--d, 0ms) forwards;
+}
+@keyframes spark {
+  0%   { opacity: 0; transform: translate(0, 0) scale(1); }
+  20%  { opacity: .95; }
+  100% { opacity: 0; transform: translate(var(--dx, 0), var(--dy, -120px)) scale(.2); }
+}
+
+/* ---- Message ----------------------------------------------------------- */
+
+.launch-copy {
+  position: absolute;
+  bottom: 2%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(12px);
+}
+.launch.is-live .launch-copy {
+  animation: launch-copy 700ms var(--ease) 1950ms forwards;
+}
+@keyframes launch-copy {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.launch-copy h2 {
+  font-size: var(--step-4);
+  margin-bottom: var(--s-3);
+}
+.launch-copy p {
+  color: var(--text-2);
+  max-width: 34ch;
+  margin-inline: auto;
+}
+.launch-copy .mono { display: block; margin-top: var(--s-4); color: var(--text-3); }
+
+@media (prefers-reduced-motion: reduce) {
+  .launch-comet, .launch-trail, .launch-spark { display: none !important; }
+  .launch-copy { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .launch-rocket { opacity: 1 !important; animation: none !important; }
+}

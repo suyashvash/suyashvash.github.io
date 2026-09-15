@@ -118,12 +118,24 @@
 
 /* ---- Founder ------------------------------------------------------------- */
 
+/* Same treatment as a project row: a gold-tinted wash and a hairline that
+   warms on hover, so the founder reads as one more piece of the work. */
 .founder {
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: var(--s-16);
   align-items: start;
+  padding: var(--s-8);
+  margin-inline: calc(var(--s-8) * -1);
+  border: 1px solid transparent;
+  border-radius: var(--r-2);
+  transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
 }
+.founder:hover {
+  border-color: var(--hairline);
+  background: rgba(229, 180, 95, .03);
+}
+.founder:hover .founder-portrait { border-color: var(--gold-600); }
 .founder-portrait {
   position: relative;
   display: block;
@@ -154,8 +166,11 @@
 .founder-links .icon { width: 1em; height: 1em; }
 
 @media (max-width: 860px) {
-  .founder { grid-template-columns: 1fr; gap: var(--s-8); }
+  .founder { grid-template-columns: 1fr; gap: var(--s-8); padding: var(--s-4); margin-inline: calc(var(--s-4) * -1); }
   .founder-portrait { max-width: 260px; }
+}
+@media (max-width: 420px) {
+  .founder { padding: var(--s-2); margin-inline: 0; }
 }
 
 /* ---- Firm trust badge ---------------------------------------------------- */

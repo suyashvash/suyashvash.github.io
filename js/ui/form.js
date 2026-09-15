@@ -11,6 +11,7 @@
  */
 
 import { submitLead, warmUp } from '../core/leads.js';
+import { playLaunch } from './launch.js';
 
 const FALLBACK_EMAIL = 'suyashvashishtha@gmail.com';
 
@@ -95,9 +96,15 @@ export function initForm() {
     try {
       await submitLead(data);
       form.reset();
+
+      // Announce the outcome BEFORE the animation, so assistive tech is
+      // never waiting on it.
       status.dataset.state = 'ok';
       status.textContent = 'Received. You will hear back within two working days.';
       if (typeof gtag === 'function') gtag('event', 'firm_enquiry_sent');
+
+      // Purely decorative, and never allowed to break a successful send.
+      playLaunch().catch((err) => console.warn('[launch] skipped:', err));
     } catch (err) {
       console.error('[leads] write failed:', err);
       if (typeof gtag === 'function') {
