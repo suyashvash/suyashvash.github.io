@@ -22,6 +22,44 @@ Merging it into `main` would repoint the personal domain and delete the personal
 
 ---
 
+## Contact form / leads
+
+Writes to Firestore in the **shared** project `suyash-portfolio-b9bf5`,
+collection `leads`, tagged **`source: "FIRM_ENQUIRY"`** so firm enquiries
+filter apart from personal-portfolio leads.
+
+The Firebase SDK is loaded on **first interaction** with the form
+(`focusin` / `pointerenter`), never at page load — unlike the personal site,
+which blocks first paint on two `<script>` tags in `<head>`.
+
+If the write fails the form hands off to `mailto:` rather than losing the
+enquiry.
+
+### Sort on `createdAt`, not `timestamp` or `sentOn`
+
+| field | type | use |
+|---|---|---|
+| `createdAt` | Firestore **Timestamp**, server clock | ✅ the one to sort and filter on |
+| `clientSentAtISO` | string, ISO 8601 UTC | diagnostic; compare against `createdAt` to spot client clock skew |
+| `timestamp` | number (epoch ms, **client** clock) | legacy, kept for compatibility |
+| `sentOn` | string, **client locale + timezone** | legacy, kept for compatibility |
+
+`timestamp` is a plain number, so the console renders it as `1789462490863`
+rather than a date, and `sentOn` is a locale string starting with the weekday
+name (`"Tue Sep 15 2026 …"`), so ordering it sorts Fri → Mon → Sat → Sun.
+Both are also the *visitor's* clock. `createdAt` uses `serverTimestamp()`,
+which the server resolves at write time — readable, sortable, and immune to a
+wrong clock on the visitor's device.
+
+### ⚠ Security rules are not applied yet
+
+`firestore.rules` in this repo must be published. As of 2026-09-15 the live
+rules allow **any reader to download every lead and delete them**, using only
+the public API key that is committed in this repo. See the header of
+`firestore.rules` for the verification commands and how to publish.
+
+---
+
 ## Local development
 
 ES modules will not load over `file://`. Serve it:

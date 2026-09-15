@@ -1,0 +1,77 @@
+// Firestore security rules for project `suyash-portfolio-b9bf5`
+//
+// ─────────────────────────────────────────────────────────────────────────
+// ⚠  APPLY THESE. The rules currently live are wide open.
+//
+// Verified on 2026-09-15 using ONLY the public API key that is committed in
+// this repo (and in the personal portfolio repo), with no authentication:
+//
+//   • READ   succeeded — every lead was returned: names, emails, messages.
+//   • DELETE succeeded — a document was removed.
+//
+// So today, anyone who views source on either site can download every
+// enquiry you have ever received, delete them all, or fill the collection
+// with spam. A Firebase apiKey is a public project identifier, not a
+// secret — security rules are the only thing protecting this data.
+//
+// This also matters for the privacy page at /legal/privacy/, which tells
+// visitors their enquiry is not shared with anyone outside the engagement.
+//
+// To apply:
+//   Firebase console → Firestore Database → Rules → paste → Publish
+//   (or: firebase deploy --only firestore:rules)
+//
+// Safe to publish as-is: the create rule is written to accept the existing
+// personal-portfolio form too, so suyashvashishtha.com keeps working.
+//
+// After publishing, re-run the check — the read should now fail:
+//   curl -s -o /dev/null -w '%{http_code}\n' \
+//     "https://firestore.googleapis.com/v1/projects/suyash-portfolio-b9bf5/databases/(default)/documents/leads?key=YOUR_API_KEY"
+//   Expect 403. If it still returns 200, the rules did not publish.
+// ─────────────────────────────────────────────────────────────────────────
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /leads/{leadId} {
+
+      // Anyone may SUBMIT an enquiry — that is the whole point of the form.
+      //
+      // COMPATIBILITY: these conditions are deliberately satisfied by BOTH
+      // this site's form AND the existing personal-portfolio form on
+      // suyashvashishtha.com, which sends neither `source` nor `createdAt`.
+      // Publishing these rules will not break the live personal site.
+      allow create: if
+           request.resource.data.keys().hasAll(['name', 'email', 'message', 'status'])
+        && request.resource.data.name    is string
+        && request.resource.data.name.size()    > 0
+        && request.resource.data.name.size()    < 200
+        && request.resource.data.email   is string
+        && request.resource.data.email.size()   > 3
+        && request.resource.data.email.size()   < 320
+        && request.resource.data.message is string
+        && request.resource.data.message.size() < 5000
+        // A new lead is always unhandled; nobody may pre-set a status.
+        && request.resource.data.status == 'none'
+        // If createdAt is sent it MUST be the server's own clock. This is
+        // what makes createdAt trustworthy to sort on: a client cannot
+        // backdate or forward-date a lead. Optional only so the older
+        // personal-site form keeps working.
+        && (!('createdAt' in request.resource.data)
+            || request.resource.data.createdAt == request.time)
+        // Cap the document so nobody can use the form as free storage.
+        && request.resource.data.size() < 25;
+
+      // Nothing else is allowed from a client. Read your leads in the
+      // Firebase console or via the Admin SDK, both of which bypass rules.
+      allow read, update, delete: if false;
+    }
+
+    // Deny everything not explicitly matched above.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

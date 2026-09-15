@@ -1,16 +1,17 @@
 /**
  * Contact form.
  *
- * Deliberately NOT wired to the personal portfolio's Firebase project
- * (suyash-portfolio-b9bf5). Mixing firm leads into a personal Firestore and
- * shipping a personal config on a business domain is wrong on both counts.
+ * Writes to Firestore via ./core/leads.js, tagged `source: "FIRM_ENQUIRY"`.
+ * The Firebase SDK is loaded on first interaction with the form, never at
+ * page load, so it stays off the critical path.
  *
- * Set ENDPOINT to a Formspree/Web3Forms URL (no keys in the repo, no SDK on
- * the critical path) or to a dedicated Cosmic Shaft project. Until it is set,
- * the form falls back to a mailto: handoff so it is never a dead end.
+ * If the write fails for any reason the form falls back to a mailto: handoff
+ * rather than swallowing the enquiry — a lead lost to a network blip is the
+ * most expensive possible failure on this page.
  */
 
-const ENDPOINT = ''; // e.g. 'https://formspree.io/f/xxxxxxxx'
+import { submitLead, warmUp } from '../core/leads.js';
+
 const FALLBACK_EMAIL = 'suyashvashishtha@gmail.com';
 
 const setError = (input, msgEl, message) => {
@@ -21,14 +22,36 @@ const setError = (input, msgEl, message) => {
   return !has;
 };
 
+/** Hand off to the user's mail client so the enquiry is never simply lost. */
+function mailtoHandoff(data) {
+  const subject = encodeURIComponent(`Project enquiry — ${data.name}`);
+  const body = encodeURIComponent(
+    `${data.message}\n\n— ${data.name} (${data.email})\nNeeds: ${data.need}`
+  );
+  window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
+}
+
 export function initForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
   const status = document.getElementById('form-status');
+  const submit = form.querySelector('.contact-submit');
   const name = form.querySelector('#f-name');
   const email = form.querySelector('#f-email');
   const message = form.querySelector('#f-message');
+
+  // Fetch the SDK the moment someone shows intent, so the eventual submit
+  // feels instant. Idempotent, and a failure here is not surfaced — the
+  // submit path retries and falls back on its own.
+  let warmed = false;
+  const warm = () => {
+    if (warmed) return;
+    warmed = true;
+    warmUp().catch(() => { /* submit handles it */ });
+  };
+  form.addEventListener('focusin', warm, { once: true });
+  form.addEventListener('pointerenter', warm, { once: true });
 
   const validate = () => {
     let ok = true;
@@ -41,12 +64,17 @@ export function initForm() {
     return ok;
   };
 
-  // Clear an error as soon as the field is corrected.
   [name, email, message].forEach((el) =>
     el.addEventListener('input', () => {
       if (el.getAttribute('aria-invalid') === 'true') validate();
     })
   );
+
+  const setBusy = (busy) => {
+    submit.disabled = busy;
+    submit.setAttribute('aria-busy', String(busy));
+    submit.textContent = busy ? 'Sending…' : 'Send it';
+  };
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -59,34 +87,27 @@ export function initForm() {
     }
 
     const data = Object.fromEntries(new FormData(form).entries());
+
+    setBusy(true);
     status.dataset.state = '';
     status.textContent = 'Sending…';
 
-    if (!ENDPOINT) {
-      // No backend configured yet — hand off rather than silently fail.
-      const subject = encodeURIComponent(`Project enquiry — ${data.name}`);
-      const body = encodeURIComponent(
-        `${data.message}\n\n— ${data.name} (${data.email})\nNeeds: ${data.need}`
-      );
-      window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
-      status.dataset.state = 'ok';
-      status.textContent = 'Opening your email client…';
-      return;
-    }
-
     try {
-      const res = await fetch(ENDPOINT, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
-      });
-      if (!res.ok) throw new Error(String(res.status));
+      await submitLead(data);
       form.reset();
       status.dataset.state = 'ok';
       status.textContent = 'Received. You will hear back within two working days.';
-    } catch {
+      if (typeof gtag === 'function') gtag('event', 'firm_enquiry_sent');
+    } catch (err) {
+      console.error('[leads] write failed:', err);
+      if (typeof gtag === 'function') {
+        gtag('event', 'firm_enquiry_error', { error_code: err?.code ?? 'unknown' });
+      }
       status.dataset.state = 'error';
-      status.textContent = `Something went wrong. Email us directly at ${FALLBACK_EMAIL}.`;
+      status.textContent = 'That did not send. Opening your email client instead…';
+      mailtoHandoff(data);
+    } finally {
+      setBusy(false);
     }
   });
 }
