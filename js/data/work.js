@@ -6,6 +6,10 @@
  *   'also'  — a compact card under "Also shipped"
  *   'none'  — kept here as a record, but not shown on the site
  *
+ * `originalProduct: true` marks something Cosmic Shaft built and owns
+ * outright — not client work — and gets a small "Cosmic Shaft Originals"
+ * badge on the homepage row and the case study, in place of a client name.
+ *
  * FRAMING: Cosmic Shaft was incorporated 01/04/2024. Several of these
  * engagements predate that, delivered by the founder and the teams he ran.
  * Copy says "led by" — never implies the firm held those contracts. This
@@ -23,7 +27,7 @@ export const work = [
     year: '2024 — present',
     role: 'Engineering lead, product & delivery',
     summary:
-      'Exam automation for schools and institutes. Teachers set papers and mark handwritten answer sheets with AI doing the reading.',
+      'Exam automation for schools and institutes.  Teachers can create and check handwritten answer sheets with AI .',
     outcomes: [
       ['+80%', 'app performance'],
       ['−70%', 'codebase size'],
@@ -58,6 +62,30 @@ export const work = [
     image: './assets/img/work/haulr.png',
     logo: './assets/img/brands/Haulr.webp',
     href: './work/haulr/',
+    caseStudy: true,
+  },
+  {
+    slug: 'myvitals',
+    feed: 'main',
+    originalProduct: true,
+    name: 'MyVitals',
+    client: 'Cosmic Shaft Originals',
+    location: 'India',
+    year: '2026 — present',
+    role: 'Founder, product & engineering',
+    summary:
+      'Every lab report you have ever had, from every lab, in every format \u2014 reconciled into one AI-organised health history.',
+    outcomes: [
+      ['Any lab', 'any format'],
+      ['Self-improving', 'canonicalization'],
+      ['Offline-first', 'delivery'],
+    ],
+    detail:
+      'A lab report from any lab, any format \u2014 a PDF or a phone photo \u2014 read by a multimodal AI and matched against a shared, self-improving dictionary of clinical metrics, so the same measurement stays one continuous history even when the lab, the units, or the printed name changes. Prioritised dashboard, per-metric charts, a chat assistant grounded in the user\u2019s own data, a doctor-ready PDF generated in the browser, and family sharing for one person managing a household\u2019s records. Ships as a web app first; the Play Store app is a thin WebView shell around it, so an ordinary product update reaches every install with no store-review wait.',
+    stack: ['React Native', 'React', 'Node.js', 'MongoDB', 'Multi-LLM'],
+    image: './assets/img/work/myvitals.webp',
+    logo: null,
+    href: './work/myvitals/',
     caseStudy: true,
   },
   {

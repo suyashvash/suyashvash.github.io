@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MyVitals — Cosmic Shaft</title>
+<meta name="description" content="MyVitals turns years of scattered lab reports — any lab, any format — into one AI-organised health history. A Cosmic Shaft Original.">
+<meta name="theme-color" content="#08090C">
+<link rel="canonical" href="https://cosmicshaft.com/work/myvitals/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cosmic Shaft">
+<meta property="og:title" content="MyVitals — Cosmic Shaft">
+<meta property="og:description" content="MyVitals turns years of scattered lab reports — any lab, any format — into one AI-organised health history. A Cosmic Shaft Original.">
+<meta property="og:url" content="https://cosmicshaft.com/work/myvitals/">
+<meta property="og:image" content="https://cosmicshaft.com/assets/img/og/cosmic-shaft-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../styles/01-tokens.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/02-reset.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/03-type.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/04-layout.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/05-motion.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/06-icons.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/10-nav.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/17-contact.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/20-case.css?v=2026-09-15">
+<link rel="stylesheet" href="../../styles/91-reduced-motion.css?v=2026-09-15">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "MyVitals",
+  "about": "MyVitals turns years of scattered lab reports — any lab, any format — into one AI-organised health history.",
+  "url": "https://cosmicshaft.com/work/myvitals/",
+  "creator": { "@type": "Organization", "name": "Cosmic Shaft", "url": "https://cosmicshaft.com/" }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="backdrop-still" aria-hidden="true"></div>
+
+<header class="nav is-stuck" id="nav">
+  <div class="nav-inner shell">
+    <a class="nav-brand" href="../../" aria-label="Cosmic Shaft, home">
+      <span class="nav-mark" aria-hidden="true"></span>
+      <span class="nav-word">Cosmic&nbsp;Shaft</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="../../#work">Work</a>
+      <a href="../../#capabilities">Capabilities</a>
+      <a href="../../#firm">Firm</a>
+      <a href="../../#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary nav-cta" href="../../#contact">Start a project</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article>
+<section class="case-hero shell">
+  <a class="case-back" href="../../#work">← All work</a>
+  <p class="eyebrow"><span class="originals-badge">Cosmic Shaft Originals</span> · India</p>
+  <h1 class="case-title">MyVitals</h1>
+  <p class="lede">Every lab report you have ever had, in every format, from every lab — reconciled into one continuous health history an AI can actually reason about. Built end to end by Cosmic Shaft, for ourselves first.</p>
+
+  <dl class="case-meta">
+    <div><dt>Type</dt><dd>Cosmic Shaft Original</dd></div>
+    <div><dt>Engagement</dt><dd>2026 — present</dd></div>
+    <div><dt>Role</dt><dd>Founder, product &amp; engineering</dd></div>
+    <div><dt>Stack</dt><dd>React Native · React · Node.js · Multi-LLM</dd></div>
+  </dl>
+
+  <figure class="case-figure"><div class="device device-lg wipe">
+    <img src="../../assets/img/work/myvitals.webp" alt="MyVitals metric detail screen showing a TSH trend chart with an out-of-range flag" width="327" height="663" fetchpriority="high" decoding="async">
+    </div>
+  </figure>
+</section>
+
+<section class="shell case-body">
+  <div>
+    <h2>The problem</h2>
+    <p>Anyone who has used a healthcare system for more than a few years accumulates lab reports — blood panels, thyroid panels, lipid profiles — from different labs, each with its own PDF layout and its own name for the same measurement. Fasting blood sugar becomes "FBS" in one report and "Glucose, Fasting" in another a year later, in different units, from a different lab.</p>
+    <p>The moment someone changes labs, cities, or providers, their ability to see a trend in their own health data is effectively gone. The data still exists — it is scattered across PDFs, WhatsApp forwards, photos, and lab portals nobody logs back into. The usual coping mechanism is a spreadsheet, a folder, or, most commonly, nothing.</p>
+  </div>
+
+  <div>
+    <h2>What we built</h2>
+    <p>MyVitals accepts any lab report — a PDF or a phone photo — from any lab, in any format. A multimodal AI model reads every measurement on the page: name as printed, value, unit, and the lab's own reference range. No templates, no "supported labs" list.</p>
+    <p>The part that actually matters is what happens next. Each measurement is matched against a shared, self-improving dictionary of clinical metrics and its unit normalised, so "FBS," "Fasting Blood Sugar," and "Glucose (Fasting)" all become one continuous history, chartable across years and labs. Extraction is table stakes now; reconciliation is the product.</p>
+    <ul>
+      <li>A prioritised dashboard, weighted by how far out of range a metric is against its own trend direction</li>
+      <li>Per-metric charts with reference-range bands, and every contributing report linked back to the original file</li>
+      <li>A chat assistant grounded in the user's own history, medications, and lifestyle profile — not a generic model</li>
+      <li>A doctor-ready PDF, generated entirely in the browser, for a doctor who needs a summary and not an app</li>
+      <li>Family sharing — one person can manage a household's records from a single login, with access re-checked on every request so it can be revoked instantly</li>
+    </ul>
+    <p>It ships as a web app first. The Play Store app is a thin WebView shell around it, which means an ordinary product update reaches every install immediately, with no store-review cycle to wait on. That same choice shaped the reliability work: because a WebView may never register or persist a service worker, the app carries two independent offline caching layers rather than one.</p>
+  </div>
+
+  <div>
+    <h2>Why it compounds</h2>
+    <p>AI document extraction is increasingly commodity. The moat here is what it feeds: every report anyone uploads teaches the shared alias dictionary, which makes matching cheaper and more accurate for every other user, not just that one. And because history is retroactive, a new user can upload five years of old reports on day one and immediately hold a continuous record a competitor cannot hand them without the same upload effort.</p>
+  </div>
+
+  <div>
+    <h2>Where it stands</h2>
+    <p>Live on the web at <a href="https://myvitals.co.in" target="_blank" rel="noopener">myvitals.co.in</a> and on the Play Store. It is early — a single developer's product finding its first users, not a funded business — and that is worth saying plainly rather than dressing up. It also means everything in this case study is already shipped, not a slide.</p>
+  </div>
+
+  <dl class="case-outcomes">
+    <div class="case-outcome reveal" style="--i:0"><dt>Ingestion</dt><dd>Any format</dd></div>
+    <div class="case-outcome reveal" style="--i:1"><dt>Matching</dt><dd>Gets smarter</dd></div>
+    <div class="case-outcome reveal" style="--i:2"><dt>Delivery</dt><dd>Works offline</dd></div>
+    <div class="case-outcome reveal" style="--i:3"><dt>Households</dt><dd>One login</dd></div>
+  </dl>
+
+  <div class="case-next">
+    <a class="btn btn-primary" href="../../#contact">Start a project</a>
+    <a class="btn btn-ghost" href="../../#work">See other work</a>
+  </div>
+</section>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-meta">
+      <p class="mono">Cosmic Shaft · Udyam UDYAM-RJ-17-0684883 · Jaipur, India</p>
+      <nav class="footer-links mono" aria-label="Footer">
+        <a href="../../#work">Work</a>
+        <a href="../../#firm">Firm</a>
+        <a href="../../legal/privacy/">Privacy</a>
+        <a href="../../legal/terms/">Terms</a>
+      </nav>
+      <p class="mono">© 2026 Cosmic Shaft.</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+  import { initNav } from '../../js/ui/nav.js';
+  import { initReveals } from '../../js/ui/reveal.js';
+  initNav();
+  initReveals();
+</script>
+</body>
+</html>

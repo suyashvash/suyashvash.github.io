@@ -36,7 +36,9 @@
 .case-body { display: grid; gap: var(--s-16); max-width: 46rem; }
 .case-body h2 { font-size: var(--step-4); margin-bottom: var(--s-4); }
 .case-body h3 { font-size: var(--step-2); margin-bottom: var(--s-3); }
-.case-body p + p { margin-top: var(--s-4); }
+.case-body p + p,
+.case-body ul + p,
+.case-body p + ul { margin-top: var(--s-4); }
 .case-body ul { display: grid; gap: var(--s-3); }
 .case-body ul li { padding-left: var(--s-6); position: relative; color: var(--text-2); max-width: var(--measure); }
 .case-body ul li::before {
@@ -45,14 +47,25 @@
 }
 
 .case-outcomes {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--s-8); padding-block: var(--s-12);
   border-block: 1px solid var(--hairline-2);
 }
+/* Grid items default to min-width: auto, so a wrapped two-word value (e.g.
+   "Self-improving") can render wider than its own track and spill into the
+   next column instead of wrapping inside it. min-width: 0 is what actually
+   makes the wrap respect the column. */
+.case-outcome { min-width: 0; }
 .case-outcome dt { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: .14em;
                    text-transform: uppercase; color: var(--text-3); margin-bottom: var(--s-2); }
 .case-outcome dd { font-family: var(--font-display); font-weight: 300; font-size: var(--step-5);
-                   letter-spacing: -.03em; color: var(--gold-500); }
+                   letter-spacing: -.03em; color: var(--gold-500); line-height: 1.05;
+                   /* At this size a single long, unhyphenated word (e.g. an
+                      11-char value with no natural break point) can be wider
+                      than its own 170px+ column. Without this, that word
+                      overflows the grid cell instead of wrapping, and bleeds
+                      visibly into the next column rather than staying put. */
+                   overflow-wrap: break-word; }
 
 .case-next {
   display: flex; flex-wrap: wrap; gap: var(--s-4);
