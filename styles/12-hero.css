@@ -45,9 +45,12 @@
 .brands { padding-block: var(--s-16); position: relative; z-index: var(--z-content); }
 .brands-label { margin-bottom: var(--s-8); }
 .marquee-track img {
-  height: 30px;
+  height: 48px;
   width: auto;
-  opacity: .42;
+  /* Logos are already mid-gray on a near-black ground (confirmed by
+     compositing them over --void directly) — the old 30px / 0.42 opacity
+     combination left almost no contrast to read by. */
+  opacity: .72;
   filter: grayscale(1);
   transition: opacity var(--dur-2) var(--ease), filter var(--dur-2) var(--ease);
 }
