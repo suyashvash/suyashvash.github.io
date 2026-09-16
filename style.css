@@ -1103,6 +1103,8 @@ footer>div {
 .taskbar-app {
     width: 42px;
     height: 42px;
+    flex-shrink: 0;
+    object-fit: cover;
     border-radius: 10px;
     margin-right: 5px;
     margin-left: 5px;
@@ -1206,6 +1208,29 @@ footer>div {
 
 .app-link:hover {
     cursor: pointer;
+}
+
+/* MyVitals is a web product as well as an app, so its row carries a link to
+   the site alongside the store badge. Sized to the 32px badge height so the
+   two sit on one line. */
+.web-link {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 14px;
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    color: var(--primary-color);
+    font-family: 'Unbounded-Light', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    vertical-align: top;
+    transition: 0.3s ease-in-out;
+}
+
+.web-link:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
 }
 
 
@@ -1502,7 +1527,6 @@ footer>div {
         transform: translateY(10px);
         transition: 0.3s ease-in-out;
     }
-/* 
     .playwiseScreenshot {
         background: url('src/assets/images/screenshots/playwise.png');
         background-size: contain;
@@ -1510,7 +1534,7 @@ footer>div {
         background-position: center;
         transform: translateY(10px);
         transition: 0.3s ease-in-out;
-    } */
+    }
 
     .chanakyaScreenshot {
         background: url('src/assets/images/screenshots/chanakya.png');
@@ -1540,8 +1564,8 @@ footer>div {
         transition: 0.3s ease-in-out;
     } */
 
-    .ayuraidScreenshot {
-        background: url('src/assets/images/screenshots/ayuraid.png');
+    .myvitalsScreenshot {
+        background: url('src/assets/images/screenshots/myvitals.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -1551,10 +1575,23 @@ footer>div {
 
 
     .pc.taskbar {
-        width: 75%;
-        bottom: -18%;
+        /* Was a fixed 75%, which forced six icons to shrink to fit. Sizing to
+           content instead keeps every icon at its full size, and max-width
+           still stops the tray escaping the screen on a narrow phone. */
+        width: auto;
+        max-width: 94%;
+        bottom: -15%;
+        padding-left: 7px;
+        padding-right: 7px;
         background: linear-gradient(125deg, rgba(138, 138, 138, 0.448) 0%, rgba(140, 140, 140, 0.519) 100%);
 
+    }
+
+    .taskbar-app {
+        width: 40px;
+        height: 40px;
+        margin-left: 4px;
+        margin-right: 4px;
     }
 
 
