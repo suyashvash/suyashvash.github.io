@@ -211,3 +211,32 @@
   transition: letter-spacing var(--dur-2) var(--ease);
 }
 .work-mini:hover .work-mini-more { letter-spacing: .18em; }
+
+/* ---- Visit-now CTA -------------------------------------------------------
+   Chanakya AI is a web product, not an app-store listing — this replaces
+   the App Store / Google Play badges for that one row only. Sized and
+   positioned to match where the store badges sat on the other rows, so the
+   row rhythm holds even though the CTA itself is different. */
+.visit-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+  height: 34px;
+  padding-inline: var(--s-4);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-1);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  transition: border-color var(--dur-1) var(--ease), background var(--dur-1) var(--ease),
+              color var(--dur-1) var(--ease);
+}
+.visit-cta .icon { width: 1em; height: 1em; }
+.visit-cta:hover {
+  border-color: var(--gold-500);
+  background: rgba(229, 180, 95, .08);
+  color: var(--gold-300);
+}
