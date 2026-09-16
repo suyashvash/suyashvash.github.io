@@ -91,6 +91,75 @@
     0 0 64px -12px rgba(229,180,95,.34);
 }
 
+/* ---- Laptop / browser-window frame ---------------------------------------
+   For a web product — a browser chrome rather than a phone body, in the
+   same brushed-metal gradient and gold-glow shadow as .device so the two
+   read as one family. Aspect ratio matches the source screenshot
+   (3022 x 1892) rather than a fixed device ratio, since this is a browser
+   window, not a specific physical screen size. */
+.device-laptop {
+  position: relative;
+  width: min(560px, 92%);
+  aspect-ratio: 3022 / 1892;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(155deg, #33384A, #14171F 45%, #0E1017 70%, #2A2F3D);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.07),
+    0 30px 70px -20px rgba(0,0,0,.85),
+    0 0 54px -16px rgba(229,180,95,.22);
+  transition: transform var(--dur-3) var(--ease), box-shadow var(--dur-3) var(--ease);
+}
+.device-laptop-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding-inline: 11px;
+  background: #0B0D13;
+}
+.device-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.16); }
+.device-dot:last-child { background: var(--gold-600); }
+.device-laptop-url {
+  margin-inline: auto;
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  color: var(--text-3);
+  font-size: .5625rem;
+  letter-spacing: .08em;
+}
+.device-laptop img {
+  display: block;
+  width: 100%;
+  height: calc(100% - 28px);
+  object-fit: cover;
+  object-position: top center;
+}
+.work-link:hover .device-laptop,
+.case-figure:hover .device-laptop {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 0 1px rgba(229,180,95,.22),
+    0 38px 80px -20px rgba(0,0,0,.9),
+    0 0 64px -12px rgba(229,180,95,.34);
+}
+
+/* Pairs a laptop with a phone for a case study that ships on both — plain
+   flex, bottom-aligned so their bases sit on one implied surface, and it
+   wraps to a stack on narrow widths rather than needing absolute-position
+   overlap math that would have to be re-tested at every breakpoint. */
+.device-duo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--s-8);
+  width: 100%;
+}
+.device-duo .device-laptop { width: min(520px, 100%); }
+.device-duo .device { width: min(176px, 44%); }
+
 .work-meta { margin-bottom: var(--s-4); }
 .work-name { font-size: var(--step-5); margin-bottom: var(--s-4); }
 .work-summary { font-size: var(--step-1); color: var(--text-2); margin-bottom: var(--s-6); max-width: 40ch; }
