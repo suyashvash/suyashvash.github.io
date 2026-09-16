@@ -50,7 +50,7 @@
     0 0 48px -14px rgba(229,180,95,.22);
   transition: transform var(--dur-3) var(--ease), box-shadow var(--dur-3) var(--ease);
 }
-.device-lg { width: min(320px, 80%); }
+.device-lg { width: min(400px, 88%); }
 
 .device img {
   width: 100%;
@@ -157,8 +157,8 @@
   gap: var(--s-8);
   width: 100%;
 }
-.device-duo .device-laptop { width: min(520px, 100%); }
-.device-duo .device { width: min(176px, 44%); }
+.device-duo .device-laptop { width: min(640px, 100%); }
+.device-duo .device { width: min(215px, 46%); }
 
 .work-meta { margin-bottom: var(--s-4); }
 .work-name { font-size: var(--step-5); margin-bottom: var(--s-4); }
