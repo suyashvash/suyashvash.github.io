@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Chanakya AI — Cosmic Shaft</title>
-<meta name="description" content="How Cosmic Shaft made an AI EdTech product 80% faster while cutting 70% of its codebase.">
+<meta name="description" content="Exam automation for schools and institutes — teachers set papers and AI marks handwritten answer sheets. How Cosmic Shaft made it 80% faster on 70% less code.">
 <meta name="theme-color" content="#08090C">
 <link rel="canonical" href="https://cosmicshaft.com/work/chanakya-ai/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Cosmic Shaft">
 <meta property="og:title" content="Chanakya AI — Cosmic Shaft">
-<meta property="og:description" content="How Cosmic Shaft made an AI EdTech product 80% faster while cutting 70% of its codebase.">
+<meta property="og:description" content="Exam automation for schools and institutes — teachers set papers and AI marks handwritten answer sheets. How Cosmic Shaft made it 80% faster on 70% less code.">
 <meta property="og:url" content="https://cosmicshaft.com/work/chanakya-ai/">
 <meta property="og:image" content="https://cosmicshaft.com/assets/img/og/cosmic-shaft-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "CreativeWork",
   "name": "Chanakya AI",
-  "about": "How Cosmic Shaft made an AI EdTech product 80% faster while cutting 70% of its codebase.",
+  "about": "Exam automation for schools and institutes — teachers set papers and AI marks handwritten answer sheets. How Cosmic Shaft made it 80% faster on 70% less code.",
   "url": "https://cosmicshaft.com/work/chanakya-ai/",
   "creator": { "@type": "Organization", "name": "Cosmic Shaft", "url": "https://cosmicshaft.com/" }
 }
@@ -69,7 +69,7 @@
   <a class="case-back" href="../../#work">← All work</a>
   <p class="eyebrow">Neurobridge Tech · India</p>
   <h1 class="case-title">Chanakya AI</h1>
-  <p class="lede">An AI assistant built for India, answering in nine Indian languages — and the engineering work that made it fast enough to be usable at national scale.</p>
+  <p class="lede">Exam automation for schools and institutes. Teachers set papers, students write them by hand as they always have, and AI reads and marks the scanned answer sheets.</p>
 
   <dl class="case-meta">
     <div><dt>Client</dt><dd>Neurobridge Tech</dd></div>
@@ -87,7 +87,8 @@
 <section class="shell case-body">
   <div>
     <h2>The problem</h2>
-    <p>Chanakya AI had product-market fit and a serious engineering problem. The app worked, but it was heavy, slow to start, and getting slower with every release. Technical debt had reached the point where shipping a feature meant risking a regression somewhere unrelated, and the team was spending more time firefighting than building.</p>
+    <p>Marking is where teaching time goes. A school running end-of-term exams across a few hundred students is looking at thousands of handwritten pages, read one at a time, by people who would rather be teaching. Chanakya AI's answer was to keep the exam exactly as it is — paper, handwriting, no new habits for students — and automate the reading instead. Teachers set the paper in the platform; scanned answer sheets come back marked.</p>
+    <p>That is a hard problem to make fast. Handwriting recognition over a full answer sheet is not a single quick call, and the product had found its market before the engineering had caught up with it. The app worked, but it was heavy, slow to start, and getting slower with every release. Technical debt had reached the point where shipping a feature meant risking a regression somewhere unrelated, and the team was spending more time firefighting than building.</p>
     <p>The brief was not "add features". It was: make this fast, make it maintainable, and make releases boring.</p>
   </div>
 
@@ -109,7 +110,7 @@
 
   <div>
     <h2>Beyond the code</h2>
-    <p>We consulted directly with the founders on product-market fit and go-to-market strategy. That is not scope creep; it is the reason the engineering decisions were the right ones. Knowing which markets mattered most told us which languages to optimise the model routing for first.</p>
+    <p>We consulted directly with the founders on product-market fit and go-to-market strategy. That is not scope creep; it is the reason the engineering decisions were the right ones. Knowing that schools buy in the weeks around an exam cycle, and that a teacher will abandon a tool that is slow on the one day they actually need it, is what made performance the priority over the feature list.</p>
   </div>
 
   <dl class="case-outcomes">

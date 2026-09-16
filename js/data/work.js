@@ -17,14 +17,14 @@ export const work = [
     year: '2024 — present',
     role: 'Engineering lead, product & delivery',
     summary:
-      'An AI assistant for India, answering in nine Indian languages. Exam automation at national scale.',
+      'Exam automation for schools and institutes. Teachers set papers and mark handwritten answer sheets with AI doing the reading.',
     outcomes: [
       ['+80%', 'app performance'],
       ['−70%', 'codebase size'],
       ['5+', 'engineers mentored'],
     ],
     detail:
-      'Took an AI EdTech product from heavy and slow to fast and maintainable: batch and frame processing for real-time server-side event handling, an 80% performance gain against a 70% reduction in codebase, and CI/CD through AppCenter that turned releases from an event into a routine.',
+      'An exam automation platform for schools and institutes: teachers create papers, and AI reads and marks scanned handwritten answer sheets. Took it from heavy and slow to fast and maintainable — batch and frame processing for real-time server-side event handling, an 80% performance gain against a 70% reduction in codebase, and CI/CD through AppCenter that turned releases from an event into a routine.',
     stack: ['React Native', 'TypeScript', 'CI/CD', 'AppCenter'],
     image: './assets/img/work/chanakya.png',
     logo: './assets/img/brands/chanakya.webp',
