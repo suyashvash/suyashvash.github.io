@@ -91,3 +91,7 @@
   .launch-rocket, .launch-trail, .launch-spark { animation: none !important; }
   .launch-rocket { opacity: 1 !important; transform: none !important; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .device-pending-shaft { animation: none !important; opacity: .8 !important; transform: none !important; }
+}

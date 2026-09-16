@@ -148,3 +148,66 @@
 /* The whole card is clickable as an enhancement; the real anchors above
    are what keyboard and screen-reader users actually traverse. */
 .work-link[data-href] { cursor: pointer; }
+
+/* ==========================================================================
+   Placeholder row — the third main-feed slot, awaiting the next product.
+
+   Must read as deliberate, not as a broken card: it keeps the exact row
+   geometry, so dropping the real product in later changes nothing about
+   the layout. Deliberately makes no claim it cannot support.
+   ========================================================================== */
+
+.work-link--pending { cursor: default; }
+.work-link--pending:hover { border-color: transparent; background: none; }
+
+.device--empty {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(155deg, #1B1F2B, #0E1017 60%, #171B26);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05),
+    0 24px 60px -22px rgba(0,0,0,.8);
+}
+.device--empty::before,
+.device--empty::after { display: none; }
+
+.device-pending {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-6);
+  color: var(--text-3);
+}
+.device-pending .mono { letter-spacing: .32em; font-size: .625rem; }
+
+/* The shaft motif, seen end-on — the same mark as the nav and preloader,
+   here standing in for a product not yet revealed. */
+.device-pending-shaft {
+  width: 2px;
+  height: 84px;
+  background: linear-gradient(180deg, transparent, var(--gold-600), transparent);
+  box-shadow: 0 0 18px rgba(229,180,95,.45);
+  animation: pending-pulse 3.2s ease-in-out infinite;
+}
+@keyframes pending-pulse {
+  0%, 100% { opacity: .35; transform: scaleY(.72); }
+  50%      { opacity: 1;   transform: scaleY(1); }
+}
+
+.work-row--pending .work-name { color: var(--text-2); }
+.work-row--pending .work-summary { max-width: 38ch; }
+.work-row--pending .work-more { color: var(--gold-500); }
+
+/* ---- "Also shipped" minis that link to a case study --------------------- */
+
+.work-mini-link { display: grid; gap: 0; }
+.work-mini-more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+  color: var(--gold-500);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition: letter-spacing var(--dur-2) var(--ease);
+}
+.work-mini:hover .work-mini-more { letter-spacing: .18em; }

@@ -1,6 +1,11 @@
 /**
  * The work.
  *
+ * `feed` controls placement on the homepage:
+ *   'main'  — a full work row with device frame and store links
+ *   'also'  — a compact card under "Also shipped"
+ *   'none'  — kept here as a record, but not shown on the site
+ *
  * FRAMING: Cosmic Shaft was incorporated 01/04/2024. Several of these
  * engagements predate that, delivered by the founder and the teams he ran.
  * Copy says "led by" — never implies the firm held those contracts. This
@@ -11,6 +16,7 @@
 export const work = [
   {
     slug: 'chanakya-ai',
+    feed: 'main',
     name: 'Chanakya AI',
     client: 'Neurobridge Tech',
     location: 'India',
@@ -33,6 +39,7 @@ export const work = [
   },
   {
     slug: 'haulr',
+    feed: 'main',
     name: 'Haulr',
     client: 'Haulr Corp',
     location: 'United States',
@@ -55,11 +62,13 @@ export const work = [
   },
   {
     slug: 'venyou',
+    feed: 'also',
     name: 'Venyou',
     client: 'Venyou',
     location: 'Melbourne, Australia',
     year: '2021 — 2023',
     role: 'Lead developer, 4-person team',
+    active: false,
     summary:
       'Find a venue, book it, and meet everyone else who is going. Event discovery for the Australian market.',
     outcomes: [
@@ -77,6 +86,7 @@ export const work = [
   },
   {
     slug: 'playnoot',
+    feed: 'also',
     name: 'Playnoot',
     client: 'Playnoot',
     location: 'India',
@@ -98,6 +108,7 @@ export const work = [
   },
   {
     slug: 'playwise',
+    feed: 'also',
     name: 'Playwise',
     client: 'Playwise Esports',
     location: 'India',
@@ -118,6 +129,7 @@ export const work = [
   },
   {
     slug: 'ayuraid',
+    feed: 'none',
     name: 'AyurAid AI',
     client: 'Original',
     location: 'India',
@@ -139,6 +151,7 @@ export const work = [
   },
   {
     slug: 'singhal-jain',
+    feed: 'also',
     name: 'Singhal Jain & Co.',
     client: 'Singhal Jain & Co.',
     location: 'India',
