@@ -15,8 +15,9 @@
 }
 .work-link:hover { border-color: var(--hairline); background: rgba(229,180,95,.03); }
 
-.work-row:nth-child(even) .work-link { direction: rtl; }
-.work-row:nth-child(even) .work-body { direction: ltr; }
+/* Every row uses the SAME layout — media left, copy right — rather than an
+   alternating zigzag. An every-other-row flip read as misaligned rather than
+   deliberate once real content was in it. */
 
 /* The device frame is drawn in CSS rather than loaded as a 729 KB PNG —
    a few hundred bytes, and crisp at every device pixel ratio. */
@@ -123,8 +124,7 @@
 .work-mini p { font-size: var(--step--1); }
 
 @media (max-width: 860px) {
-  .work-link,
-  .work-row:nth-child(even) .work-link { grid-template-columns: 1fr; direction: ltr; gap: var(--s-8); }
+  .work-link { grid-template-columns: 1fr; gap: var(--s-8); }
   .work-list { gap: var(--s-24); }
   /* The bleed-out negative margin made the row wider than the viewport. */
   .work-link { padding: var(--s-4); margin-inline: calc(var(--s-4) * -1); }
